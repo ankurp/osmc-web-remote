@@ -20,6 +20,8 @@
 
 'use strict';
 
+var $ = require('jquery');
+
 var xbmc = {};
 
 xbmc.rpc = {
@@ -27,38 +29,38 @@ xbmc.rpc = {
         'contentType': 'application/json',
         'dataType': 'json',
         'type': 'POST',
-        'success': function () {
+        'success': function() {
             $('#spinner').hide();
         }
     },
-    'request': function (options) {
-        var request_options = jQuery.extend({}, this.default_options, options);
-        request_options.url = this.core.JSON_RPC + '?' + options.method;
+    'request': function(options) {
+        var request_options = $.extend({}, this.default_options, options);
+        request_options.url = xbmc.core.JSON_RPC + '?' + options.method;
         request_options.data = JSON.stringify({
             'jsonrpc': '2.0',
             'method': options.method,
             'id': 1,
             'params': request_options.params
         });
-        return jQuery.ajax(request_options)
+        return $.ajax(request_options)
     }
 };
 xbmc.core = {
     'DEFAULT_ALBUM_COVER': 'images/DefaultAlbumCover.png',
     'DEFAULT_VIDEO_COVER': 'images/DefaultVideo.png',
     'JSON_RPC': 'jsonrpc',
-    'applyDeviceFixes': function () {
-        window.document.addEventListener('touchmove', function (e) {
+    'applyDeviceFixes': function() {
+        window.document.addEventListener('touchmove', function(e) {
             e.preventDefault();
         });
     },
-    'displayCommunicationError': function (m) {
+    'displayCommunicationError': function(m) {
         window.clearTimeout(xbmc.core.commsErrorTimeout);
         var message = m || 'Connection to server lost';
         $('#commsErrorPanel').html(message).show();
         xbmc.core.commsErrorTimeout = window.setTimeout('xbmc.core.hideCommunicationError()', 5000);
     },
-    'durationToString': function (duration) {
+    'durationToString': function(duration) {
         var total_seconds = duration || 0,
             seconds = total_seconds % 60,
             minutes = Math.floor(total_seconds / 60) % 60,
@@ -68,7 +70,7 @@ xbmc.core = {
         result += (seconds < 10 ? '0' : '') + seconds;
         return result;
     },
-    'getCookie': function (name) {
+    'getCookie': function(name) {
         var i,
             match,
             haystack = window.document.cookie.split(';');
@@ -80,10 +82,10 @@ xbmc.core = {
         }
         return null;
     },
-    'hideCommunicationError': function () {
+    'hideCommunicationError': function() {
         $('#commsErrorPanel').hide();
     },
-    'setCookie': function (name, value, days) {
+    'setCookie': function(name, value, days) {
         var date,
             expires;
         if (name) {
@@ -97,7 +99,7 @@ xbmc.core = {
             window.document.cookie = name + "=" + value + expires + "; path=/";
         }
     },
-    'timeToDuration': function (time) {
+    'timeToDuration': function(time) {
         var duration;
         time = time || {};
         duration = ((time.hours || 0) * 3600);

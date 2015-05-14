@@ -7,20 +7,11 @@ var compiler = webpack({
   entry: './entry',
   output: {
       path: __dirname + '/dist',
-      filename: 'bundle.js',
-      sourceMapFilename: 'bundle.js.map'
+      filename: 'bundle.js'
   },
-  loaders: [
-    { test: /\.sass$/, loader: 'style!css!sass' },
-    { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
-  ],
-  plugins: [new HtmlWebpackPlugin({
-    title: 'OSMC'
-  }), new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
-  })]
+  plugins: [
+    new HtmlWebpackPlugin({title: 'OSMC'})
+  ]
 });
 
 compiler.run(function(err, stats) {
