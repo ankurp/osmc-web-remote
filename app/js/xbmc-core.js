@@ -35,7 +35,8 @@ xbmc.rpc = {
     },
     'request': function(options) {
         var request_options = $.extend({}, this.default_options, options);
-        request_options.url = xbmc.core.JSON_RPC + '?' + options.method;
+        request_options.url = '/' + xbmc.core.JSON_RPC + '?' + options.method;
+        request_options.method = 'POST';
         request_options.data = JSON.stringify({
             'jsonrpc': '2.0',
             'method': options.method,

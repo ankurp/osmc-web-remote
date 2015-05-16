@@ -1,4 +1,7 @@
 @import "pure";
+$fa-font-path: "";
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
 html {
   height: 100%;
   body {
@@ -24,10 +27,10 @@ html {
         text-align: center;
         vertical-align: middle;
         color: white;
-        div {
+        i.fa {
           display: table-cell;
-          height: 100%;
           vertical-align: middle;
+          font-size: 4rem;
         }
       }
     }

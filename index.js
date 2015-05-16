@@ -8,6 +8,13 @@ var compiler = webpack({
         path: __dirname + '/dist',
         filename: 'bundle.js'
     },
+    module: {
+        loaders: [{
+            test: /\.js?$/,
+            exclude: /(app\/js\/vendor|node_modules|bower_components)/,
+            loader: 'babel'
+        }]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'OSMC'

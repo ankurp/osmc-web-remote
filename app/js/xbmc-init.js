@@ -20,9 +20,22 @@
 
 'use strict'
 
-var MediaLibrary = require('./MediaLibrary');
-var NowPlayingManager = require('./NowPlayingManager');
 var xbmc = require('./xbmc-core');
-var mediaLibrary = new MediaLibrary(),
-    nowPlayingManager = new NowPlayingManager();
 xbmc.core.applyDeviceFixes();
+
+class Remote {
+  constructor() {
+
+  }
+  rpcCall(method, params) {
+      var callObj = {
+          'method': method
+      };
+      if (params) {
+          callObj.params = params;
+      }
+      return xbmc.rpc.request(callObj);
+  }
+}
+
+module.exports = Remote;

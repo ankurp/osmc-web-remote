@@ -44,19 +44,783 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(12);
+	'use strict';
 
-	__webpack_require__(6);
+	__webpack_require__(16);
+	__webpack_require__(17);
+	__webpack_require__(20);
+	__webpack_require__(18);
+	__webpack_require__(19);
 
-	var $ = __webpack_require__(1);
-	var html = __webpack_require__(3)();
-	var bgImgURL = __webpack_require__(4);
+	__webpack_require__(3);
 
-	$('body').append(html);
-	$('body').css({'background-image': 'url(' + bgImgURL + ')'});
+	var $ = __webpack_require__(15);
+	$('body').append(__webpack_require__(5)());
+	$('body').css({ 'background-image': 'url(' + __webpack_require__(2) + ')' });
+
+	var Remote = __webpack_require__(7);
+	var remote = new Remote();
+	$('i.fa').click(function (e) {
+	  remote.rpcCall($(e.target).data('method'));
+	});
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "7a4497e1e33681b6f24e11037a98b39b.png"
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(4);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	exports.push([module.id, "/*!\nPure v0.6.0\nCopyright 2014 Yahoo! Inc. All rights reserved.\nLicensed under the BSD License.\nhttps://github.com/yahoo/pure/blob/master/LICENSE.md\n*/\n/*!\nnormalize.css v^3.0 | MIT License | git.io/normalize\nCopyright (c) Nicolas Gallagher and Jonathan Neal\n*/\n/*! normalize.css v3.0.2 | MIT License | git.io/normalize */\n/**\n * 1. Set default font family to sans-serif.\n * 2. Prevent iOS text size adjust after orientation change, without disabling\n *    user zoom.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n * Remove default margin.\n */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Correct `block` display not defined for any HTML5 element in IE 8/9.\n * Correct `block` display not defined for `details` or `summary` in IE 10/11\n * and Firefox.\n * Correct `block` display not defined for `main` in IE 11.\n */\narticle, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {\n  display: block; }\n\n/**\n * 1. Correct `inline-block` display not defined in IE 8/9.\n * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.\n */\naudio, canvas, progress, video {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Prevent modern browsers from displaying `audio` without controls.\n * Remove excess height in iOS 5 devices.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Address `[hidden]` styling not present in IE 8/9/10.\n * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.\n */\n[hidden], template {\n  display: none; }\n\n/* Links\n   ========================================================================== */\n/**\n * Remove the gray background color from active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * Improve readability when focused and also mouse hovered in all browsers.\n */\na:active, a:hover {\n  outline: 0; }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Address styling not present in IE 8/9/10/11, Safari, and Chrome.\n */\nabbr[title] {\n  border-bottom: 1px dotted; }\n\n/**\n * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.\n */\nb, strong {\n  font-weight: bold; }\n\n/**\n * Address styling not present in Safari and Chrome.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Address variable `h1` font-size and margin within `section` and `article`\n * contexts in Firefox 4+, Safari, and Chrome.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n * Address styling not present in IE 8/9.\n */\nmark {\n  background: #ff0;\n  color: #000; }\n\n/**\n * Address inconsistent and variable font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` affecting `line-height` in all browsers.\n */\nsub, sup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove border when inside `a` element in IE 8/9/10.\n */\nimg {\n  border: 0; }\n\n/**\n * Correct overflow not hidden in IE 9/10/11.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Address margin not present in IE 8/9 and Safari.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * Address differences between Firefox and other browsers.\n */\nhr {\n  -moz-box-sizing: content-box;\n  box-sizing: content-box;\n  height: 0; }\n\n/**\n * Contain overflow in all browsers.\n */\npre {\n  overflow: auto; }\n\n/**\n * Address odd `em`-unit font size rendering in all browsers.\n */\ncode, kbd, pre, samp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n/* Forms\n   ========================================================================== */\n/**\n * Known limitation: by default, Chrome and Safari on OS X allow very limited\n * styling of `select`, unless a `border` property is set.\n */\n/**\n * 1. Correct color not being inherited.\n *    Known issue: affects color of disabled elements.\n * 2. Correct font properties not being inherited.\n * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.\n */\nbutton, input, optgroup, select, textarea {\n  color: inherit;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n  margin: 0;\n  /* 3 */ }\n\n/**\n * Address `overflow` set to `hidden` in IE 8/9/10/11.\n */\nbutton {\n  overflow: visible; }\n\n/**\n * Address inconsistent `text-transform` inheritance for `button` and `select`.\n * All other form control elements do not inherit `text-transform` values.\n * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.\n * Correct `select` style inheritance in Firefox.\n */\nbutton, select {\n  text-transform: none; }\n\n/**\n * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`\n *    and `video` controls.\n * 2. Correct inability to style clickable `input` types in iOS.\n * 3. Improve usability and consistency of cursor style between image-type\n *    `input` and others.\n */\nbutton, html input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n  cursor: pointer;\n  /* 3 */ }\n\n/**\n * Re-set default cursor for disabled elements.\n */\nbutton[disabled], html input[disabled] {\n  cursor: default; }\n\n/**\n * Remove inner padding and border in Firefox 4+.\n */\nbutton::-moz-focus-inner, input::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n/**\n * Address Firefox 4+ setting `line-height` on `input` using `!important` in\n * the UA stylesheet.\n */\ninput {\n  line-height: normal; }\n\n/**\n * It's recommended that you don't attempt to style these elements.\n * Firefox's implementation doesn't respect box-sizing, padding, or width.\n *\n * 1. Address box sizing set to `content-box` in IE 8/9/10.\n * 2. Remove excess padding in IE 8/9/10.\n */\ninput[type=\"checkbox\"], input[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Fix the cursor style for Chrome's increment/decrement buttons. For certain\n * `font-size` values of the `input`, it causes the cursor style of the\n * decrement button to change from `default` to `text`.\n */\ninput[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Address `appearance` set to `searchfield` in Safari and Chrome.\n * 2. Address `box-sizing` set to `border-box` in Safari and Chrome\n *    (include `-moz` to future-proof).\n */\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  -moz-box-sizing: content-box;\n  -webkit-box-sizing: content-box;\n  /* 2 */\n  box-sizing: content-box; }\n\n/**\n * Remove inner padding and search cancel button in Safari and Chrome on OS X.\n * Safari (but not Chrome) clips the cancel button when the search input has\n * padding (and `textfield` appearance).\n */\ninput[type=\"search\"]::-webkit-search-cancel-button, input[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * Define consistent border, margin, and padding.\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct `color` not being inherited in IE 8/9/10/11.\n * 2. Remove padding so people aren't caught out if they zero out fieldsets.\n */\nlegend {\n  border: 0;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Remove default vertical scrollbar in IE 8/9/10/11.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * Don't inherit the `font-weight` (applied by a rule above).\n * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.\n */\noptgroup {\n  font-weight: bold; }\n\n/* Tables\n   ========================================================================== */\n/**\n * Remove most spacing between table cells.\n */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd, th {\n  padding: 0; }\n\n/*csslint important:false*/\n/* ==========================================================================\n   Pure Base Extras\n   ========================================================================== */\n/**\n * Extra rules that Pure adds on top of Normalize.css\n */\n/**\n * Always hide an element when it has the `hidden` HTML attribute.\n */\n.hidden, [hidden] {\n  display: none !important; }\n\n/**\n * Add this class to an image to make it fit within it's fluid parent wrapper while maintaining\n * aspect ratio.\n */\n.pure-img {\n  max-width: 100%;\n  height: auto;\n  display: block; }\n\n/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/\n.pure-g {\n  letter-spacing: -0.31em;\n  /* Webkit: collapse white-space between units */\n  *letter-spacing: normal;\n  /* reset IE < 8 */\n  *word-spacing: -0.43em;\n  /* IE < 8: collapse white-space between units */\n  text-rendering: optimizespeed;\n  /* Webkit: fixes text-rendering: optimizeLegibility */\n  /*\n    Sets the font stack to fonts known to work properly with the above letter\n    and word spacings. See: https://github.com/yahoo/pure/issues/41/\n\n    The following font stack makes Pure Grids work on all known environments.\n\n    * FreeSans: Ships with many Linux distros, including Ubuntu\n\n    * Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and\n      Arial to get picked up by the browser, even though neither is available\n      in Chrome OS.\n\n    * Droid Sans: Ships with all versions of Android.\n\n    * Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.\n    */\n  font-family: FreeSans, Arimo, \"Droid Sans\", Helvetica, Arial, sans-serif;\n  /*\n    Use flexbox when possible to avoid `letter-spacing` side-effects.\n\n    NOTE: Firefox (as of 25) does not currently support flex-wrap, so the\n    `-moz-` prefix version is omitted.\n    */\n  display: -webkit-flex;\n  -webkit-flex-flow: row wrap;\n  /* IE10 uses display: flexbox */\n  display: -ms-flexbox;\n  -ms-flex-flow: row wrap;\n  /* Prevents distributing space between rows */\n  -ms-align-content: flex-start;\n  -webkit-align-content: flex-start;\n  align-content: flex-start; }\n\n/* Opera as of 12 on Windows needs word-spacing.\n   The \".opera-only\" selector is used to prevent actual prefocus styling\n   and is not required in markup.\n*/\n.opera-only :-o-prefocus, .pure-g {\n  word-spacing: -0.43em; }\n\n.pure-u {\n  display: inline-block;\n  *display: inline;\n  /* IE < 8: fake inline-block */\n  zoom: 1;\n  letter-spacing: normal;\n  word-spacing: normal;\n  vertical-align: top;\n  text-rendering: auto; }\n\n/*\nResets the font family back to the OS/browser's default sans-serif font,\nthis the same font stack that Normalize.css sets for the `body`.\n*/\n.pure-g [class*=\"pure-u\"] {\n  font-family: sans-serif; }\n\n.pure-u-1, .pure-u-1-1, .pure-u-1-2, .pure-u-1-3, .pure-u-2-3, .pure-u-1-4, .pure-u-3-4, .pure-u-1-5, .pure-u-2-5, .pure-u-3-5, .pure-u-4-5, .pure-u-5-5, .pure-u-1-6, .pure-u-5-6, .pure-u-1-8, .pure-u-3-8, .pure-u-5-8, .pure-u-7-8, .pure-u-1-12, .pure-u-5-12, .pure-u-7-12, .pure-u-11-12, .pure-u-1-24, .pure-u-2-24, .pure-u-3-24, .pure-u-4-24, .pure-u-5-24, .pure-u-6-24, .pure-u-7-24, .pure-u-8-24, .pure-u-9-24, .pure-u-10-24, .pure-u-11-24, .pure-u-12-24, .pure-u-13-24, .pure-u-14-24, .pure-u-15-24, .pure-u-16-24, .pure-u-17-24, .pure-u-18-24, .pure-u-19-24, .pure-u-20-24, .pure-u-21-24, .pure-u-22-24, .pure-u-23-24, .pure-u-24-24 {\n  display: inline-block;\n  *display: inline;\n  zoom: 1;\n  letter-spacing: normal;\n  word-spacing: normal;\n  vertical-align: top;\n  text-rendering: auto; }\n\n.pure-u-1-24 {\n  width: 4.1667%;\n  *width: 4.1357%; }\n\n.pure-u-1-12, .pure-u-2-24 {\n  width: 8.3333%;\n  *width: 8.3023%; }\n\n.pure-u-1-8, .pure-u-3-24 {\n  width: 12.5%;\n  *width: 12.469%; }\n\n.pure-u-1-6, .pure-u-4-24 {\n  width: 16.6667%;\n  *width: 16.6357%; }\n\n.pure-u-1-5 {\n  width: 20%;\n  *width: 19.969%; }\n\n.pure-u-5-24 {\n  width: 20.8333%;\n  *width: 20.8023%; }\n\n.pure-u-1-4, .pure-u-6-24 {\n  width: 25%;\n  *width: 24.969%; }\n\n.pure-u-7-24 {\n  width: 29.1667%;\n  *width: 29.1357%; }\n\n.pure-u-1-3, .pure-u-8-24 {\n  width: 33.3333%;\n  *width: 33.3023%; }\n\n.pure-u-3-8, .pure-u-9-24 {\n  width: 37.5%;\n  *width: 37.469%; }\n\n.pure-u-2-5 {\n  width: 40%;\n  *width: 39.969%; }\n\n.pure-u-5-12, .pure-u-10-24 {\n  width: 41.6667%;\n  *width: 41.6357%; }\n\n.pure-u-11-24 {\n  width: 45.8333%;\n  *width: 45.8023%; }\n\n.pure-u-1-2, .pure-u-12-24 {\n  width: 50%;\n  *width: 49.969%; }\n\n.pure-u-13-24 {\n  width: 54.1667%;\n  *width: 54.1357%; }\n\n.pure-u-7-12, .pure-u-14-24 {\n  width: 58.3333%;\n  *width: 58.3023%; }\n\n.pure-u-3-5 {\n  width: 60%;\n  *width: 59.969%; }\n\n.pure-u-5-8, .pure-u-15-24 {\n  width: 62.5%;\n  *width: 62.469%; }\n\n.pure-u-2-3, .pure-u-16-24 {\n  width: 66.6667%;\n  *width: 66.6357%; }\n\n.pure-u-17-24 {\n  width: 70.8333%;\n  *width: 70.8023%; }\n\n.pure-u-3-4, .pure-u-18-24 {\n  width: 75%;\n  *width: 74.969%; }\n\n.pure-u-19-24 {\n  width: 79.1667%;\n  *width: 79.1357%; }\n\n.pure-u-4-5 {\n  width: 80%;\n  *width: 79.969%; }\n\n.pure-u-5-6, .pure-u-20-24 {\n  width: 83.3333%;\n  *width: 83.3023%; }\n\n.pure-u-7-8, .pure-u-21-24 {\n  width: 87.5%;\n  *width: 87.469%; }\n\n.pure-u-11-12, .pure-u-22-24 {\n  width: 91.6667%;\n  *width: 91.6357%; }\n\n.pure-u-23-24 {\n  width: 95.8333%;\n  *width: 95.8023%; }\n\n.pure-u-1, .pure-u-1-1, .pure-u-5-5, .pure-u-24-24 {\n  width: 100%; }\n\n.pure-button {\n  /* Structure */\n  display: inline-block;\n  zoom: 1;\n  line-height: normal;\n  white-space: nowrap;\n  vertical-align: middle;\n  text-align: center;\n  cursor: pointer;\n  -webkit-user-drag: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Firefox: Get rid of the inner focus border */\n.pure-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n/*csslint outline-none:false*/\n.pure-button {\n  font-family: inherit;\n  font-size: 100%;\n  padding: 0.5em 1em;\n  color: #444;\n  /* rgba not supported (IE 8) */\n  color: rgba(0, 0, 0, 0.8);\n  /* rgba supported */\n  border: 1px solid #999;\n  /*IE 6/7/8*/\n  border: none transparent;\n  /*IE9 + everything else*/\n  background-color: #E6E6E6;\n  text-decoration: none;\n  border-radius: 2px; }\n\n.pure-button-hover, .pure-button:hover, .pure-button:focus {\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);\n  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.1)));\n  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));\n  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1));\n  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));\n  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1)); }\n\n.pure-button:focus {\n  outline: 0; }\n\n.pure-button-active, .pure-button:active {\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;\n  border-color: #000 \\9; }\n\n.pure-button[disabled], .pure-button-disabled, .pure-button-disabled:hover, .pure-button-disabled:focus, .pure-button-disabled:active {\n  border: none;\n  background-image: none;\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);\n  filter: alpha(opacity=40);\n  -khtml-opacity: 0.40;\n  -moz-opacity: 0.40;\n  opacity: 0.40;\n  cursor: not-allowed;\n  box-shadow: none; }\n\n.pure-button-hidden {\n  display: none; }\n\n/* Firefox: Get rid of the inner focus border */\n.pure-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {\n  background-color: #0078e7;\n  color: #fff; }\n\n/*csslint box-model:false*/\n/*\nBox-model set to false because we're setting a height on select elements, which\nalso have border and padding. This is done because some browsers don't render\nthe padding. We explicitly set the box-model for select elements to border-box,\nso we can ignore the csslint warning.\n*/\n.pure-form input[type=\"text\"], .pure-form input[type=\"password\"], .pure-form input[type=\"email\"], .pure-form input[type=\"url\"], .pure-form input[type=\"date\"], .pure-form input[type=\"month\"], .pure-form input[type=\"time\"], .pure-form input[type=\"datetime\"], .pure-form input[type=\"datetime-local\"], .pure-form input[type=\"week\"], .pure-form input[type=\"number\"], .pure-form input[type=\"search\"], .pure-form input[type=\"tel\"], .pure-form input[type=\"color\"], .pure-form select, .pure-form textarea {\n  padding: 0.5em 0.6em;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-shadow: inset 0 1px 3px #ddd;\n  border-radius: 4px;\n  vertical-align: middle;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form input:not([type]) {\n  padding: 0.5em 0.6em;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-shadow: inset 0 1px 3px #ddd;\n  border-radius: 4px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */\n/* May be able to remove this tweak as color inputs become more standardized across browsers. */\n.pure-form input[type=\"color\"] {\n  padding: 0.2em 0.5em; }\n\n.pure-form input[type=\"text\"]:focus, .pure-form input[type=\"password\"]:focus, .pure-form input[type=\"email\"]:focus, .pure-form input[type=\"url\"]:focus, .pure-form input[type=\"date\"]:focus, .pure-form input[type=\"month\"]:focus, .pure-form input[type=\"time\"]:focus, .pure-form input[type=\"datetime\"]:focus, .pure-form input[type=\"datetime-local\"]:focus, .pure-form input[type=\"week\"]:focus, .pure-form input[type=\"number\"]:focus, .pure-form input[type=\"search\"]:focus, .pure-form input[type=\"tel\"]:focus, .pure-form input[type=\"color\"]:focus, .pure-form select:focus, .pure-form textarea:focus {\n  outline: 0;\n  border-color: #129FEA; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form input:not([type]):focus {\n  outline: 0;\n  border-color: #129FEA; }\n\n.pure-form input[type=\"file\"]:focus, .pure-form input[type=\"radio\"]:focus, .pure-form input[type=\"checkbox\"]:focus {\n  outline: thin solid #129FEA;\n  outline: 1px auto #129FEA; }\n\n.pure-form .pure-checkbox, .pure-form .pure-radio {\n  margin: 0.5em 0;\n  display: block; }\n\n.pure-form input[type=\"text\"][disabled], .pure-form input[type=\"password\"][disabled], .pure-form input[type=\"email\"][disabled], .pure-form input[type=\"url\"][disabled], .pure-form input[type=\"date\"][disabled], .pure-form input[type=\"month\"][disabled], .pure-form input[type=\"time\"][disabled], .pure-form input[type=\"datetime\"][disabled], .pure-form input[type=\"datetime-local\"][disabled], .pure-form input[type=\"week\"][disabled], .pure-form input[type=\"number\"][disabled], .pure-form input[type=\"search\"][disabled], .pure-form input[type=\"tel\"][disabled], .pure-form input[type=\"color\"][disabled], .pure-form select[disabled], .pure-form textarea[disabled] {\n  cursor: not-allowed;\n  background-color: #eaeded;\n  color: #cad2d3; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form input:not([type])[disabled] {\n  cursor: not-allowed;\n  background-color: #eaeded;\n  color: #cad2d3; }\n\n.pure-form input[readonly], .pure-form select[readonly], .pure-form textarea[readonly] {\n  background-color: #eee;\n  /* menu hover bg color */\n  color: #777;\n  /* menu text color */\n  border-color: #ccc; }\n\n.pure-form input:focus:invalid, .pure-form textarea:focus:invalid, .pure-form select:focus:invalid {\n  color: #b94a48;\n  border-color: #e9322d; }\n\n.pure-form input[type=\"file\"]:focus:invalid:focus, .pure-form input[type=\"radio\"]:focus:invalid:focus, .pure-form input[type=\"checkbox\"]:focus:invalid:focus {\n  outline-color: #e9322d; }\n\n.pure-form select {\n  /* Normalizes the height; padding is not sufficient. */\n  height: 2.25em;\n  border: 1px solid #ccc;\n  background-color: white; }\n\n.pure-form select[multiple] {\n  height: auto; }\n\n.pure-form label {\n  margin: 0.5em 0 0.2em; }\n\n.pure-form fieldset {\n  margin: 0;\n  padding: 0.35em 0 0.75em;\n  border: 0; }\n\n.pure-form legend {\n  display: block;\n  width: 100%;\n  padding: 0.3em 0;\n  margin-bottom: 0.3em;\n  color: #333;\n  border-bottom: 1px solid #e5e5e5; }\n\n.pure-form-stacked input[type=\"text\"], .pure-form-stacked input[type=\"password\"], .pure-form-stacked input[type=\"email\"], .pure-form-stacked input[type=\"url\"], .pure-form-stacked input[type=\"date\"], .pure-form-stacked input[type=\"month\"], .pure-form-stacked input[type=\"time\"], .pure-form-stacked input[type=\"datetime\"], .pure-form-stacked input[type=\"datetime-local\"], .pure-form-stacked input[type=\"week\"], .pure-form-stacked input[type=\"number\"], .pure-form-stacked input[type=\"search\"], .pure-form-stacked input[type=\"tel\"], .pure-form-stacked input[type=\"color\"], .pure-form-stacked input[type=\"file\"], .pure-form-stacked select, .pure-form-stacked label, .pure-form-stacked textarea {\n  display: block;\n  margin: 0.25em 0; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form-stacked input:not([type]) {\n  display: block;\n  margin: 0.25em 0; }\n\n.pure-form-aligned input, .pure-form-aligned textarea, .pure-form-aligned select, .pure-form-aligned .pure-help-inline, .pure-form-message-inline {\n  display: inline-block;\n  *display: inline;\n  *zoom: 1;\n  vertical-align: middle; }\n\n.pure-form-aligned textarea {\n  vertical-align: top; }\n\n/* Aligned Forms */\n.pure-form-aligned .pure-control-group {\n  margin-bottom: 0.5em; }\n\n.pure-form-aligned .pure-control-group label {\n  text-align: right;\n  display: inline-block;\n  vertical-align: middle;\n  width: 10em;\n  margin: 0 1em 0 0; }\n\n.pure-form-aligned .pure-controls {\n  margin: 1.5em 0 0 11em; }\n\n/* Rounded Inputs */\n.pure-form input.pure-input-rounded, .pure-form .pure-input-rounded {\n  border-radius: 2em;\n  padding: 0.5em 1em; }\n\n/* Grouped Inputs */\n.pure-form .pure-group fieldset {\n  margin-bottom: 10px; }\n\n.pure-form .pure-group input, .pure-form .pure-group textarea {\n  display: block;\n  padding: 10px;\n  margin: 0 0 -1px;\n  border-radius: 0;\n  position: relative;\n  top: -1px; }\n\n.pure-form .pure-group input:focus, .pure-form .pure-group textarea:focus {\n  z-index: 3; }\n\n.pure-form .pure-group input:first-child, .pure-form .pure-group textarea:first-child {\n  top: 1px;\n  border-radius: 4px 4px 0 0;\n  margin: 0; }\n\n.pure-form .pure-group input:first-child:last-child, .pure-form .pure-group textarea:first-child:last-child {\n  top: 1px;\n  border-radius: 4px;\n  margin: 0; }\n\n.pure-form .pure-group input:last-child, .pure-form .pure-group textarea:last-child {\n  top: -2px;\n  border-radius: 0 0 4px 4px;\n  margin: 0; }\n\n.pure-form .pure-group button {\n  margin: 0.35em 0; }\n\n.pure-form .pure-input-1 {\n  width: 100%; }\n\n.pure-form .pure-input-2-3 {\n  width: 66%; }\n\n.pure-form .pure-input-1-2 {\n  width: 50%; }\n\n.pure-form .pure-input-1-3 {\n  width: 33%; }\n\n.pure-form .pure-input-1-4 {\n  width: 25%; }\n\n/* Inline help for forms */\n/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */\n.pure-form .pure-help-inline, .pure-form-message-inline {\n  display: inline-block;\n  padding-left: 0.3em;\n  color: #666;\n  vertical-align: middle;\n  font-size: 0.875em; }\n\n/* Block help for forms */\n.pure-form-message {\n  display: block;\n  color: #666;\n  font-size: 0.875em; }\n\n@media only screen and (max-width: 480px) {\n  .pure-form button[type=\"submit\"] {\n    margin: 0.7em 0 0; }\n  .pure-form input:not([type]), .pure-form input[type=\"text\"], .pure-form input[type=\"password\"], .pure-form input[type=\"email\"], .pure-form input[type=\"url\"], .pure-form input[type=\"date\"], .pure-form input[type=\"month\"], .pure-form input[type=\"time\"], .pure-form input[type=\"datetime\"], .pure-form input[type=\"datetime-local\"], .pure-form input[type=\"week\"], .pure-form input[type=\"number\"], .pure-form input[type=\"search\"], .pure-form input[type=\"tel\"], .pure-form input[type=\"color\"], .pure-form label {\n    margin-bottom: 0.3em;\n    display: block; }\n  .pure-group input:not([type]), .pure-group input[type=\"text\"], .pure-group input[type=\"password\"], .pure-group input[type=\"email\"], .pure-group input[type=\"url\"], .pure-group input[type=\"date\"], .pure-group input[type=\"month\"], .pure-group input[type=\"time\"], .pure-group input[type=\"datetime\"], .pure-group input[type=\"datetime-local\"], .pure-group input[type=\"week\"], .pure-group input[type=\"number\"], .pure-group input[type=\"search\"], .pure-group input[type=\"tel\"], .pure-group input[type=\"color\"] {\n    margin-bottom: 0; }\n  .pure-form-aligned .pure-control-group label {\n    margin-bottom: 0.3em;\n    text-align: left;\n    display: block;\n    width: 100%; }\n  .pure-form-aligned .pure-controls {\n    margin: 1.5em 0 0 0; }\n  /* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */\n  .pure-form .pure-help-inline, .pure-form-message-inline, .pure-form-message {\n    display: block;\n    font-size: 0.75em;\n    /* Increased bottom padding to make it group with its related input element. */\n    padding: 0.2em 0 0.8em; } }\n\n/*csslint adjoining-classes: false, box-model:false*/\n.pure-menu {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.pure-menu-fixed {\n  position: fixed;\n  left: 0;\n  top: 0;\n  z-index: 3; }\n\n.pure-menu-list, .pure-menu-item {\n  position: relative; }\n\n.pure-menu-list {\n  list-style: none;\n  margin: 0;\n  padding: 0; }\n\n.pure-menu-item {\n  padding: 0;\n  margin: 0;\n  height: 100%; }\n\n.pure-menu-link, .pure-menu-heading {\n  display: block;\n  text-decoration: none;\n  white-space: nowrap; }\n\n/* HORIZONTAL MENU */\n.pure-menu-horizontal {\n  width: 100%;\n  white-space: nowrap; }\n\n.pure-menu-horizontal .pure-menu-list {\n  display: inline-block; }\n\n/* Initial menus should be inline-block so that they are horizontal */\n.pure-menu-horizontal .pure-menu-item, .pure-menu-horizontal .pure-menu-heading, .pure-menu-horizontal .pure-menu-separator {\n  display: inline-block;\n  *display: inline;\n  zoom: 1;\n  vertical-align: middle; }\n\n/* Submenus should still be display: block; */\n.pure-menu-item .pure-menu-item {\n  display: block; }\n\n.pure-menu-children {\n  display: none;\n  position: absolute;\n  left: 100%;\n  top: 0;\n  margin: 0;\n  padding: 0;\n  z-index: 3; }\n\n.pure-menu-horizontal .pure-menu-children {\n  left: 0;\n  top: auto;\n  width: inherit; }\n\n.pure-menu-allow-hover:hover > .pure-menu-children, .pure-menu-active > .pure-menu-children {\n  display: block;\n  position: absolute; }\n\n/* Vertical Menus - show the dropdown arrow */\n.pure-menu-has-children > .pure-menu-link:after {\n  padding-left: 0.5em;\n  content: \"\\25B8\";\n  font-size: small; }\n\n/* Horizontal Menus - show the dropdown arrow */\n.pure-menu-horizontal .pure-menu-has-children > .pure-menu-link:after {\n  content: \"\\25BE\"; }\n\n/* scrollable menus */\n.pure-menu-scrollable {\n  overflow-y: scroll;\n  overflow-x: hidden; }\n\n.pure-menu-scrollable .pure-menu-list {\n  display: block; }\n\n.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list {\n  display: inline-block; }\n\n.pure-menu-horizontal.pure-menu-scrollable {\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n  -ms-overflow-style: none;\n  -webkit-overflow-scrolling: touch;\n  /* a little extra padding for this style to allow for scrollbars */\n  padding: .5em 0; }\n\n.pure-menu-horizontal.pure-menu-scrollable::-webkit-scrollbar {\n  display: none; }\n\n/* misc default styling */\n.pure-menu-separator {\n  background-color: #ccc;\n  height: 1px;\n  margin: .3em 0; }\n\n.pure-menu-horizontal .pure-menu-separator {\n  width: 1px;\n  height: 1.3em;\n  margin: 0 .3em; }\n\n.pure-menu-heading {\n  text-transform: uppercase;\n  color: #565d64; }\n\n.pure-menu-link {\n  color: #777; }\n\n.pure-menu-children {\n  background-color: #fff; }\n\n.pure-menu-link, .pure-menu-disabled, .pure-menu-heading {\n  padding: .5em 1em; }\n\n.pure-menu-disabled {\n  opacity: .5; }\n\n.pure-menu-disabled .pure-menu-link:hover {\n  background-color: transparent; }\n\n.pure-menu-active > .pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {\n  background-color: #eee; }\n\n.pure-menu-selected .pure-menu-link, .pure-menu-selected .pure-menu-link:visited {\n  color: #000; }\n\n.pure-table {\n  /* Remove spacing between table cells (from Normalize.css) */\n  border-collapse: collapse;\n  border-spacing: 0;\n  empty-cells: show;\n  border: 1px solid #cbcbcb; }\n\n.pure-table caption {\n  color: #000;\n  font: italic 85%/1 arial, sans-serif;\n  padding: 1em 0;\n  text-align: center; }\n\n.pure-table td, .pure-table th {\n  border-left: 1px solid #cbcbcb;\n  /*  inner column border */\n  border-width: 0 0 0 1px;\n  font-size: inherit;\n  margin: 0;\n  overflow: visible;\n  /*to make ths where the title is really long work*/\n  padding: 0.5em 1em;\n  /* cell padding */ }\n\n/* Consider removing this next declaration block, as it causes problems when\nthere's a rowspan on the first cell. Case added to the tests. issue#432 */\n.pure-table td:first-child, .pure-table th:first-child {\n  border-left-width: 0; }\n\n.pure-table thead {\n  background-color: #e0e0e0;\n  color: #000;\n  text-align: left;\n  vertical-align: bottom; }\n\n/*\nstriping:\n   even - #fff (white)\n   odd  - #f2f2f2 (light gray)\n*/\n.pure-table td {\n  background-color: transparent; }\n\n.pure-table-odd td {\n  background-color: #f2f2f2; }\n\n/* nth-child selector for modern browsers */\n.pure-table-striped tr:nth-child(2n-1) td {\n  background-color: #f2f2f2; }\n\n/* BORDERED TABLES */\n.pure-table-bordered td {\n  border-bottom: 1px solid #cbcbcb; }\n\n.pure-table-bordered tbody > tr:last-child > td {\n  border-bottom-width: 0; }\n\n/* HORIZONTAL BORDERED TABLES */\n.pure-table-horizontal td, .pure-table-horizontal th {\n  border-width: 0 0 1px 0;\n  border-bottom: 1px solid #cbcbcb; }\n\n.pure-table-horizontal tbody > tr:last-child > td {\n  border-bottom-width: 0; }\n\n/*!\n *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome\n *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)\n */\n/* FONT PATH\n * -------------------------- */\n@font-face {\n  font-family: 'FontAwesome';\n  src: url('./fontawesome-webfont.eot?v=4.3.0');\n  src: url('./fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('./fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('./fontawesome-webfont.woff?v=4.3.0') format('woff'), url('./fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('./fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');\n  font-weight: normal;\n  font-style: normal; }\n\n.fa {\n  display: inline-block;\n  font: normal normal normal 14px/1 FontAwesome;\n  font-size: inherit;\n  text-rendering: auto;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  transform: translate(0, 0); }\n\n/* makes the font 33% larger relative to the icon container */\n.fa-lg {\n  font-size: 1.33333em;\n  line-height: 0.75em;\n  vertical-align: -15%; }\n\n.fa-2x {\n  font-size: 2em; }\n\n.fa-3x {\n  font-size: 3em; }\n\n.fa-4x {\n  font-size: 4em; }\n\n.fa-5x {\n  font-size: 5em; }\n\n.fa-fw {\n  width: 1.28571em;\n  text-align: center; }\n\n.fa-ul {\n  padding-left: 0;\n  margin-left: 2.14286em;\n  list-style-type: none; }\n  .fa-ul > li {\n    position: relative; }\n\n.fa-li {\n  position: absolute;\n  left: -2.14286em;\n  width: 2.14286em;\n  top: 0.14286em;\n  text-align: center; }\n  .fa-li.fa-lg {\n    left: -1.85714em; }\n\n.fa-border {\n  padding: .2em .25em .15em;\n  border: solid .08em #eee;\n  border-radius: .1em; }\n\n.pull-right {\n  float: right; }\n\n.pull-left {\n  float: left; }\n\n.fa.pull-left {\n  margin-right: .3em; }\n.fa.pull-right {\n  margin-left: .3em; }\n\n.fa-spin {\n  -webkit-animation: fa-spin 2s infinite linear;\n  animation: fa-spin 2s infinite linear; }\n\n.fa-pulse {\n  -webkit-animation: fa-spin 1s infinite steps(8);\n  animation: fa-spin 1s infinite steps(8); }\n\n@-webkit-keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg); }\n\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg); } }\n\n@keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg); }\n\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg); } }\n\n.fa-rotate-90 {\n  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);\n  -webkit-transform: rotate(90deg);\n  -ms-transform: rotate(90deg);\n  transform: rotate(90deg); }\n\n.fa-rotate-180 {\n  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);\n  -webkit-transform: rotate(180deg);\n  -ms-transform: rotate(180deg);\n  transform: rotate(180deg); }\n\n.fa-rotate-270 {\n  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);\n  -webkit-transform: rotate(270deg);\n  -ms-transform: rotate(270deg);\n  transform: rotate(270deg); }\n\n.fa-flip-horizontal {\n  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);\n  -webkit-transform: scale(-1, 1);\n  -ms-transform: scale(-1, 1);\n  transform: scale(-1, 1); }\n\n.fa-flip-vertical {\n  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);\n  -webkit-transform: scale(1, -1);\n  -ms-transform: scale(1, -1);\n  transform: scale(1, -1); }\n\n:root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270, :root .fa-flip-horizontal, :root .fa-flip-vertical {\n  filter: none; }\n\n.fa-stack {\n  position: relative;\n  display: inline-block;\n  width: 2em;\n  height: 2em;\n  line-height: 2em;\n  vertical-align: middle; }\n\n.fa-stack-1x, .fa-stack-2x {\n  position: absolute;\n  left: 0;\n  width: 100%;\n  text-align: center; }\n\n.fa-stack-1x {\n  line-height: inherit; }\n\n.fa-stack-2x {\n  font-size: 2em; }\n\n.fa-inverse {\n  color: #fff; }\n\n/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen\n   readers do not read off random characters that represent icons */\n.fa-glass:before {\n  content: \"\\f000\"; }\n\n.fa-music:before {\n  content: \"\\f001\"; }\n\n.fa-search:before {\n  content: \"\\f002\"; }\n\n.fa-envelope-o:before {\n  content: \"\\f003\"; }\n\n.fa-heart:before {\n  content: \"\\f004\"; }\n\n.fa-star:before {\n  content: \"\\f005\"; }\n\n.fa-star-o:before {\n  content: \"\\f006\"; }\n\n.fa-user:before {\n  content: \"\\f007\"; }\n\n.fa-film:before {\n  content: \"\\f008\"; }\n\n.fa-th-large:before {\n  content: \"\\f009\"; }\n\n.fa-th:before {\n  content: \"\\f00a\"; }\n\n.fa-th-list:before {\n  content: \"\\f00b\"; }\n\n.fa-check:before {\n  content: \"\\f00c\"; }\n\n.fa-remove:before, .fa-close:before, .fa-times:before {\n  content: \"\\f00d\"; }\n\n.fa-search-plus:before {\n  content: \"\\f00e\"; }\n\n.fa-search-minus:before {\n  content: \"\\f010\"; }\n\n.fa-power-off:before {\n  content: \"\\f011\"; }\n\n.fa-signal:before {\n  content: \"\\f012\"; }\n\n.fa-gear:before, .fa-cog:before {\n  content: \"\\f013\"; }\n\n.fa-trash-o:before {\n  content: \"\\f014\"; }\n\n.fa-home:before {\n  content: \"\\f015\"; }\n\n.fa-file-o:before {\n  content: \"\\f016\"; }\n\n.fa-clock-o:before {\n  content: \"\\f017\"; }\n\n.fa-road:before {\n  content: \"\\f018\"; }\n\n.fa-download:before {\n  content: \"\\f019\"; }\n\n.fa-arrow-circle-o-down:before {\n  content: \"\\f01a\"; }\n\n.fa-arrow-circle-o-up:before {\n  content: \"\\f01b\"; }\n\n.fa-inbox:before {\n  content: \"\\f01c\"; }\n\n.fa-play-circle-o:before {\n  content: \"\\f01d\"; }\n\n.fa-rotate-right:before, .fa-repeat:before {\n  content: \"\\f01e\"; }\n\n.fa-refresh:before {\n  content: \"\\f021\"; }\n\n.fa-list-alt:before {\n  content: \"\\f022\"; }\n\n.fa-lock:before {\n  content: \"\\f023\"; }\n\n.fa-flag:before {\n  content: \"\\f024\"; }\n\n.fa-headphones:before {\n  content: \"\\f025\"; }\n\n.fa-volume-off:before {\n  content: \"\\f026\"; }\n\n.fa-volume-down:before {\n  content: \"\\f027\"; }\n\n.fa-volume-up:before {\n  content: \"\\f028\"; }\n\n.fa-qrcode:before {\n  content: \"\\f029\"; }\n\n.fa-barcode:before {\n  content: \"\\f02a\"; }\n\n.fa-tag:before {\n  content: \"\\f02b\"; }\n\n.fa-tags:before {\n  content: \"\\f02c\"; }\n\n.fa-book:before {\n  content: \"\\f02d\"; }\n\n.fa-bookmark:before {\n  content: \"\\f02e\"; }\n\n.fa-print:before {\n  content: \"\\f02f\"; }\n\n.fa-camera:before {\n  content: \"\\f030\"; }\n\n.fa-font:before {\n  content: \"\\f031\"; }\n\n.fa-bold:before {\n  content: \"\\f032\"; }\n\n.fa-italic:before {\n  content: \"\\f033\"; }\n\n.fa-text-height:before {\n  content: \"\\f034\"; }\n\n.fa-text-width:before {\n  content: \"\\f035\"; }\n\n.fa-align-left:before {\n  content: \"\\f036\"; }\n\n.fa-align-center:before {\n  content: \"\\f037\"; }\n\n.fa-align-right:before {\n  content: \"\\f038\"; }\n\n.fa-align-justify:before {\n  content: \"\\f039\"; }\n\n.fa-list:before {\n  content: \"\\f03a\"; }\n\n.fa-dedent:before, .fa-outdent:before {\n  content: \"\\f03b\"; }\n\n.fa-indent:before {\n  content: \"\\f03c\"; }\n\n.fa-video-camera:before {\n  content: \"\\f03d\"; }\n\n.fa-photo:before, .fa-image:before, .fa-picture-o:before {\n  content: \"\\f03e\"; }\n\n.fa-pencil:before {\n  content: \"\\f040\"; }\n\n.fa-map-marker:before {\n  content: \"\\f041\"; }\n\n.fa-adjust:before {\n  content: \"\\f042\"; }\n\n.fa-tint:before {\n  content: \"\\f043\"; }\n\n.fa-edit:before, .fa-pencil-square-o:before {\n  content: \"\\f044\"; }\n\n.fa-share-square-o:before {\n  content: \"\\f045\"; }\n\n.fa-check-square-o:before {\n  content: \"\\f046\"; }\n\n.fa-arrows:before {\n  content: \"\\f047\"; }\n\n.fa-step-backward:before {\n  content: \"\\f048\"; }\n\n.fa-fast-backward:before {\n  content: \"\\f049\"; }\n\n.fa-backward:before {\n  content: \"\\f04a\"; }\n\n.fa-play:before {\n  content: \"\\f04b\"; }\n\n.fa-pause:before {\n  content: \"\\f04c\"; }\n\n.fa-stop:before {\n  content: \"\\f04d\"; }\n\n.fa-forward:before {\n  content: \"\\f04e\"; }\n\n.fa-fast-forward:before {\n  content: \"\\f050\"; }\n\n.fa-step-forward:before {\n  content: \"\\f051\"; }\n\n.fa-eject:before {\n  content: \"\\f052\"; }\n\n.fa-chevron-left:before {\n  content: \"\\f053\"; }\n\n.fa-chevron-right:before {\n  content: \"\\f054\"; }\n\n.fa-plus-circle:before {\n  content: \"\\f055\"; }\n\n.fa-minus-circle:before {\n  content: \"\\f056\"; }\n\n.fa-times-circle:before {\n  content: \"\\f057\"; }\n\n.fa-check-circle:before {\n  content: \"\\f058\"; }\n\n.fa-question-circle:before {\n  content: \"\\f059\"; }\n\n.fa-info-circle:before {\n  content: \"\\f05a\"; }\n\n.fa-crosshairs:before {\n  content: \"\\f05b\"; }\n\n.fa-times-circle-o:before {\n  content: \"\\f05c\"; }\n\n.fa-check-circle-o:before {\n  content: \"\\f05d\"; }\n\n.fa-ban:before {\n  content: \"\\f05e\"; }\n\n.fa-arrow-left:before {\n  content: \"\\f060\"; }\n\n.fa-arrow-right:before {\n  content: \"\\f061\"; }\n\n.fa-arrow-up:before {\n  content: \"\\f062\"; }\n\n.fa-arrow-down:before {\n  content: \"\\f063\"; }\n\n.fa-mail-forward:before, .fa-share:before {\n  content: \"\\f064\"; }\n\n.fa-expand:before {\n  content: \"\\f065\"; }\n\n.fa-compress:before {\n  content: \"\\f066\"; }\n\n.fa-plus:before {\n  content: \"\\f067\"; }\n\n.fa-minus:before {\n  content: \"\\f068\"; }\n\n.fa-asterisk:before {\n  content: \"\\f069\"; }\n\n.fa-exclamation-circle:before {\n  content: \"\\f06a\"; }\n\n.fa-gift:before {\n  content: \"\\f06b\"; }\n\n.fa-leaf:before {\n  content: \"\\f06c\"; }\n\n.fa-fire:before {\n  content: \"\\f06d\"; }\n\n.fa-eye:before {\n  content: \"\\f06e\"; }\n\n.fa-eye-slash:before {\n  content: \"\\f070\"; }\n\n.fa-warning:before, .fa-exclamation-triangle:before {\n  content: \"\\f071\"; }\n\n.fa-plane:before {\n  content: \"\\f072\"; }\n\n.fa-calendar:before {\n  content: \"\\f073\"; }\n\n.fa-random:before {\n  content: \"\\f074\"; }\n\n.fa-comment:before {\n  content: \"\\f075\"; }\n\n.fa-magnet:before {\n  content: \"\\f076\"; }\n\n.fa-chevron-up:before {\n  content: \"\\f077\"; }\n\n.fa-chevron-down:before {\n  content: \"\\f078\"; }\n\n.fa-retweet:before {\n  content: \"\\f079\"; }\n\n.fa-shopping-cart:before {\n  content: \"\\f07a\"; }\n\n.fa-folder:before {\n  content: \"\\f07b\"; }\n\n.fa-folder-open:before {\n  content: \"\\f07c\"; }\n\n.fa-arrows-v:before {\n  content: \"\\f07d\"; }\n\n.fa-arrows-h:before {\n  content: \"\\f07e\"; }\n\n.fa-bar-chart-o:before, .fa-bar-chart:before {\n  content: \"\\f080\"; }\n\n.fa-twitter-square:before {\n  content: \"\\f081\"; }\n\n.fa-facebook-square:before {\n  content: \"\\f082\"; }\n\n.fa-camera-retro:before {\n  content: \"\\f083\"; }\n\n.fa-key:before {\n  content: \"\\f084\"; }\n\n.fa-gears:before, .fa-cogs:before {\n  content: \"\\f085\"; }\n\n.fa-comments:before {\n  content: \"\\f086\"; }\n\n.fa-thumbs-o-up:before {\n  content: \"\\f087\"; }\n\n.fa-thumbs-o-down:before {\n  content: \"\\f088\"; }\n\n.fa-star-half:before {\n  content: \"\\f089\"; }\n\n.fa-heart-o:before {\n  content: \"\\f08a\"; }\n\n.fa-sign-out:before {\n  content: \"\\f08b\"; }\n\n.fa-linkedin-square:before {\n  content: \"\\f08c\"; }\n\n.fa-thumb-tack:before {\n  content: \"\\f08d\"; }\n\n.fa-external-link:before {\n  content: \"\\f08e\"; }\n\n.fa-sign-in:before {\n  content: \"\\f090\"; }\n\n.fa-trophy:before {\n  content: \"\\f091\"; }\n\n.fa-github-square:before {\n  content: \"\\f092\"; }\n\n.fa-upload:before {\n  content: \"\\f093\"; }\n\n.fa-lemon-o:before {\n  content: \"\\f094\"; }\n\n.fa-phone:before {\n  content: \"\\f095\"; }\n\n.fa-square-o:before {\n  content: \"\\f096\"; }\n\n.fa-bookmark-o:before {\n  content: \"\\f097\"; }\n\n.fa-phone-square:before {\n  content: \"\\f098\"; }\n\n.fa-twitter:before {\n  content: \"\\f099\"; }\n\n.fa-facebook-f:before, .fa-facebook:before {\n  content: \"\\f09a\"; }\n\n.fa-github:before {\n  content: \"\\f09b\"; }\n\n.fa-unlock:before {\n  content: \"\\f09c\"; }\n\n.fa-credit-card:before {\n  content: \"\\f09d\"; }\n\n.fa-rss:before {\n  content: \"\\f09e\"; }\n\n.fa-hdd-o:before {\n  content: \"\\f0a0\"; }\n\n.fa-bullhorn:before {\n  content: \"\\f0a1\"; }\n\n.fa-bell:before {\n  content: \"\\f0f3\"; }\n\n.fa-certificate:before {\n  content: \"\\f0a3\"; }\n\n.fa-hand-o-right:before {\n  content: \"\\f0a4\"; }\n\n.fa-hand-o-left:before {\n  content: \"\\f0a5\"; }\n\n.fa-hand-o-up:before {\n  content: \"\\f0a6\"; }\n\n.fa-hand-o-down:before {\n  content: \"\\f0a7\"; }\n\n.fa-arrow-circle-left:before {\n  content: \"\\f0a8\"; }\n\n.fa-arrow-circle-right:before {\n  content: \"\\f0a9\"; }\n\n.fa-arrow-circle-up:before {\n  content: \"\\f0aa\"; }\n\n.fa-arrow-circle-down:before {\n  content: \"\\f0ab\"; }\n\n.fa-globe:before {\n  content: \"\\f0ac\"; }\n\n.fa-wrench:before {\n  content: \"\\f0ad\"; }\n\n.fa-tasks:before {\n  content: \"\\f0ae\"; }\n\n.fa-filter:before {\n  content: \"\\f0b0\"; }\n\n.fa-briefcase:before {\n  content: \"\\f0b1\"; }\n\n.fa-arrows-alt:before {\n  content: \"\\f0b2\"; }\n\n.fa-group:before, .fa-users:before {\n  content: \"\\f0c0\"; }\n\n.fa-chain:before, .fa-link:before {\n  content: \"\\f0c1\"; }\n\n.fa-cloud:before {\n  content: \"\\f0c2\"; }\n\n.fa-flask:before {\n  content: \"\\f0c3\"; }\n\n.fa-cut:before, .fa-scissors:before {\n  content: \"\\f0c4\"; }\n\n.fa-copy:before, .fa-files-o:before {\n  content: \"\\f0c5\"; }\n\n.fa-paperclip:before {\n  content: \"\\f0c6\"; }\n\n.fa-save:before, .fa-floppy-o:before {\n  content: \"\\f0c7\"; }\n\n.fa-square:before {\n  content: \"\\f0c8\"; }\n\n.fa-navicon:before, .fa-reorder:before, .fa-bars:before {\n  content: \"\\f0c9\"; }\n\n.fa-list-ul:before {\n  content: \"\\f0ca\"; }\n\n.fa-list-ol:before {\n  content: \"\\f0cb\"; }\n\n.fa-strikethrough:before {\n  content: \"\\f0cc\"; }\n\n.fa-underline:before {\n  content: \"\\f0cd\"; }\n\n.fa-table:before {\n  content: \"\\f0ce\"; }\n\n.fa-magic:before {\n  content: \"\\f0d0\"; }\n\n.fa-truck:before {\n  content: \"\\f0d1\"; }\n\n.fa-pinterest:before {\n  content: \"\\f0d2\"; }\n\n.fa-pinterest-square:before {\n  content: \"\\f0d3\"; }\n\n.fa-google-plus-square:before {\n  content: \"\\f0d4\"; }\n\n.fa-google-plus:before {\n  content: \"\\f0d5\"; }\n\n.fa-money:before {\n  content: \"\\f0d6\"; }\n\n.fa-caret-down:before {\n  content: \"\\f0d7\"; }\n\n.fa-caret-up:before {\n  content: \"\\f0d8\"; }\n\n.fa-caret-left:before {\n  content: \"\\f0d9\"; }\n\n.fa-caret-right:before {\n  content: \"\\f0da\"; }\n\n.fa-columns:before {\n  content: \"\\f0db\"; }\n\n.fa-unsorted:before, .fa-sort:before {\n  content: \"\\f0dc\"; }\n\n.fa-sort-down:before, .fa-sort-desc:before {\n  content: \"\\f0dd\"; }\n\n.fa-sort-up:before, .fa-sort-asc:before {\n  content: \"\\f0de\"; }\n\n.fa-envelope:before {\n  content: \"\\f0e0\"; }\n\n.fa-linkedin:before {\n  content: \"\\f0e1\"; }\n\n.fa-rotate-left:before, .fa-undo:before {\n  content: \"\\f0e2\"; }\n\n.fa-legal:before, .fa-gavel:before {\n  content: \"\\f0e3\"; }\n\n.fa-dashboard:before, .fa-tachometer:before {\n  content: \"\\f0e4\"; }\n\n.fa-comment-o:before {\n  content: \"\\f0e5\"; }\n\n.fa-comments-o:before {\n  content: \"\\f0e6\"; }\n\n.fa-flash:before, .fa-bolt:before {\n  content: \"\\f0e7\"; }\n\n.fa-sitemap:before {\n  content: \"\\f0e8\"; }\n\n.fa-umbrella:before {\n  content: \"\\f0e9\"; }\n\n.fa-paste:before, .fa-clipboard:before {\n  content: \"\\f0ea\"; }\n\n.fa-lightbulb-o:before {\n  content: \"\\f0eb\"; }\n\n.fa-exchange:before {\n  content: \"\\f0ec\"; }\n\n.fa-cloud-download:before {\n  content: \"\\f0ed\"; }\n\n.fa-cloud-upload:before {\n  content: \"\\f0ee\"; }\n\n.fa-user-md:before {\n  content: \"\\f0f0\"; }\n\n.fa-stethoscope:before {\n  content: \"\\f0f1\"; }\n\n.fa-suitcase:before {\n  content: \"\\f0f2\"; }\n\n.fa-bell-o:before {\n  content: \"\\f0a2\"; }\n\n.fa-coffee:before {\n  content: \"\\f0f4\"; }\n\n.fa-cutlery:before {\n  content: \"\\f0f5\"; }\n\n.fa-file-text-o:before {\n  content: \"\\f0f6\"; }\n\n.fa-building-o:before {\n  content: \"\\f0f7\"; }\n\n.fa-hospital-o:before {\n  content: \"\\f0f8\"; }\n\n.fa-ambulance:before {\n  content: \"\\f0f9\"; }\n\n.fa-medkit:before {\n  content: \"\\f0fa\"; }\n\n.fa-fighter-jet:before {\n  content: \"\\f0fb\"; }\n\n.fa-beer:before {\n  content: \"\\f0fc\"; }\n\n.fa-h-square:before {\n  content: \"\\f0fd\"; }\n\n.fa-plus-square:before {\n  content: \"\\f0fe\"; }\n\n.fa-angle-double-left:before {\n  content: \"\\f100\"; }\n\n.fa-angle-double-right:before {\n  content: \"\\f101\"; }\n\n.fa-angle-double-up:before {\n  content: \"\\f102\"; }\n\n.fa-angle-double-down:before {\n  content: \"\\f103\"; }\n\n.fa-angle-left:before {\n  content: \"\\f104\"; }\n\n.fa-angle-right:before {\n  content: \"\\f105\"; }\n\n.fa-angle-up:before {\n  content: \"\\f106\"; }\n\n.fa-angle-down:before {\n  content: \"\\f107\"; }\n\n.fa-desktop:before {\n  content: \"\\f108\"; }\n\n.fa-laptop:before {\n  content: \"\\f109\"; }\n\n.fa-tablet:before {\n  content: \"\\f10a\"; }\n\n.fa-mobile-phone:before, .fa-mobile:before {\n  content: \"\\f10b\"; }\n\n.fa-circle-o:before {\n  content: \"\\f10c\"; }\n\n.fa-quote-left:before {\n  content: \"\\f10d\"; }\n\n.fa-quote-right:before {\n  content: \"\\f10e\"; }\n\n.fa-spinner:before {\n  content: \"\\f110\"; }\n\n.fa-circle:before {\n  content: \"\\f111\"; }\n\n.fa-mail-reply:before, .fa-reply:before {\n  content: \"\\f112\"; }\n\n.fa-github-alt:before {\n  content: \"\\f113\"; }\n\n.fa-folder-o:before {\n  content: \"\\f114\"; }\n\n.fa-folder-open-o:before {\n  content: \"\\f115\"; }\n\n.fa-smile-o:before {\n  content: \"\\f118\"; }\n\n.fa-frown-o:before {\n  content: \"\\f119\"; }\n\n.fa-meh-o:before {\n  content: \"\\f11a\"; }\n\n.fa-gamepad:before {\n  content: \"\\f11b\"; }\n\n.fa-keyboard-o:before {\n  content: \"\\f11c\"; }\n\n.fa-flag-o:before {\n  content: \"\\f11d\"; }\n\n.fa-flag-checkered:before {\n  content: \"\\f11e\"; }\n\n.fa-terminal:before {\n  content: \"\\f120\"; }\n\n.fa-code:before {\n  content: \"\\f121\"; }\n\n.fa-mail-reply-all:before, .fa-reply-all:before {\n  content: \"\\f122\"; }\n\n.fa-star-half-empty:before, .fa-star-half-full:before, .fa-star-half-o:before {\n  content: \"\\f123\"; }\n\n.fa-location-arrow:before {\n  content: \"\\f124\"; }\n\n.fa-crop:before {\n  content: \"\\f125\"; }\n\n.fa-code-fork:before {\n  content: \"\\f126\"; }\n\n.fa-unlink:before, .fa-chain-broken:before {\n  content: \"\\f127\"; }\n\n.fa-question:before {\n  content: \"\\f128\"; }\n\n.fa-info:before {\n  content: \"\\f129\"; }\n\n.fa-exclamation:before {\n  content: \"\\f12a\"; }\n\n.fa-superscript:before {\n  content: \"\\f12b\"; }\n\n.fa-subscript:before {\n  content: \"\\f12c\"; }\n\n.fa-eraser:before {\n  content: \"\\f12d\"; }\n\n.fa-puzzle-piece:before {\n  content: \"\\f12e\"; }\n\n.fa-microphone:before {\n  content: \"\\f130\"; }\n\n.fa-microphone-slash:before {\n  content: \"\\f131\"; }\n\n.fa-shield:before {\n  content: \"\\f132\"; }\n\n.fa-calendar-o:before {\n  content: \"\\f133\"; }\n\n.fa-fire-extinguisher:before {\n  content: \"\\f134\"; }\n\n.fa-rocket:before {\n  content: \"\\f135\"; }\n\n.fa-maxcdn:before {\n  content: \"\\f136\"; }\n\n.fa-chevron-circle-left:before {\n  content: \"\\f137\"; }\n\n.fa-chevron-circle-right:before {\n  content: \"\\f138\"; }\n\n.fa-chevron-circle-up:before {\n  content: \"\\f139\"; }\n\n.fa-chevron-circle-down:before {\n  content: \"\\f13a\"; }\n\n.fa-html5:before {\n  content: \"\\f13b\"; }\n\n.fa-css3:before {\n  content: \"\\f13c\"; }\n\n.fa-anchor:before {\n  content: \"\\f13d\"; }\n\n.fa-unlock-alt:before {\n  content: \"\\f13e\"; }\n\n.fa-bullseye:before {\n  content: \"\\f140\"; }\n\n.fa-ellipsis-h:before {\n  content: \"\\f141\"; }\n\n.fa-ellipsis-v:before {\n  content: \"\\f142\"; }\n\n.fa-rss-square:before {\n  content: \"\\f143\"; }\n\n.fa-play-circle:before {\n  content: \"\\f144\"; }\n\n.fa-ticket:before {\n  content: \"\\f145\"; }\n\n.fa-minus-square:before {\n  content: \"\\f146\"; }\n\n.fa-minus-square-o:before {\n  content: \"\\f147\"; }\n\n.fa-level-up:before {\n  content: \"\\f148\"; }\n\n.fa-level-down:before {\n  content: \"\\f149\"; }\n\n.fa-check-square:before {\n  content: \"\\f14a\"; }\n\n.fa-pencil-square:before {\n  content: \"\\f14b\"; }\n\n.fa-external-link-square:before {\n  content: \"\\f14c\"; }\n\n.fa-share-square:before {\n  content: \"\\f14d\"; }\n\n.fa-compass:before {\n  content: \"\\f14e\"; }\n\n.fa-toggle-down:before, .fa-caret-square-o-down:before {\n  content: \"\\f150\"; }\n\n.fa-toggle-up:before, .fa-caret-square-o-up:before {\n  content: \"\\f151\"; }\n\n.fa-toggle-right:before, .fa-caret-square-o-right:before {\n  content: \"\\f152\"; }\n\n.fa-euro:before, .fa-eur:before {\n  content: \"\\f153\"; }\n\n.fa-gbp:before {\n  content: \"\\f154\"; }\n\n.fa-dollar:before, .fa-usd:before {\n  content: \"\\f155\"; }\n\n.fa-rupee:before, .fa-inr:before {\n  content: \"\\f156\"; }\n\n.fa-cny:before, .fa-rmb:before, .fa-yen:before, .fa-jpy:before {\n  content: \"\\f157\"; }\n\n.fa-ruble:before, .fa-rouble:before, .fa-rub:before {\n  content: \"\\f158\"; }\n\n.fa-won:before, .fa-krw:before {\n  content: \"\\f159\"; }\n\n.fa-bitcoin:before, .fa-btc:before {\n  content: \"\\f15a\"; }\n\n.fa-file:before {\n  content: \"\\f15b\"; }\n\n.fa-file-text:before {\n  content: \"\\f15c\"; }\n\n.fa-sort-alpha-asc:before {\n  content: \"\\f15d\"; }\n\n.fa-sort-alpha-desc:before {\n  content: \"\\f15e\"; }\n\n.fa-sort-amount-asc:before {\n  content: \"\\f160\"; }\n\n.fa-sort-amount-desc:before {\n  content: \"\\f161\"; }\n\n.fa-sort-numeric-asc:before {\n  content: \"\\f162\"; }\n\n.fa-sort-numeric-desc:before {\n  content: \"\\f163\"; }\n\n.fa-thumbs-up:before {\n  content: \"\\f164\"; }\n\n.fa-thumbs-down:before {\n  content: \"\\f165\"; }\n\n.fa-youtube-square:before {\n  content: \"\\f166\"; }\n\n.fa-youtube:before {\n  content: \"\\f167\"; }\n\n.fa-xing:before {\n  content: \"\\f168\"; }\n\n.fa-xing-square:before {\n  content: \"\\f169\"; }\n\n.fa-youtube-play:before {\n  content: \"\\f16a\"; }\n\n.fa-dropbox:before {\n  content: \"\\f16b\"; }\n\n.fa-stack-overflow:before {\n  content: \"\\f16c\"; }\n\n.fa-instagram:before {\n  content: \"\\f16d\"; }\n\n.fa-flickr:before {\n  content: \"\\f16e\"; }\n\n.fa-adn:before {\n  content: \"\\f170\"; }\n\n.fa-bitbucket:before {\n  content: \"\\f171\"; }\n\n.fa-bitbucket-square:before {\n  content: \"\\f172\"; }\n\n.fa-tumblr:before {\n  content: \"\\f173\"; }\n\n.fa-tumblr-square:before {\n  content: \"\\f174\"; }\n\n.fa-long-arrow-down:before {\n  content: \"\\f175\"; }\n\n.fa-long-arrow-up:before {\n  content: \"\\f176\"; }\n\n.fa-long-arrow-left:before {\n  content: \"\\f177\"; }\n\n.fa-long-arrow-right:before {\n  content: \"\\f178\"; }\n\n.fa-apple:before {\n  content: \"\\f179\"; }\n\n.fa-windows:before {\n  content: \"\\f17a\"; }\n\n.fa-android:before {\n  content: \"\\f17b\"; }\n\n.fa-linux:before {\n  content: \"\\f17c\"; }\n\n.fa-dribbble:before {\n  content: \"\\f17d\"; }\n\n.fa-skype:before {\n  content: \"\\f17e\"; }\n\n.fa-foursquare:before {\n  content: \"\\f180\"; }\n\n.fa-trello:before {\n  content: \"\\f181\"; }\n\n.fa-female:before {\n  content: \"\\f182\"; }\n\n.fa-male:before {\n  content: \"\\f183\"; }\n\n.fa-gittip:before, .fa-gratipay:before {\n  content: \"\\f184\"; }\n\n.fa-sun-o:before {\n  content: \"\\f185\"; }\n\n.fa-moon-o:before {\n  content: \"\\f186\"; }\n\n.fa-archive:before {\n  content: \"\\f187\"; }\n\n.fa-bug:before {\n  content: \"\\f188\"; }\n\n.fa-vk:before {\n  content: \"\\f189\"; }\n\n.fa-weibo:before {\n  content: \"\\f18a\"; }\n\n.fa-renren:before {\n  content: \"\\f18b\"; }\n\n.fa-pagelines:before {\n  content: \"\\f18c\"; }\n\n.fa-stack-exchange:before {\n  content: \"\\f18d\"; }\n\n.fa-arrow-circle-o-right:before {\n  content: \"\\f18e\"; }\n\n.fa-arrow-circle-o-left:before {\n  content: \"\\f190\"; }\n\n.fa-toggle-left:before, .fa-caret-square-o-left:before {\n  content: \"\\f191\"; }\n\n.fa-dot-circle-o:before {\n  content: \"\\f192\"; }\n\n.fa-wheelchair:before {\n  content: \"\\f193\"; }\n\n.fa-vimeo-square:before {\n  content: \"\\f194\"; }\n\n.fa-turkish-lira:before, .fa-try:before {\n  content: \"\\f195\"; }\n\n.fa-plus-square-o:before {\n  content: \"\\f196\"; }\n\n.fa-space-shuttle:before {\n  content: \"\\f197\"; }\n\n.fa-slack:before {\n  content: \"\\f198\"; }\n\n.fa-envelope-square:before {\n  content: \"\\f199\"; }\n\n.fa-wordpress:before {\n  content: \"\\f19a\"; }\n\n.fa-openid:before {\n  content: \"\\f19b\"; }\n\n.fa-institution:before, .fa-bank:before, .fa-university:before {\n  content: \"\\f19c\"; }\n\n.fa-mortar-board:before, .fa-graduation-cap:before {\n  content: \"\\f19d\"; }\n\n.fa-yahoo:before {\n  content: \"\\f19e\"; }\n\n.fa-google:before {\n  content: \"\\f1a0\"; }\n\n.fa-reddit:before {\n  content: \"\\f1a1\"; }\n\n.fa-reddit-square:before {\n  content: \"\\f1a2\"; }\n\n.fa-stumbleupon-circle:before {\n  content: \"\\f1a3\"; }\n\n.fa-stumbleupon:before {\n  content: \"\\f1a4\"; }\n\n.fa-delicious:before {\n  content: \"\\f1a5\"; }\n\n.fa-digg:before {\n  content: \"\\f1a6\"; }\n\n.fa-pied-piper:before {\n  content: \"\\f1a7\"; }\n\n.fa-pied-piper-alt:before {\n  content: \"\\f1a8\"; }\n\n.fa-drupal:before {\n  content: \"\\f1a9\"; }\n\n.fa-joomla:before {\n  content: \"\\f1aa\"; }\n\n.fa-language:before {\n  content: \"\\f1ab\"; }\n\n.fa-fax:before {\n  content: \"\\f1ac\"; }\n\n.fa-building:before {\n  content: \"\\f1ad\"; }\n\n.fa-child:before {\n  content: \"\\f1ae\"; }\n\n.fa-paw:before {\n  content: \"\\f1b0\"; }\n\n.fa-spoon:before {\n  content: \"\\f1b1\"; }\n\n.fa-cube:before {\n  content: \"\\f1b2\"; }\n\n.fa-cubes:before {\n  content: \"\\f1b3\"; }\n\n.fa-behance:before {\n  content: \"\\f1b4\"; }\n\n.fa-behance-square:before {\n  content: \"\\f1b5\"; }\n\n.fa-steam:before {\n  content: \"\\f1b6\"; }\n\n.fa-steam-square:before {\n  content: \"\\f1b7\"; }\n\n.fa-recycle:before {\n  content: \"\\f1b8\"; }\n\n.fa-automobile:before, .fa-car:before {\n  content: \"\\f1b9\"; }\n\n.fa-cab:before, .fa-taxi:before {\n  content: \"\\f1ba\"; }\n\n.fa-tree:before {\n  content: \"\\f1bb\"; }\n\n.fa-spotify:before {\n  content: \"\\f1bc\"; }\n\n.fa-deviantart:before {\n  content: \"\\f1bd\"; }\n\n.fa-soundcloud:before {\n  content: \"\\f1be\"; }\n\n.fa-database:before {\n  content: \"\\f1c0\"; }\n\n.fa-file-pdf-o:before {\n  content: \"\\f1c1\"; }\n\n.fa-file-word-o:before {\n  content: \"\\f1c2\"; }\n\n.fa-file-excel-o:before {\n  content: \"\\f1c3\"; }\n\n.fa-file-powerpoint-o:before {\n  content: \"\\f1c4\"; }\n\n.fa-file-photo-o:before, .fa-file-picture-o:before, .fa-file-image-o:before {\n  content: \"\\f1c5\"; }\n\n.fa-file-zip-o:before, .fa-file-archive-o:before {\n  content: \"\\f1c6\"; }\n\n.fa-file-sound-o:before, .fa-file-audio-o:before {\n  content: \"\\f1c7\"; }\n\n.fa-file-movie-o:before, .fa-file-video-o:before {\n  content: \"\\f1c8\"; }\n\n.fa-file-code-o:before {\n  content: \"\\f1c9\"; }\n\n.fa-vine:before {\n  content: \"\\f1ca\"; }\n\n.fa-codepen:before {\n  content: \"\\f1cb\"; }\n\n.fa-jsfiddle:before {\n  content: \"\\f1cc\"; }\n\n.fa-life-bouy:before, .fa-life-buoy:before, .fa-life-saver:before, .fa-support:before, .fa-life-ring:before {\n  content: \"\\f1cd\"; }\n\n.fa-circle-o-notch:before {\n  content: \"\\f1ce\"; }\n\n.fa-ra:before, .fa-rebel:before {\n  content: \"\\f1d0\"; }\n\n.fa-ge:before, .fa-empire:before {\n  content: \"\\f1d1\"; }\n\n.fa-git-square:before {\n  content: \"\\f1d2\"; }\n\n.fa-git:before {\n  content: \"\\f1d3\"; }\n\n.fa-hacker-news:before {\n  content: \"\\f1d4\"; }\n\n.fa-tencent-weibo:before {\n  content: \"\\f1d5\"; }\n\n.fa-qq:before {\n  content: \"\\f1d6\"; }\n\n.fa-wechat:before, .fa-weixin:before {\n  content: \"\\f1d7\"; }\n\n.fa-send:before, .fa-paper-plane:before {\n  content: \"\\f1d8\"; }\n\n.fa-send-o:before, .fa-paper-plane-o:before {\n  content: \"\\f1d9\"; }\n\n.fa-history:before {\n  content: \"\\f1da\"; }\n\n.fa-genderless:before, .fa-circle-thin:before {\n  content: \"\\f1db\"; }\n\n.fa-header:before {\n  content: \"\\f1dc\"; }\n\n.fa-paragraph:before {\n  content: \"\\f1dd\"; }\n\n.fa-sliders:before {\n  content: \"\\f1de\"; }\n\n.fa-share-alt:before {\n  content: \"\\f1e0\"; }\n\n.fa-share-alt-square:before {\n  content: \"\\f1e1\"; }\n\n.fa-bomb:before {\n  content: \"\\f1e2\"; }\n\n.fa-soccer-ball-o:before, .fa-futbol-o:before {\n  content: \"\\f1e3\"; }\n\n.fa-tty:before {\n  content: \"\\f1e4\"; }\n\n.fa-binoculars:before {\n  content: \"\\f1e5\"; }\n\n.fa-plug:before {\n  content: \"\\f1e6\"; }\n\n.fa-slideshare:before {\n  content: \"\\f1e7\"; }\n\n.fa-twitch:before {\n  content: \"\\f1e8\"; }\n\n.fa-yelp:before {\n  content: \"\\f1e9\"; }\n\n.fa-newspaper-o:before {\n  content: \"\\f1ea\"; }\n\n.fa-wifi:before {\n  content: \"\\f1eb\"; }\n\n.fa-calculator:before {\n  content: \"\\f1ec\"; }\n\n.fa-paypal:before {\n  content: \"\\f1ed\"; }\n\n.fa-google-wallet:before {\n  content: \"\\f1ee\"; }\n\n.fa-cc-visa:before {\n  content: \"\\f1f0\"; }\n\n.fa-cc-mastercard:before {\n  content: \"\\f1f1\"; }\n\n.fa-cc-discover:before {\n  content: \"\\f1f2\"; }\n\n.fa-cc-amex:before {\n  content: \"\\f1f3\"; }\n\n.fa-cc-paypal:before {\n  content: \"\\f1f4\"; }\n\n.fa-cc-stripe:before {\n  content: \"\\f1f5\"; }\n\n.fa-bell-slash:before {\n  content: \"\\f1f6\"; }\n\n.fa-bell-slash-o:before {\n  content: \"\\f1f7\"; }\n\n.fa-trash:before {\n  content: \"\\f1f8\"; }\n\n.fa-copyright:before {\n  content: \"\\f1f9\"; }\n\n.fa-at:before {\n  content: \"\\f1fa\"; }\n\n.fa-eyedropper:before {\n  content: \"\\f1fb\"; }\n\n.fa-paint-brush:before {\n  content: \"\\f1fc\"; }\n\n.fa-birthday-cake:before {\n  content: \"\\f1fd\"; }\n\n.fa-area-chart:before {\n  content: \"\\f1fe\"; }\n\n.fa-pie-chart:before {\n  content: \"\\f200\"; }\n\n.fa-line-chart:before {\n  content: \"\\f201\"; }\n\n.fa-lastfm:before {\n  content: \"\\f202\"; }\n\n.fa-lastfm-square:before {\n  content: \"\\f203\"; }\n\n.fa-toggle-off:before {\n  content: \"\\f204\"; }\n\n.fa-toggle-on:before {\n  content: \"\\f205\"; }\n\n.fa-bicycle:before {\n  content: \"\\f206\"; }\n\n.fa-bus:before {\n  content: \"\\f207\"; }\n\n.fa-ioxhost:before {\n  content: \"\\f208\"; }\n\n.fa-angellist:before {\n  content: \"\\f209\"; }\n\n.fa-cc:before {\n  content: \"\\f20a\"; }\n\n.fa-shekel:before, .fa-sheqel:before, .fa-ils:before {\n  content: \"\\f20b\"; }\n\n.fa-meanpath:before {\n  content: \"\\f20c\"; }\n\n.fa-buysellads:before {\n  content: \"\\f20d\"; }\n\n.fa-connectdevelop:before {\n  content: \"\\f20e\"; }\n\n.fa-dashcube:before {\n  content: \"\\f210\"; }\n\n.fa-forumbee:before {\n  content: \"\\f211\"; }\n\n.fa-leanpub:before {\n  content: \"\\f212\"; }\n\n.fa-sellsy:before {\n  content: \"\\f213\"; }\n\n.fa-shirtsinbulk:before {\n  content: \"\\f214\"; }\n\n.fa-simplybuilt:before {\n  content: \"\\f215\"; }\n\n.fa-skyatlas:before {\n  content: \"\\f216\"; }\n\n.fa-cart-plus:before {\n  content: \"\\f217\"; }\n\n.fa-cart-arrow-down:before {\n  content: \"\\f218\"; }\n\n.fa-diamond:before {\n  content: \"\\f219\"; }\n\n.fa-ship:before {\n  content: \"\\f21a\"; }\n\n.fa-user-secret:before {\n  content: \"\\f21b\"; }\n\n.fa-motorcycle:before {\n  content: \"\\f21c\"; }\n\n.fa-street-view:before {\n  content: \"\\f21d\"; }\n\n.fa-heartbeat:before {\n  content: \"\\f21e\"; }\n\n.fa-venus:before {\n  content: \"\\f221\"; }\n\n.fa-mars:before {\n  content: \"\\f222\"; }\n\n.fa-mercury:before {\n  content: \"\\f223\"; }\n\n.fa-transgender:before {\n  content: \"\\f224\"; }\n\n.fa-transgender-alt:before {\n  content: \"\\f225\"; }\n\n.fa-venus-double:before {\n  content: \"\\f226\"; }\n\n.fa-mars-double:before {\n  content: \"\\f227\"; }\n\n.fa-venus-mars:before {\n  content: \"\\f228\"; }\n\n.fa-mars-stroke:before {\n  content: \"\\f229\"; }\n\n.fa-mars-stroke-v:before {\n  content: \"\\f22a\"; }\n\n.fa-mars-stroke-h:before {\n  content: \"\\f22b\"; }\n\n.fa-neuter:before {\n  content: \"\\f22c\"; }\n\n.fa-facebook-official:before {\n  content: \"\\f230\"; }\n\n.fa-pinterest-p:before {\n  content: \"\\f231\"; }\n\n.fa-whatsapp:before {\n  content: \"\\f232\"; }\n\n.fa-server:before {\n  content: \"\\f233\"; }\n\n.fa-user-plus:before {\n  content: \"\\f234\"; }\n\n.fa-user-times:before {\n  content: \"\\f235\"; }\n\n.fa-hotel:before, .fa-bed:before {\n  content: \"\\f236\"; }\n\n.fa-viacoin:before {\n  content: \"\\f237\"; }\n\n.fa-train:before {\n  content: \"\\f238\"; }\n\n.fa-subway:before {\n  content: \"\\f239\"; }\n\n.fa-medium:before {\n  content: \"\\f23a\"; }\n\nhtml {\n  height: 100%; }\n  html body {\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center;\n    -webkit-background-size: cover;\n    -moz-background-size: cover;\n    -o-background-size: cover;\n    background-size: cover;\n    height: 100%; }\n    html body main {\n      background: rgba(0, 0, 0, 0.7);\n      height: 100%; }\n      html body main .pure-u-1-3 {\n        cursor: pointer;\n        box-shadow: 1px 1px rgba(255, 255, 255, 0.2);\n        display: table;\n        height: 25%;\n        text-align: center;\n        vertical-align: middle;\n        color: white; }\n        html body main .pure-u-1-3:hover {\n          background: rgba(3, 3, 3, 0.3); }\n        html body main .pure-u-1-3 i.fa {\n          display: table-cell;\n          vertical-align: middle;\n          font-size: 4rem; }\n", ""]);
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(12);
+
+	module.exports = function template(locals) {
+	var buf = [];
+	var jade_mixins = {};
+	var jade_interp;
+
+	buf.push("<header></header><main class=\"pure-g\"><!-- Row--><div class=\"pure-u-1-3\"><i data-method=\"System.Shutdown\" class=\"fa fa-power-off\"></i></div><div class=\"pure-u-1-3\"><i data-method=\"Input.Up\" class=\"fa fa-arrow-up\"></i></div><div class=\"pure-u-1-3\"><i data-method=\"Input.Home\" class=\"fa fa-home\"></i></div><!-- Row--><div class=\"pure-u-1-3\"><i data-method=\"Input.Left\" class=\"fa fa-arrow-left\"></i></div><div class=\"pure-u-1-3\"><i data-method=\"Input.Select\" class=\"fa fa-check\"></i></div><div class=\"pure-u-1-3\"><i data-method=\"Input.Right\" class=\"fa fa-arrow-right\"></i></div><!-- Row--><div class=\"pure-u-1-3\"><i data-method=\"Input.ContextMenu\" class=\"fa fa-bars\"></i></div><div class=\"pure-u-1-3\"><i data-method=\"Input.Down\" class=\"fa fa-arrow-down\"></i></div><div class=\"pure-u-1-3\"><i data-method=\"Input.Back\" class=\"fa fa-undo\"></i></div><!-- Row--><div class=\"pure-u-1-3\"><i class=\"fa fa-backward\"></i></div><div class=\"pure-u-1-3\"><i class=\"fa fa-play\"></i></div><div class=\"pure-u-1-3\"><i class=\"fa fa-forward\"></i></div></main><footer></footer>");;return buf.join("");
+	}
+
+/***/ },
+/* 6 */,
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	 *      Copyright (C) 2005-2013 Team XBMC
+	 *      http://xbmc.org
+	 *
+	 *  This Program is free software; you can redistribute it and/or modify
+	 *  it under the terms of the GNU General Public License as published by
+	 *  the Free Software Foundation; either version 2, or (at your option)
+	 *  any later version.
+	 *
+	 *  This Program is distributed in the hope that it will be useful,
+	 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+	 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	 *  GNU General Public License for more details.
+	 *
+	 *  You should have received a copy of the GNU General Public License
+	 *  along with XBMC; see the file COPYING.  If not, see
+	 *  <http://www.gnu.org/licenses/>.
+	 *
+	 */
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var xbmc = __webpack_require__(11);
+	xbmc.core.applyDeviceFixes();
+
+	var Remote = (function () {
+	    function Remote() {
+	        _classCallCheck(this, Remote);
+	    }
+
+	    _createClass(Remote, [{
+	        key: 'rpcCall',
+	        value: function rpcCall(method, params) {
+	            var callObj = {
+	                'method': method
+	            };
+	            if (params) {
+	                callObj.params = params;
+	            }
+	            return xbmc.rpc.request(callObj);
+	        }
+	    }]);
+
+	    return Remote;
+	})();
+
+	module.exports = Remote;
+
+/***/ },
+/* 8 */,
+/* 9 */,
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0;
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function createStyleElement() {
+		var styleElement = document.createElement("style");
+		var head = getHeadElement();
+		styleElement.type = "text/css";
+		head.appendChild(styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement() {
+		var linkElement = document.createElement("link");
+		var head = getHeadElement();
+		linkElement.rel = "stylesheet";
+		head.appendChild(linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement());
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement();
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement();
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	 *      Copyright (C) 2005-2013 Team XBMC
+	 *      http://xbmc.org
+	 *
+	 *  This Program is free software; you can redistribute it and/or modify
+	 *  it under the terms of the GNU General Public License as published by
+	 *  the Free Software Foundation; either version 2, or (at your option)
+	 *  any later version.
+	 *
+	 *  This Program is distributed in the hope that it will be useful,
+	 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+	 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	 *  GNU General Public License for more details.
+	 *
+	 *  You should have received a copy of the GNU General Public License
+	 *  along with XBMC; see the file COPYING.  If not, see
+	 *  <http://www.gnu.org/licenses/>.
+	 *
+	 */
+
+	'use strict';
+
+	var $ = __webpack_require__(15);
+
+	var xbmc = {};
+
+	xbmc.rpc = {
+	    'default_options': {
+	        'contentType': 'application/json',
+	        'dataType': 'json',
+	        'type': 'POST',
+	        'success': function success() {
+	            $('#spinner').hide();
+	        }
+	    },
+	    'request': function request(options) {
+	        var request_options = $.extend({}, this.default_options, options);
+	        request_options.url = '/' + xbmc.core.JSON_RPC + '?' + options.method;
+	        request_options.method = 'POST';
+	        request_options.data = JSON.stringify({
+	            'jsonrpc': '2.0',
+	            'method': options.method,
+	            'id': 1,
+	            'params': request_options.params
+	        });
+	        return $.ajax(request_options);
+	    }
+	};
+	xbmc.core = {
+	    'DEFAULT_ALBUM_COVER': 'images/DefaultAlbumCover.png',
+	    'DEFAULT_VIDEO_COVER': 'images/DefaultVideo.png',
+	    'JSON_RPC': 'jsonrpc',
+	    'applyDeviceFixes': function applyDeviceFixes() {
+	        window.document.addEventListener('touchmove', function (e) {
+	            e.preventDefault();
+	        });
+	    },
+	    'displayCommunicationError': function displayCommunicationError(m) {
+	        window.clearTimeout(xbmc.core.commsErrorTimeout);
+	        var message = m || 'Connection to server lost';
+	        $('#commsErrorPanel').html(message).show();
+	        xbmc.core.commsErrorTimeout = window.setTimeout('xbmc.core.hideCommunicationError()', 5000);
+	    },
+	    'durationToString': function durationToString(duration) {
+	        var total_seconds = duration || 0,
+	            seconds = total_seconds % 60,
+	            minutes = Math.floor(total_seconds / 60) % 60,
+	            hours = Math.floor(total_seconds / 3600),
+	            result = hours > 0 && (hours < 10 ? '0' : '') + hours + ':' || '';
+	        result += (minutes < 10 ? '0' : '') + minutes + ':';
+	        result += (seconds < 10 ? '0' : '') + seconds;
+	        return result;
+	    },
+	    'getCookie': function getCookie(name) {
+	        var i,
+	            match,
+	            haystack = window.document.cookie.split(';');
+	        for (i = 0; i < haystack.length; i += 1) {
+	            match = haystack[i].match(/^\s*[\S\s]*=([\s\S]*)\s*$/);
+	            if (match && match.length === 2) {
+	                return match[1];
+	            }
+	        }
+	        return null;
+	    },
+	    'hideCommunicationError': function hideCommunicationError() {
+	        $('#commsErrorPanel').hide();
+	    },
+	    'setCookie': function setCookie(name, value, days) {
+	        var date, expires;
+	        if (name) {
+	            if (days) {
+	                date = new Date();
+	                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+	                expires = '; expires=' + date.toGMTString();
+	            } else {
+	                expires = '';
+	            }
+	            window.document.cookie = name + '=' + value + expires + '; path=/';
+	        }
+	    },
+	    'timeToDuration': function timeToDuration(time) {
+	        var duration;
+	        time = time || {};
+	        duration = (time.hours || 0) * 3600;
+	        duration += (time.minutes || 0) * 60;
+	        duration += time.seconds || 0;
+	        return duration;
+	    }
+	};
+
+	module.exports = xbmc;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	/**
+	 * Merge two attribute objects giving precedence
+	 * to values in object `b`. Classes are special-cased
+	 * allowing for arrays and merging/joining appropriately
+	 * resulting in a string.
+	 *
+	 * @param {Object} a
+	 * @param {Object} b
+	 * @return {Object} a
+	 * @api private
+	 */
+
+	exports.merge = function merge(a, b) {
+	  if (arguments.length === 1) {
+	    var attrs = a[0];
+	    for (var i = 1; i < a.length; i++) {
+	      attrs = merge(attrs, a[i]);
+	    }
+	    return attrs;
+	  }
+	  var ac = a['class'];
+	  var bc = b['class'];
+
+	  if (ac || bc) {
+	    ac = ac || [];
+	    bc = bc || [];
+	    if (!Array.isArray(ac)) ac = [ac];
+	    if (!Array.isArray(bc)) bc = [bc];
+	    a['class'] = ac.concat(bc).filter(nulls);
+	  }
+
+	  for (var key in b) {
+	    if (key != 'class') {
+	      a[key] = b[key];
+	    }
+	  }
+
+	  return a;
+	};
+
+	/**
+	 * Filter null `val`s.
+	 *
+	 * @param {*} val
+	 * @return {Boolean}
+	 * @api private
+	 */
+
+	function nulls(val) {
+	  return val != null && val !== '';
+	}
+
+	/**
+	 * join array as classes.
+	 *
+	 * @param {*} val
+	 * @return {String}
+	 */
+	exports.joinClasses = joinClasses;
+	function joinClasses(val) {
+	  return (Array.isArray(val) ? val.map(joinClasses) :
+	    (val && typeof val === 'object') ? Object.keys(val).filter(function (key) { return val[key]; }) :
+	    [val]).filter(nulls).join(' ');
+	}
+
+	/**
+	 * Render the given classes.
+	 *
+	 * @param {Array} classes
+	 * @param {Array.<Boolean>} escaped
+	 * @return {String}
+	 */
+	exports.cls = function cls(classes, escaped) {
+	  var buf = [];
+	  for (var i = 0; i < classes.length; i++) {
+	    if (escaped && escaped[i]) {
+	      buf.push(exports.escape(joinClasses([classes[i]])));
+	    } else {
+	      buf.push(joinClasses(classes[i]));
+	    }
+	  }
+	  var text = joinClasses(buf);
+	  if (text.length) {
+	    return ' class="' + text + '"';
+	  } else {
+	    return '';
+	  }
+	};
+
+
+	exports.style = function (val) {
+	  if (val && typeof val === 'object') {
+	    return Object.keys(val).map(function (style) {
+	      return style + ':' + val[style];
+	    }).join(';');
+	  } else {
+	    return val;
+	  }
+	};
+	/**
+	 * Render the given attribute.
+	 *
+	 * @param {String} key
+	 * @param {String} val
+	 * @param {Boolean} escaped
+	 * @param {Boolean} terse
+	 * @return {String}
+	 */
+	exports.attr = function attr(key, val, escaped, terse) {
+	  if (key === 'style') {
+	    val = exports.style(val);
+	  }
+	  if ('boolean' == typeof val || null == val) {
+	    if (val) {
+	      return ' ' + (terse ? key : key + '="' + key + '"');
+	    } else {
+	      return '';
+	    }
+	  } else if (0 == key.indexOf('data') && 'string' != typeof val) {
+	    if (JSON.stringify(val).indexOf('&') !== -1) {
+	      console.warn('Since Jade 2.0.0, ampersands (`&`) in data attributes ' +
+	                   'will be escaped to `&amp;`');
+	    };
+	    if (val && typeof val.toISOString === 'function') {
+	      console.warn('Jade will eliminate the double quotes around dates in ' +
+	                   'ISO form after 2.0.0');
+	    }
+	    return ' ' + key + "='" + JSON.stringify(val).replace(/'/g, '&apos;') + "'";
+	  } else if (escaped) {
+	    if (val && typeof val.toISOString === 'function') {
+	      console.warn('Jade will stringify dates in ISO form after 2.0.0');
+	    }
+	    return ' ' + key + '="' + exports.escape(val) + '"';
+	  } else {
+	    if (val && typeof val.toISOString === 'function') {
+	      console.warn('Jade will stringify dates in ISO form after 2.0.0');
+	    }
+	    return ' ' + key + '="' + val + '"';
+	  }
+	};
+
+	/**
+	 * Render the given attributes object.
+	 *
+	 * @param {Object} obj
+	 * @param {Object} escaped
+	 * @return {String}
+	 */
+	exports.attrs = function attrs(obj, terse){
+	  var buf = [];
+
+	  var keys = Object.keys(obj);
+
+	  if (keys.length) {
+	    for (var i = 0; i < keys.length; ++i) {
+	      var key = keys[i]
+	        , val = obj[key];
+
+	      if ('class' == key) {
+	        if (val = joinClasses(val)) {
+	          buf.push(' ' + key + '="' + val + '"');
+	        }
+	      } else {
+	        buf.push(exports.attr(key, val, false, terse));
+	      }
+	    }
+	  }
+
+	  return buf.join('');
+	};
+
+	/**
+	 * Escape the given string of `html`.
+	 *
+	 * @param {String} html
+	 * @return {String}
+	 * @api private
+	 */
+
+	exports.escape = function escape(html){
+	  var result = String(html)
+	    .replace(/&/g, '&amp;')
+	    .replace(/</g, '&lt;')
+	    .replace(/>/g, '&gt;')
+	    .replace(/"/g, '&quot;');
+	  if (result === '' + html) return html;
+	  else return result;
+	};
+
+	/**
+	 * Re-throw the given `err` in context to the
+	 * the jade in `filename` at the given `lineno`.
+	 *
+	 * @param {Error} err
+	 * @param {String} filename
+	 * @param {String} lineno
+	 * @api private
+	 */
+
+	exports.rethrow = function rethrow(err, filename, lineno, str){
+	  if (!(err instanceof Error)) throw err;
+	  if ((typeof window != 'undefined' || !filename) && !str) {
+	    err.message += ' on line ' + lineno;
+	    throw err;
+	  }
+	  try {
+	    str = str || __webpack_require__(13).readFileSync(filename, 'utf8')
+	  } catch (ex) {
+	    rethrow(err, null, lineno)
+	  }
+	  var context = 3
+	    , lines = str.split('\n')
+	    , start = Math.max(lineno - context, 0)
+	    , end = Math.min(lines.length, lineno + context);
+
+	  // Error context
+	  var context = lines.slice(start, end).map(function(line, i){
+	    var curr = i + start + 1;
+	    return (curr == lineno ? '  > ' : '    ')
+	      + curr
+	      + '| '
+	      + line;
+	  }).join('\n');
+
+	  // Alter exception message
+	  err.path = filename;
+	  err.message = (filename || 'Jade') + ':' + lineno
+	    + '\n' + context + '\n\n' + err.message;
+	  throw err;
+	};
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* (ignored) */
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -9272,2697 +10036,34 @@
 
 
 /***/ },
-/* 2 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(11)();
-	exports.push([module.id, "/*!\nPure v0.6.0\nCopyright 2014 Yahoo! Inc. All rights reserved.\nLicensed under the BSD License.\nhttps://github.com/yahoo/pure/blob/master/LICENSE.md\n*/\n/*!\nnormalize.css v^3.0 | MIT License | git.io/normalize\nCopyright (c) Nicolas Gallagher and Jonathan Neal\n*/\n/*! normalize.css v3.0.2 | MIT License | git.io/normalize */\n/**\n * 1. Set default font family to sans-serif.\n * 2. Prevent iOS text size adjust after orientation change, without disabling\n *    user zoom.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n * Remove default margin.\n */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Correct `block` display not defined for any HTML5 element in IE 8/9.\n * Correct `block` display not defined for `details` or `summary` in IE 10/11\n * and Firefox.\n * Correct `block` display not defined for `main` in IE 11.\n */\narticle, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {\n  display: block; }\n\n/**\n * 1. Correct `inline-block` display not defined in IE 8/9.\n * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.\n */\naudio, canvas, progress, video {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Prevent modern browsers from displaying `audio` without controls.\n * Remove excess height in iOS 5 devices.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Address `[hidden]` styling not present in IE 8/9/10.\n * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.\n */\n[hidden], template {\n  display: none; }\n\n/* Links\n   ========================================================================== */\n/**\n * Remove the gray background color from active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * Improve readability when focused and also mouse hovered in all browsers.\n */\na:active, a:hover {\n  outline: 0; }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Address styling not present in IE 8/9/10/11, Safari, and Chrome.\n */\nabbr[title] {\n  border-bottom: 1px dotted; }\n\n/**\n * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.\n */\nb, strong {\n  font-weight: bold; }\n\n/**\n * Address styling not present in Safari and Chrome.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Address variable `h1` font-size and margin within `section` and `article`\n * contexts in Firefox 4+, Safari, and Chrome.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n * Address styling not present in IE 8/9.\n */\nmark {\n  background: #ff0;\n  color: #000; }\n\n/**\n * Address inconsistent and variable font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` affecting `line-height` in all browsers.\n */\nsub, sup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove border when inside `a` element in IE 8/9/10.\n */\nimg {\n  border: 0; }\n\n/**\n * Correct overflow not hidden in IE 9/10/11.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Address margin not present in IE 8/9 and Safari.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * Address differences between Firefox and other browsers.\n */\nhr {\n  -moz-box-sizing: content-box;\n  box-sizing: content-box;\n  height: 0; }\n\n/**\n * Contain overflow in all browsers.\n */\npre {\n  overflow: auto; }\n\n/**\n * Address odd `em`-unit font size rendering in all browsers.\n */\ncode, kbd, pre, samp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n/* Forms\n   ========================================================================== */\n/**\n * Known limitation: by default, Chrome and Safari on OS X allow very limited\n * styling of `select`, unless a `border` property is set.\n */\n/**\n * 1. Correct color not being inherited.\n *    Known issue: affects color of disabled elements.\n * 2. Correct font properties not being inherited.\n * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.\n */\nbutton, input, optgroup, select, textarea {\n  color: inherit;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n  margin: 0;\n  /* 3 */ }\n\n/**\n * Address `overflow` set to `hidden` in IE 8/9/10/11.\n */\nbutton {\n  overflow: visible; }\n\n/**\n * Address inconsistent `text-transform` inheritance for `button` and `select`.\n * All other form control elements do not inherit `text-transform` values.\n * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.\n * Correct `select` style inheritance in Firefox.\n */\nbutton, select {\n  text-transform: none; }\n\n/**\n * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`\n *    and `video` controls.\n * 2. Correct inability to style clickable `input` types in iOS.\n * 3. Improve usability and consistency of cursor style between image-type\n *    `input` and others.\n */\nbutton, html input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n  cursor: pointer;\n  /* 3 */ }\n\n/**\n * Re-set default cursor for disabled elements.\n */\nbutton[disabled], html input[disabled] {\n  cursor: default; }\n\n/**\n * Remove inner padding and border in Firefox 4+.\n */\nbutton::-moz-focus-inner, input::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n/**\n * Address Firefox 4+ setting `line-height` on `input` using `!important` in\n * the UA stylesheet.\n */\ninput {\n  line-height: normal; }\n\n/**\n * It's recommended that you don't attempt to style these elements.\n * Firefox's implementation doesn't respect box-sizing, padding, or width.\n *\n * 1. Address box sizing set to `content-box` in IE 8/9/10.\n * 2. Remove excess padding in IE 8/9/10.\n */\ninput[type=\"checkbox\"], input[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Fix the cursor style for Chrome's increment/decrement buttons. For certain\n * `font-size` values of the `input`, it causes the cursor style of the\n * decrement button to change from `default` to `text`.\n */\ninput[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Address `appearance` set to `searchfield` in Safari and Chrome.\n * 2. Address `box-sizing` set to `border-box` in Safari and Chrome\n *    (include `-moz` to future-proof).\n */\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  -moz-box-sizing: content-box;\n  -webkit-box-sizing: content-box;\n  /* 2 */\n  box-sizing: content-box; }\n\n/**\n * Remove inner padding and search cancel button in Safari and Chrome on OS X.\n * Safari (but not Chrome) clips the cancel button when the search input has\n * padding (and `textfield` appearance).\n */\ninput[type=\"search\"]::-webkit-search-cancel-button, input[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * Define consistent border, margin, and padding.\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct `color` not being inherited in IE 8/9/10/11.\n * 2. Remove padding so people aren't caught out if they zero out fieldsets.\n */\nlegend {\n  border: 0;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Remove default vertical scrollbar in IE 8/9/10/11.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * Don't inherit the `font-weight` (applied by a rule above).\n * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.\n */\noptgroup {\n  font-weight: bold; }\n\n/* Tables\n   ========================================================================== */\n/**\n * Remove most spacing between table cells.\n */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd, th {\n  padding: 0; }\n\n/*csslint important:false*/\n/* ==========================================================================\n   Pure Base Extras\n   ========================================================================== */\n/**\n * Extra rules that Pure adds on top of Normalize.css\n */\n/**\n * Always hide an element when it has the `hidden` HTML attribute.\n */\n.hidden, [hidden] {\n  display: none !important; }\n\n/**\n * Add this class to an image to make it fit within it's fluid parent wrapper while maintaining\n * aspect ratio.\n */\n.pure-img {\n  max-width: 100%;\n  height: auto;\n  display: block; }\n\n/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/\n.pure-g {\n  letter-spacing: -0.31em;\n  /* Webkit: collapse white-space between units */\n  *letter-spacing: normal;\n  /* reset IE < 8 */\n  *word-spacing: -0.43em;\n  /* IE < 8: collapse white-space between units */\n  text-rendering: optimizespeed;\n  /* Webkit: fixes text-rendering: optimizeLegibility */\n  /*\n    Sets the font stack to fonts known to work properly with the above letter\n    and word spacings. See: https://github.com/yahoo/pure/issues/41/\n\n    The following font stack makes Pure Grids work on all known environments.\n\n    * FreeSans: Ships with many Linux distros, including Ubuntu\n\n    * Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and\n      Arial to get picked up by the browser, even though neither is available\n      in Chrome OS.\n\n    * Droid Sans: Ships with all versions of Android.\n\n    * Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.\n    */\n  font-family: FreeSans, Arimo, \"Droid Sans\", Helvetica, Arial, sans-serif;\n  /*\n    Use flexbox when possible to avoid `letter-spacing` side-effects.\n\n    NOTE: Firefox (as of 25) does not currently support flex-wrap, so the\n    `-moz-` prefix version is omitted.\n    */\n  display: -webkit-flex;\n  -webkit-flex-flow: row wrap;\n  /* IE10 uses display: flexbox */\n  display: -ms-flexbox;\n  -ms-flex-flow: row wrap;\n  /* Prevents distributing space between rows */\n  -ms-align-content: flex-start;\n  -webkit-align-content: flex-start;\n  align-content: flex-start; }\n\n/* Opera as of 12 on Windows needs word-spacing.\n   The \".opera-only\" selector is used to prevent actual prefocus styling\n   and is not required in markup.\n*/\n.opera-only :-o-prefocus, .pure-g {\n  word-spacing: -0.43em; }\n\n.pure-u {\n  display: inline-block;\n  *display: inline;\n  /* IE < 8: fake inline-block */\n  zoom: 1;\n  letter-spacing: normal;\n  word-spacing: normal;\n  vertical-align: top;\n  text-rendering: auto; }\n\n/*\nResets the font family back to the OS/browser's default sans-serif font,\nthis the same font stack that Normalize.css sets for the `body`.\n*/\n.pure-g [class*=\"pure-u\"] {\n  font-family: sans-serif; }\n\n.pure-u-1, .pure-u-1-1, .pure-u-1-2, .pure-u-1-3, .pure-u-2-3, .pure-u-1-4, .pure-u-3-4, .pure-u-1-5, .pure-u-2-5, .pure-u-3-5, .pure-u-4-5, .pure-u-5-5, .pure-u-1-6, .pure-u-5-6, .pure-u-1-8, .pure-u-3-8, .pure-u-5-8, .pure-u-7-8, .pure-u-1-12, .pure-u-5-12, .pure-u-7-12, .pure-u-11-12, .pure-u-1-24, .pure-u-2-24, .pure-u-3-24, .pure-u-4-24, .pure-u-5-24, .pure-u-6-24, .pure-u-7-24, .pure-u-8-24, .pure-u-9-24, .pure-u-10-24, .pure-u-11-24, .pure-u-12-24, .pure-u-13-24, .pure-u-14-24, .pure-u-15-24, .pure-u-16-24, .pure-u-17-24, .pure-u-18-24, .pure-u-19-24, .pure-u-20-24, .pure-u-21-24, .pure-u-22-24, .pure-u-23-24, .pure-u-24-24 {\n  display: inline-block;\n  *display: inline;\n  zoom: 1;\n  letter-spacing: normal;\n  word-spacing: normal;\n  vertical-align: top;\n  text-rendering: auto; }\n\n.pure-u-1-24 {\n  width: 4.1667%;\n  *width: 4.1357%; }\n\n.pure-u-1-12, .pure-u-2-24 {\n  width: 8.3333%;\n  *width: 8.3023%; }\n\n.pure-u-1-8, .pure-u-3-24 {\n  width: 12.5%;\n  *width: 12.469%; }\n\n.pure-u-1-6, .pure-u-4-24 {\n  width: 16.6667%;\n  *width: 16.6357%; }\n\n.pure-u-1-5 {\n  width: 20%;\n  *width: 19.969%; }\n\n.pure-u-5-24 {\n  width: 20.8333%;\n  *width: 20.8023%; }\n\n.pure-u-1-4, .pure-u-6-24 {\n  width: 25%;\n  *width: 24.969%; }\n\n.pure-u-7-24 {\n  width: 29.1667%;\n  *width: 29.1357%; }\n\n.pure-u-1-3, .pure-u-8-24 {\n  width: 33.3333%;\n  *width: 33.3023%; }\n\n.pure-u-3-8, .pure-u-9-24 {\n  width: 37.5%;\n  *width: 37.469%; }\n\n.pure-u-2-5 {\n  width: 40%;\n  *width: 39.969%; }\n\n.pure-u-5-12, .pure-u-10-24 {\n  width: 41.6667%;\n  *width: 41.6357%; }\n\n.pure-u-11-24 {\n  width: 45.8333%;\n  *width: 45.8023%; }\n\n.pure-u-1-2, .pure-u-12-24 {\n  width: 50%;\n  *width: 49.969%; }\n\n.pure-u-13-24 {\n  width: 54.1667%;\n  *width: 54.1357%; }\n\n.pure-u-7-12, .pure-u-14-24 {\n  width: 58.3333%;\n  *width: 58.3023%; }\n\n.pure-u-3-5 {\n  width: 60%;\n  *width: 59.969%; }\n\n.pure-u-5-8, .pure-u-15-24 {\n  width: 62.5%;\n  *width: 62.469%; }\n\n.pure-u-2-3, .pure-u-16-24 {\n  width: 66.6667%;\n  *width: 66.6357%; }\n\n.pure-u-17-24 {\n  width: 70.8333%;\n  *width: 70.8023%; }\n\n.pure-u-3-4, .pure-u-18-24 {\n  width: 75%;\n  *width: 74.969%; }\n\n.pure-u-19-24 {\n  width: 79.1667%;\n  *width: 79.1357%; }\n\n.pure-u-4-5 {\n  width: 80%;\n  *width: 79.969%; }\n\n.pure-u-5-6, .pure-u-20-24 {\n  width: 83.3333%;\n  *width: 83.3023%; }\n\n.pure-u-7-8, .pure-u-21-24 {\n  width: 87.5%;\n  *width: 87.469%; }\n\n.pure-u-11-12, .pure-u-22-24 {\n  width: 91.6667%;\n  *width: 91.6357%; }\n\n.pure-u-23-24 {\n  width: 95.8333%;\n  *width: 95.8023%; }\n\n.pure-u-1, .pure-u-1-1, .pure-u-5-5, .pure-u-24-24 {\n  width: 100%; }\n\n.pure-button {\n  /* Structure */\n  display: inline-block;\n  zoom: 1;\n  line-height: normal;\n  white-space: nowrap;\n  vertical-align: middle;\n  text-align: center;\n  cursor: pointer;\n  -webkit-user-drag: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Firefox: Get rid of the inner focus border */\n.pure-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n/*csslint outline-none:false*/\n.pure-button {\n  font-family: inherit;\n  font-size: 100%;\n  padding: 0.5em 1em;\n  color: #444;\n  /* rgba not supported (IE 8) */\n  color: rgba(0, 0, 0, 0.8);\n  /* rgba supported */\n  border: 1px solid #999;\n  /*IE 6/7/8*/\n  border: none transparent;\n  /*IE9 + everything else*/\n  background-color: #E6E6E6;\n  text-decoration: none;\n  border-radius: 2px; }\n\n.pure-button-hover, .pure-button:hover, .pure-button:focus {\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);\n  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.1)));\n  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));\n  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1));\n  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));\n  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1)); }\n\n.pure-button:focus {\n  outline: 0; }\n\n.pure-button-active, .pure-button:active {\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;\n  border-color: #000 \\9; }\n\n.pure-button[disabled], .pure-button-disabled, .pure-button-disabled:hover, .pure-button-disabled:focus, .pure-button-disabled:active {\n  border: none;\n  background-image: none;\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);\n  filter: alpha(opacity=40);\n  -khtml-opacity: 0.40;\n  -moz-opacity: 0.40;\n  opacity: 0.40;\n  cursor: not-allowed;\n  box-shadow: none; }\n\n.pure-button-hidden {\n  display: none; }\n\n/* Firefox: Get rid of the inner focus border */\n.pure-button::-moz-focus-inner {\n  padding: 0;\n  border: 0; }\n\n.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {\n  background-color: #0078e7;\n  color: #fff; }\n\n/*csslint box-model:false*/\n/*\nBox-model set to false because we're setting a height on select elements, which\nalso have border and padding. This is done because some browsers don't render\nthe padding. We explicitly set the box-model for select elements to border-box,\nso we can ignore the csslint warning.\n*/\n.pure-form input[type=\"text\"], .pure-form input[type=\"password\"], .pure-form input[type=\"email\"], .pure-form input[type=\"url\"], .pure-form input[type=\"date\"], .pure-form input[type=\"month\"], .pure-form input[type=\"time\"], .pure-form input[type=\"datetime\"], .pure-form input[type=\"datetime-local\"], .pure-form input[type=\"week\"], .pure-form input[type=\"number\"], .pure-form input[type=\"search\"], .pure-form input[type=\"tel\"], .pure-form input[type=\"color\"], .pure-form select, .pure-form textarea {\n  padding: 0.5em 0.6em;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-shadow: inset 0 1px 3px #ddd;\n  border-radius: 4px;\n  vertical-align: middle;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form input:not([type]) {\n  padding: 0.5em 0.6em;\n  display: inline-block;\n  border: 1px solid #ccc;\n  box-shadow: inset 0 1px 3px #ddd;\n  border-radius: 4px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */\n/* May be able to remove this tweak as color inputs become more standardized across browsers. */\n.pure-form input[type=\"color\"] {\n  padding: 0.2em 0.5em; }\n\n.pure-form input[type=\"text\"]:focus, .pure-form input[type=\"password\"]:focus, .pure-form input[type=\"email\"]:focus, .pure-form input[type=\"url\"]:focus, .pure-form input[type=\"date\"]:focus, .pure-form input[type=\"month\"]:focus, .pure-form input[type=\"time\"]:focus, .pure-form input[type=\"datetime\"]:focus, .pure-form input[type=\"datetime-local\"]:focus, .pure-form input[type=\"week\"]:focus, .pure-form input[type=\"number\"]:focus, .pure-form input[type=\"search\"]:focus, .pure-form input[type=\"tel\"]:focus, .pure-form input[type=\"color\"]:focus, .pure-form select:focus, .pure-form textarea:focus {\n  outline: 0;\n  border-color: #129FEA; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form input:not([type]):focus {\n  outline: 0;\n  border-color: #129FEA; }\n\n.pure-form input[type=\"file\"]:focus, .pure-form input[type=\"radio\"]:focus, .pure-form input[type=\"checkbox\"]:focus {\n  outline: thin solid #129FEA;\n  outline: 1px auto #129FEA; }\n\n.pure-form .pure-checkbox, .pure-form .pure-radio {\n  margin: 0.5em 0;\n  display: block; }\n\n.pure-form input[type=\"text\"][disabled], .pure-form input[type=\"password\"][disabled], .pure-form input[type=\"email\"][disabled], .pure-form input[type=\"url\"][disabled], .pure-form input[type=\"date\"][disabled], .pure-form input[type=\"month\"][disabled], .pure-form input[type=\"time\"][disabled], .pure-form input[type=\"datetime\"][disabled], .pure-form input[type=\"datetime-local\"][disabled], .pure-form input[type=\"week\"][disabled], .pure-form input[type=\"number\"][disabled], .pure-form input[type=\"search\"][disabled], .pure-form input[type=\"tel\"][disabled], .pure-form input[type=\"color\"][disabled], .pure-form select[disabled], .pure-form textarea[disabled] {\n  cursor: not-allowed;\n  background-color: #eaeded;\n  color: #cad2d3; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form input:not([type])[disabled] {\n  cursor: not-allowed;\n  background-color: #eaeded;\n  color: #cad2d3; }\n\n.pure-form input[readonly], .pure-form select[readonly], .pure-form textarea[readonly] {\n  background-color: #eee;\n  /* menu hover bg color */\n  color: #777;\n  /* menu text color */\n  border-color: #ccc; }\n\n.pure-form input:focus:invalid, .pure-form textarea:focus:invalid, .pure-form select:focus:invalid {\n  color: #b94a48;\n  border-color: #e9322d; }\n\n.pure-form input[type=\"file\"]:focus:invalid:focus, .pure-form input[type=\"radio\"]:focus:invalid:focus, .pure-form input[type=\"checkbox\"]:focus:invalid:focus {\n  outline-color: #e9322d; }\n\n.pure-form select {\n  /* Normalizes the height; padding is not sufficient. */\n  height: 2.25em;\n  border: 1px solid #ccc;\n  background-color: white; }\n\n.pure-form select[multiple] {\n  height: auto; }\n\n.pure-form label {\n  margin: 0.5em 0 0.2em; }\n\n.pure-form fieldset {\n  margin: 0;\n  padding: 0.35em 0 0.75em;\n  border: 0; }\n\n.pure-form legend {\n  display: block;\n  width: 100%;\n  padding: 0.3em 0;\n  margin-bottom: 0.3em;\n  color: #333;\n  border-bottom: 1px solid #e5e5e5; }\n\n.pure-form-stacked input[type=\"text\"], .pure-form-stacked input[type=\"password\"], .pure-form-stacked input[type=\"email\"], .pure-form-stacked input[type=\"url\"], .pure-form-stacked input[type=\"date\"], .pure-form-stacked input[type=\"month\"], .pure-form-stacked input[type=\"time\"], .pure-form-stacked input[type=\"datetime\"], .pure-form-stacked input[type=\"datetime-local\"], .pure-form-stacked input[type=\"week\"], .pure-form-stacked input[type=\"number\"], .pure-form-stacked input[type=\"search\"], .pure-form-stacked input[type=\"tel\"], .pure-form-stacked input[type=\"color\"], .pure-form-stacked input[type=\"file\"], .pure-form-stacked select, .pure-form-stacked label, .pure-form-stacked textarea {\n  display: block;\n  margin: 0.25em 0; }\n\n/*\nNeed to separate out the :not() selector from the rest of the CSS 2.1 selectors\nsince IE8 won't execute CSS that contains a CSS3 selector.\n*/\n.pure-form-stacked input:not([type]) {\n  display: block;\n  margin: 0.25em 0; }\n\n.pure-form-aligned input, .pure-form-aligned textarea, .pure-form-aligned select, .pure-form-aligned .pure-help-inline, .pure-form-message-inline {\n  display: inline-block;\n  *display: inline;\n  *zoom: 1;\n  vertical-align: middle; }\n\n.pure-form-aligned textarea {\n  vertical-align: top; }\n\n/* Aligned Forms */\n.pure-form-aligned .pure-control-group {\n  margin-bottom: 0.5em; }\n\n.pure-form-aligned .pure-control-group label {\n  text-align: right;\n  display: inline-block;\n  vertical-align: middle;\n  width: 10em;\n  margin: 0 1em 0 0; }\n\n.pure-form-aligned .pure-controls {\n  margin: 1.5em 0 0 11em; }\n\n/* Rounded Inputs */\n.pure-form input.pure-input-rounded, .pure-form .pure-input-rounded {\n  border-radius: 2em;\n  padding: 0.5em 1em; }\n\n/* Grouped Inputs */\n.pure-form .pure-group fieldset {\n  margin-bottom: 10px; }\n\n.pure-form .pure-group input, .pure-form .pure-group textarea {\n  display: block;\n  padding: 10px;\n  margin: 0 0 -1px;\n  border-radius: 0;\n  position: relative;\n  top: -1px; }\n\n.pure-form .pure-group input:focus, .pure-form .pure-group textarea:focus {\n  z-index: 3; }\n\n.pure-form .pure-group input:first-child, .pure-form .pure-group textarea:first-child {\n  top: 1px;\n  border-radius: 4px 4px 0 0;\n  margin: 0; }\n\n.pure-form .pure-group input:first-child:last-child, .pure-form .pure-group textarea:first-child:last-child {\n  top: 1px;\n  border-radius: 4px;\n  margin: 0; }\n\n.pure-form .pure-group input:last-child, .pure-form .pure-group textarea:last-child {\n  top: -2px;\n  border-radius: 0 0 4px 4px;\n  margin: 0; }\n\n.pure-form .pure-group button {\n  margin: 0.35em 0; }\n\n.pure-form .pure-input-1 {\n  width: 100%; }\n\n.pure-form .pure-input-2-3 {\n  width: 66%; }\n\n.pure-form .pure-input-1-2 {\n  width: 50%; }\n\n.pure-form .pure-input-1-3 {\n  width: 33%; }\n\n.pure-form .pure-input-1-4 {\n  width: 25%; }\n\n/* Inline help for forms */\n/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */\n.pure-form .pure-help-inline, .pure-form-message-inline {\n  display: inline-block;\n  padding-left: 0.3em;\n  color: #666;\n  vertical-align: middle;\n  font-size: 0.875em; }\n\n/* Block help for forms */\n.pure-form-message {\n  display: block;\n  color: #666;\n  font-size: 0.875em; }\n\n@media only screen and (max-width: 480px) {\n  .pure-form button[type=\"submit\"] {\n    margin: 0.7em 0 0; }\n  .pure-form input:not([type]), .pure-form input[type=\"text\"], .pure-form input[type=\"password\"], .pure-form input[type=\"email\"], .pure-form input[type=\"url\"], .pure-form input[type=\"date\"], .pure-form input[type=\"month\"], .pure-form input[type=\"time\"], .pure-form input[type=\"datetime\"], .pure-form input[type=\"datetime-local\"], .pure-form input[type=\"week\"], .pure-form input[type=\"number\"], .pure-form input[type=\"search\"], .pure-form input[type=\"tel\"], .pure-form input[type=\"color\"], .pure-form label {\n    margin-bottom: 0.3em;\n    display: block; }\n  .pure-group input:not([type]), .pure-group input[type=\"text\"], .pure-group input[type=\"password\"], .pure-group input[type=\"email\"], .pure-group input[type=\"url\"], .pure-group input[type=\"date\"], .pure-group input[type=\"month\"], .pure-group input[type=\"time\"], .pure-group input[type=\"datetime\"], .pure-group input[type=\"datetime-local\"], .pure-group input[type=\"week\"], .pure-group input[type=\"number\"], .pure-group input[type=\"search\"], .pure-group input[type=\"tel\"], .pure-group input[type=\"color\"] {\n    margin-bottom: 0; }\n  .pure-form-aligned .pure-control-group label {\n    margin-bottom: 0.3em;\n    text-align: left;\n    display: block;\n    width: 100%; }\n  .pure-form-aligned .pure-controls {\n    margin: 1.5em 0 0 0; }\n  /* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */\n  .pure-form .pure-help-inline, .pure-form-message-inline, .pure-form-message {\n    display: block;\n    font-size: 0.75em;\n    /* Increased bottom padding to make it group with its related input element. */\n    padding: 0.2em 0 0.8em; } }\n\n/*csslint adjoining-classes: false, box-model:false*/\n.pure-menu {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box; }\n\n.pure-menu-fixed {\n  position: fixed;\n  left: 0;\n  top: 0;\n  z-index: 3; }\n\n.pure-menu-list, .pure-menu-item {\n  position: relative; }\n\n.pure-menu-list {\n  list-style: none;\n  margin: 0;\n  padding: 0; }\n\n.pure-menu-item {\n  padding: 0;\n  margin: 0;\n  height: 100%; }\n\n.pure-menu-link, .pure-menu-heading {\n  display: block;\n  text-decoration: none;\n  white-space: nowrap; }\n\n/* HORIZONTAL MENU */\n.pure-menu-horizontal {\n  width: 100%;\n  white-space: nowrap; }\n\n.pure-menu-horizontal .pure-menu-list {\n  display: inline-block; }\n\n/* Initial menus should be inline-block so that they are horizontal */\n.pure-menu-horizontal .pure-menu-item, .pure-menu-horizontal .pure-menu-heading, .pure-menu-horizontal .pure-menu-separator {\n  display: inline-block;\n  *display: inline;\n  zoom: 1;\n  vertical-align: middle; }\n\n/* Submenus should still be display: block; */\n.pure-menu-item .pure-menu-item {\n  display: block; }\n\n.pure-menu-children {\n  display: none;\n  position: absolute;\n  left: 100%;\n  top: 0;\n  margin: 0;\n  padding: 0;\n  z-index: 3; }\n\n.pure-menu-horizontal .pure-menu-children {\n  left: 0;\n  top: auto;\n  width: inherit; }\n\n.pure-menu-allow-hover:hover > .pure-menu-children, .pure-menu-active > .pure-menu-children {\n  display: block;\n  position: absolute; }\n\n/* Vertical Menus - show the dropdown arrow */\n.pure-menu-has-children > .pure-menu-link:after {\n  padding-left: 0.5em;\n  content: \"\\25B8\";\n  font-size: small; }\n\n/* Horizontal Menus - show the dropdown arrow */\n.pure-menu-horizontal .pure-menu-has-children > .pure-menu-link:after {\n  content: \"\\25BE\"; }\n\n/* scrollable menus */\n.pure-menu-scrollable {\n  overflow-y: scroll;\n  overflow-x: hidden; }\n\n.pure-menu-scrollable .pure-menu-list {\n  display: block; }\n\n.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list {\n  display: inline-block; }\n\n.pure-menu-horizontal.pure-menu-scrollable {\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: auto;\n  -ms-overflow-style: none;\n  -webkit-overflow-scrolling: touch;\n  /* a little extra padding for this style to allow for scrollbars */\n  padding: .5em 0; }\n\n.pure-menu-horizontal.pure-menu-scrollable::-webkit-scrollbar {\n  display: none; }\n\n/* misc default styling */\n.pure-menu-separator {\n  background-color: #ccc;\n  height: 1px;\n  margin: .3em 0; }\n\n.pure-menu-horizontal .pure-menu-separator {\n  width: 1px;\n  height: 1.3em;\n  margin: 0 .3em; }\n\n.pure-menu-heading {\n  text-transform: uppercase;\n  color: #565d64; }\n\n.pure-menu-link {\n  color: #777; }\n\n.pure-menu-children {\n  background-color: #fff; }\n\n.pure-menu-link, .pure-menu-disabled, .pure-menu-heading {\n  padding: .5em 1em; }\n\n.pure-menu-disabled {\n  opacity: .5; }\n\n.pure-menu-disabled .pure-menu-link:hover {\n  background-color: transparent; }\n\n.pure-menu-active > .pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {\n  background-color: #eee; }\n\n.pure-menu-selected .pure-menu-link, .pure-menu-selected .pure-menu-link:visited {\n  color: #000; }\n\n.pure-table {\n  /* Remove spacing between table cells (from Normalize.css) */\n  border-collapse: collapse;\n  border-spacing: 0;\n  empty-cells: show;\n  border: 1px solid #cbcbcb; }\n\n.pure-table caption {\n  color: #000;\n  font: italic 85%/1 arial, sans-serif;\n  padding: 1em 0;\n  text-align: center; }\n\n.pure-table td, .pure-table th {\n  border-left: 1px solid #cbcbcb;\n  /*  inner column border */\n  border-width: 0 0 0 1px;\n  font-size: inherit;\n  margin: 0;\n  overflow: visible;\n  /*to make ths where the title is really long work*/\n  padding: 0.5em 1em;\n  /* cell padding */ }\n\n/* Consider removing this next declaration block, as it causes problems when\nthere's a rowspan on the first cell. Case added to the tests. issue#432 */\n.pure-table td:first-child, .pure-table th:first-child {\n  border-left-width: 0; }\n\n.pure-table thead {\n  background-color: #e0e0e0;\n  color: #000;\n  text-align: left;\n  vertical-align: bottom; }\n\n/*\nstriping:\n   even - #fff (white)\n   odd  - #f2f2f2 (light gray)\n*/\n.pure-table td {\n  background-color: transparent; }\n\n.pure-table-odd td {\n  background-color: #f2f2f2; }\n\n/* nth-child selector for modern browsers */\n.pure-table-striped tr:nth-child(2n-1) td {\n  background-color: #f2f2f2; }\n\n/* BORDERED TABLES */\n.pure-table-bordered td {\n  border-bottom: 1px solid #cbcbcb; }\n\n.pure-table-bordered tbody > tr:last-child > td {\n  border-bottom-width: 0; }\n\n/* HORIZONTAL BORDERED TABLES */\n.pure-table-horizontal td, .pure-table-horizontal th {\n  border-width: 0 0 1px 0;\n  border-bottom: 1px solid #cbcbcb; }\n\n.pure-table-horizontal tbody > tr:last-child > td {\n  border-bottom-width: 0; }\n\nhtml {\n  height: 100%; }\n  html body {\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center;\n    -webkit-background-size: cover;\n    -moz-background-size: cover;\n    -o-background-size: cover;\n    background-size: cover;\n    height: 100%; }\n    html body main {\n      background: rgba(0, 0, 0, 0.7);\n      height: 100%; }\n      html body main .pure-u-1-3 {\n        cursor: pointer;\n        box-shadow: 1px 1px rgba(255, 255, 255, 0.2);\n        display: table;\n        height: 25%;\n        text-align: center;\n        vertical-align: middle;\n        color: white; }\n        html body main .pure-u-1-3:hover {\n          background: rgba(3, 3, 3, 0.3); }\n        html body main .pure-u-1-3 div {\n          display: table-cell;\n          height: 100%;\n          vertical-align: middle; }\n", ""]);
+	module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.eot"
 
 /***/ },
-/* 3 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(10);
-
-	module.exports = function template(locals) {
-	var buf = [];
-	var jade_mixins = {};
-	var jade_interp;
-
-	buf.push("<header></header><main class=\"pure-g\"><div class=\"pure-u-1-3\"><div>Volume<h1>-</h1></div></div><div class=\"pure-u-1-3\"><div><h1>⬆</h1></div></div><div class=\"pure-u-1-3\"><div>Volume<h1>+</h1></div></div><div class=\"pure-u-1-3\"><div><h1>⬅</h1></div></div><div class=\"pure-u-1-3\"><div>Select</div></div><div class=\"pure-u-1-3\"><div><h1>➡</h1></div></div><div class=\"pure-u-1-3\"><div>Menu</div></div><div class=\"pure-u-1-3\"><div><h1>⬇</h1></div></div><div class=\"pure-u-1-3\"><div>Back</div></div><div class=\"pure-u-1-3\"><div><h1>◀◀</h1></div></div><div class=\"pure-u-1-3\"><div><h1>▶</h1></div></div><div class=\"pure-u-1-3\"><div><h1>▶▶</h1></div></div></main><footer></footer>");;return buf.join("");
-	}
+	module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.svg"
 
 /***/ },
-/* 4 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "7a4497e1e33681b6f24e11037a98b39b.png"
+	module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.woff"
 
 /***/ },
-/* 5 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0;
-
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-
-	function createStyleElement() {
-		var styleElement = document.createElement("style");
-		var head = getHeadElement();
-		styleElement.type = "text/css";
-		head.appendChild(styleElement);
-		return styleElement;
-	}
-
-	function createLinkElement() {
-		var linkElement = document.createElement("link");
-		var head = getHeadElement();
-		linkElement.rel = "stylesheet";
-		head.appendChild(linkElement);
-		return linkElement;
-	}
-
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement());
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement();
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				styleElement.parentNode.removeChild(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement();
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				styleElement.parentNode.removeChild(styleElement);
-			};
-		}
-
-		update(obj);
-
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-
-	var replaceText = (function () {
-		var textStore = [];
-
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-		var sourceMap = obj.sourceMap;
-
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-		var sourceMap = obj.sourceMap;
-
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-
-		var blob = new Blob([css], { type: "text/css" });
-
-		var oldSrc = linkElement.href;
-
-		linkElement.href = URL.createObjectURL(blob);
-
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
+	module.exports = __webpack_require__.p + "fonts/fontawesome-webfont.woff2"
 
 /***/ },
-/* 6 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/*
-	 *      Copyright (C) 2005-2013 Team XBMC
-	 *      http://xbmc.org
-	 *
-	 *  This Program is free software; you can redistribute it and/or modify
-	 *  it under the terms of the GNU General Public License as published by
-	 *  the Free Software Foundation; either version 2, or (at your option)
-	 *  any later version.
-	 *
-	 *  This Program is distributed in the hope that it will be useful,
-	 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-	 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	 *  GNU General Public License for more details.
-	 *
-	 *  You should have received a copy of the GNU General Public License
-	 *  along with XBMC; see the file COPYING.  If not, see
-	 *  <http://www.gnu.org/licenses/>.
-	 *
-	 */
-
-	'use strict'
-
-	var MediaLibrary = __webpack_require__(7);
-	var NowPlayingManager = __webpack_require__(8);
-	var xbmc = __webpack_require__(9);
-	var mediaLibrary = new MediaLibrary(),
-	    nowPlayingManager = new NowPlayingManager();
-	xbmc.core.applyDeviceFixes();
-
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	 *      Copyright (C) 2005-2013 Team XBMC
-	 *      http://xbmc.org
-	 *
-	 *  This Program is free software; you can redistribute it and/or modify
-	 *  it under the terms of the GNU General Public License as published by
-	 *  the Free Software Foundation; either version 2, or (at your option)
-	 *  any later version.
-	 *
-	 *  This Program is distributed in the hope that it will be useful,
-	 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-	 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	 *  GNU General Public License for more details.
-	 *
-	 *  You should have received a copy of the GNU General Public License
-	 *  along with XBMC; see the file COPYING.  If not, see
-	 *  <http://www.gnu.org/licenses/>.
-	 *
-	 */
-	var $ = __webpack_require__(1);
-	var xbmc = __webpack_require__(9);
-
-	var MediaLibrary = function() {
-	    this.init();
-	};
-
-	MediaLibrary.prototype = {
-	    playlists: {},
-
-	    init: function() {
-	        this.bindControls();
-	        this.getPlaylists();
-	    },
-	    bindControls: function() {
-	        $('#musicLibrary').click($.proxy(this.musicLibraryOpen, this));
-	        $('#movieLibrary').click($.proxy(this.movieLibraryOpen, this));
-	        $('#tvshowLibrary').click($.proxy(this.tvshowLibraryOpen, this));
-	        $('#pictureLibrary').click($.proxy(this.pictureLibraryOpen, this));
-	        $('#remoteControl').click($.proxy(this.remoteControlOpen, this));
-	        $('#profiles').click($.proxy(this.profilesOpen, this));
-	        $('#overlay').click($.proxy(this.hideOverlay, this));
-	        $(window).resize($.proxy(this.updatePlayButtonLocation, this));
-	        $(document).on('keydown', $.proxy(this.handleKeyPress, this));
-	        $(document).on('contextmenu', $.proxy(this.handleContextMenu, this));
-	    },
-	    resetPage: function() {
-	        $('#musicLibrary').removeClass('selected');
-	        $('#movieLibrary').removeClass('selected');
-	        $('#tvshowLibrary').removeClass('selected');
-	        $('#remoteControl').removeClass('selected');
-	        $('#pictureLibrary').removeClass('selected');
-	        $('#profiles').removeClass('selected');
-	        this.hideOverlay();
-	    },
-	    replaceAll: function(haystack, needle, thread) {
-	        return (haystack || '').split(needle || '').join(thread || '');
-	    },
-	    getPlaylists: function() {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Playlist.GetPlaylists',
-	            'timeout': 3000,
-	            'success': function(data) {
-	                if (data && data.result && data.result.length > 0) {
-	                    $.each($(data.result), $.proxy(function(i, item) {
-	                        this.playlists[item.type] = item.playlistid;
-	                    }, this));
-	                }
-	            },
-	            'error': function(data, error) {
-	                xbmc.core.displayCommunicationError();
-	                setTimeout($.proxy(this.updateState, this), 2000);
-	            }
-	        });
-	    },
-	    remoteControlOpen: function(event) {
-	        this.resetPage();
-	        $('#remoteControl').addClass('selected');
-	        $('.contentContainer').hide();
-	        var libraryContainer = $('#remoteContainer');
-	        if (!libraryContainer || libraryContainer.length === 0) {
-	            $('#spinner').show();
-	            libraryContainer = $('<div>');
-	            libraryContainer.attr('id', 'remoteContainer')
-	                .addClass('contentContainer');
-	            $('#content').append(libraryContainer);
-	            var keys = [{
-	                name: 'up',
-	                width: '40px',
-	                height: '30px',
-	                top: '28px',
-	                left: '58px'
-	            }, {
-	                name: 'down',
-	                width: '40px',
-	                height: '30px',
-	                top: '122px',
-	                left: '58px'
-	            }, {
-	                name: 'left',
-	                width: '40px',
-	                height: '30px',
-	                top: '74px',
-	                left: '15px'
-	            }, {
-	                name: 'right',
-	                width: '40px',
-	                height: '30px',
-	                top: '74px',
-	                left: '104px'
-	            }, {
-	                name: 'ok',
-	                width: '40px',
-	                height: '30px',
-	                top: '74px',
-	                left: '58px'
-	            }, {
-	                name: 'back',
-	                width: '40px',
-	                height: '30px',
-	                top: '13px',
-	                left: '161px'
-	            }, {
-	                name: 'home',
-	                width: '40px',
-	                height: '30px',
-	                top: '154px',
-	                left: '8px'
-	            }, {
-	                name: 'mute',
-	                width: '40px',
-	                height: '30px',
-	                top: '107px',
-	                left: '391px'
-	            }, {
-	                name: 'power',
-	                width: '30px',
-	                height: '30px',
-	                top: '-3px',
-	                left: '13px'
-	            }, {
-	                name: 'volumeup',
-	                width: '30px',
-	                height: '30px',
-	                top: '49px',
-	                left: '422px'
-	            }, {
-	                name: 'volumedown',
-	                width: '30px',
-	                height: '30px',
-	                top: '49px',
-	                left: '367px'
-	            }, {
-	                name: 'playpause',
-	                width: '32px',
-	                height: '23px',
-	                top: '62px',
-	                left: '260px'
-	            }, {
-	                name: 'stop',
-	                width: '32px',
-	                height: '23px',
-	                top: '62px',
-	                left: '211px'
-	            }, {
-	                name: 'next',
-	                width: '38px',
-	                height: '25px',
-	                top: '102px',
-	                left: '304px'
-	            }, {
-	                name: 'previous',
-	                width: '38px',
-	                height: '25px',
-	                top: '101px',
-	                left: '160px'
-	            }, {
-	                name: 'forward',
-	                width: '32px',
-	                height: '23px',
-	                top: '102px',
-	                left: '259px'
-	            }, {
-	                name: 'rewind',
-	                width: '32px',
-	                height: '23px',
-	                top: '101px',
-	                left: '211px'
-	            }, {
-	                name: 'cleanlib_a',
-	                width: '46px',
-	                height: '26px',
-	                top: '47px',
-	                left: '553px'
-	            }, {
-	                name: 'updatelib_a',
-	                width: '46px',
-	                height: '26px',
-	                top: '47px',
-	                left: '492px'
-	            }, {
-	                name: 'cleanlib_v',
-	                width: '46px',
-	                height: '26px',
-	                top: '111px',
-	                left: '553px'
-	            }, {
-	                name: 'updatelib_v',
-	                width: '46px',
-	                height: '26px',
-	                top: '111px',
-	                left: '492px'
-	            }];
-	            for (var akey in keys) {
-	                var aremotekey = $('<p>').attr('id', keys[akey]['name']);
-	                aremotekey.addClass('remote_key')
-	                    .css('height', keys[akey]['height'])
-	                    .css('width', keys[akey]['width'])
-	                    .css('top', keys[akey]['top'])
-	                    .css('left', keys[akey]['left'])
-	                    .bind('click', {
-	                        key: keys[akey]['name']
-	                    }, $.proxy(this.pressRemoteKey, this));
-	                libraryContainer.append(aremotekey);
-	            }
-	        } else {
-	            libraryContainer.show();
-	            libraryContainer.trigger('scroll');
-	        }
-
-	        $('#spinner').hide();
-	    },
-	    shouldHandleEvent: function(event) {
-	        var inRemoteControl = $('#remoteControl').hasClass('selected');
-	        return (!event.ctrlKey && !event.altKey && inRemoteControl);
-	    },
-	    handleKeyPress: function(event) {
-	        if (!this.shouldHandleEvent(event)) {
-	            return true;
-	        }
-
-	        var keys = {
-	            8: 'back', // Back space
-	            13: 'ok', // Enter
-	            27: 'home', // Escape
-	            32: 'playpause', // Space bar
-	            37: 'left', // Left
-	            38: 'up', // Up
-	            39: 'right', // Right
-	            40: 'down', // Down
-	            93: 'contextmenu', // "Right Click"
-	            107: 'volumeup', // + (num keypad)
-	            109: 'volumedown', // - (num keypad)
-	            187: 'volumeup', // + (alnum keypad)
-	            189: 'volumedown' // - (alnum keypad)
-	        };
-	        var which = event.which;
-	        var key = keys[which];
-
-	        event.data = {
-	            key: key
-	        };
-
-	        if (!key) {
-	            event.data.key = 'text';
-
-	            // Letters
-	            if (which >= 65 && which <= 90) {
-	                var offset = event.shiftKey ? 0 : 32;
-	                event.data.text = String.fromCharCode(which + offset);
-	            }
-
-	            // Digits
-	            if (which >= 96 && which <= 105) {
-	                event.data.text = (which - 96) + "";
-	            }
-	        }
-
-	        if (event.data.key) {
-	            this.pressRemoteKey(event);
-	            return false;
-	        }
-	    },
-	    handleContextMenu: function(event) {
-	        if (!this.shouldHandleEvent(event)) {
-	            return true;
-	        }
-	        if (
-	            (event.target == document) || //Chrome/Opera
-	            (event.clientX === event.clientY && event.clientX === 0) //FF/IE
-	        ) {
-	            return false;
-	        } //keyboard event. cancel it.
-	        return true;
-	    },
-	    rpcCall: function(method, params) {
-	        var callObj = {
-	            'method': method
-	        };
-	        if (params) {
-	            callObj.params = params;
-	        }
-	        return xbmc.rpc.request(callObj);
-	    },
-	    pressRemoteKey: function(event) {
-	        var player = -1,
-	            keyPressed = event.data.key;
-	        $('#spinner').show();
-
-	        switch (keyPressed) {
-	            case 'up':
-	                return this.rpcCall('Input.Up');
-	            case 'down':
-	                return this.rpcCall('Input.Down');
-	            case 'left':
-	                return this.rpcCall('Input.Left');
-	            case 'right':
-	                return this.rpcCall('Input.Right');
-	            case 'ok':
-	                return this.rpcCall('Input.Select');
-	            case 'cleanlib_a':
-	                return this.rpcCall('AudioLibrary.Clean');
-	            case 'updatelib_a':
-	                return this.rpcCall('AudioLibrary.Scan');
-	            case 'cleanlib_v':
-	                return this.rpcCall('VideoLibrary.Clean');
-	            case 'updatelib_v':
-	                return this.rpcCall('VideoLibrary.Scan');
-	            case 'back':
-	                return this.rpcCall('Input.Back');
-	            case 'home':
-	                return this.rpcCall('Input.Home');
-	            case 'power':
-	                return this.rpcCall('System.Shutdown');
-	            case 'contextmenu':
-	                return this.rpcCall('Input.ContextMenu');
-	            case 'mute':
-	                return this.rpcCall('Application.SetMute', {
-	                    'mute': 'toggle'
-	                });
-	            case 'volumeup':
-	                return this.rpcCall('Application.SetVolume', {
-	                    'volume': 'increment'
-	                });
-	            case 'volumedown':
-	                return this.rpcCall('Application.SetVolume', {
-	                    'volume': 'decrement'
-	                });
-	            case 'text':
-	                return this.rpcCall('Input.SendText', {
-	                    'text': event.data.text
-	                });
-	        }
-
-	        // TODO: Get active player
-	        if ($('#videoDescription').is(':visible')) {
-	            player = this.playlists["video"];
-	        } else if ($('#audioDescription').is(':visible')) {
-	            player = this.playlists["audio"];
-	        }
-
-	        if (player >= 0) {
-	            switch (keyPressed) {
-	                case 'playpause':
-	                    return this.rpcCall('Player.PlayPause', {
-	                        'playerid': player
-	                    });
-	                case 'stop':
-	                    return this.rpcCall('Player.Stop', {
-	                        'playerid': player
-	                    });
-	                case 'next':
-	                    return this.rpcCall('Player.GoTo', {
-	                        'playerid': player,
-	                        'to': 'next'
-	                    });
-	                case 'previous':
-	                    return this.rpcCall('Player.GoTo', {
-	                        'playerid': player,
-	                        'to': 'previous'
-	                    });
-	                case 'forward':
-	                    return this.rpcCall('Player.SetSpeed', {
-	                        'playerid': player,
-	                        'speed': 'increment'
-	                    });
-	                case 'rewind':
-	                    return this.rpcCall('Player.SetSpeed', {
-	                        'playerid': player,
-	                        'speed': 'decrement'
-	                    });
-	            }
-	        }
-	    },
-	    musicLibraryOpen: function(event) {
-	        this.resetPage();
-	        $('#musicLibrary').addClass('selected');
-	        $('.contentContainer').hide();
-	        var libraryContainer = $('#libraryContainer');
-	        if (!libraryContainer || libraryContainer.length === 0) {
-	            $('#spinner').show();
-	            libraryContainer = $('<div>');
-	            libraryContainer.attr('id', 'libraryContainer')
-	                .addClass('contentContainer');
-	            $('#content').append(libraryContainer);
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'AudioLibrary.GetAlbums',
-	                'params': {
-	                    'limits': {
-	                        'start': 0
-	                    },
-	                    'properties': [
-	                        'description',
-	                        'theme',
-	                        'mood',
-	                        'style',
-	                        'type',
-	                        'albumlabel',
-	                        'artist',
-	                        'genre',
-	                        'rating',
-	                        'title',
-	                        'year',
-	                        'thumbnail'
-	                    ],
-	                    'sort': {
-	                        'method': 'artist'
-	                    }
-	                },
-	                'success': function(data) {
-	                    if (data && data.result && data.result.albums) {
-	                        this.albumList = data.result.albums;
-	                        $.each($(this.albumList), $.proxy(function(i, item) {
-	                            var floatableAlbum = this.generateThumb('album', item.thumbnail, item.title, item.artist);
-	                            floatableAlbum.bind('click', {
-	                                album: item
-	                            }, $.proxy(this.displayAlbumDetails, this));
-	                            libraryContainer.append(floatableAlbum);
-	                        }, this));
-	                        libraryContainer.append($('<div>').addClass('footerPadding'));
-	                        $('#spinner').hide();
-	                        libraryContainer.bind('scroll', {
-	                            activeLibrary: libraryContainer
-	                        }, $.proxy(this.updateScrollEffects, this));
-	                        libraryContainer.trigger('scroll');
-	                        myScroll = new iScroll('libraryContainer');
-	                    } else {
-	                        libraryContainer.html('');
-	                    }
-	                }
-	            });
-	        } else {
-	            libraryContainer.show();
-	            libraryContainer.trigger('scroll');
-	        }
-	    },
-	    getThumbnailPath: function(thumbnail) {
-	        return thumbnail ? ('image/' + encodeURI(thumbnail)) : xbmc.core.DEFAULT_ALBUM_COVER;
-	    },
-	    generateThumb: function(type, thumbnail, title, artist) {
-	        title = title || '';
-	        artist = artist || '';
-
-	        var showTitle = title,
-	            showArtist = artist;
-	        var floatableAlbum = $('<div>');
-	        var path = this.getThumbnailPath(thumbnail);
-	        if (title.length > 21) {
-	            showTitle = $.trim(title.substr(0, 18)) + '...';
-	        }
-	        if (artist.length > 22) {
-	            showArtist = $.trim(artist.substr(0, 20)) + '...';
-	        }
-	        var className = '';
-	        var code = '';
-	        switch (type) {
-	            case 'album':
-	                className = 'floatableAlbum';
-	                code = '<p class="album" title="' + title + '">' + showTitle + '</p><p class="artist" title="' + artist + '">' + artist + '</p>';
-	                break;
-	            case 'movie':
-	                className = 'floatableMovieCover';
-	                code = '<p class="album" title="' + title + '">' + showTitle + '</p>';
-	                break;
-	            case 'tvshow':
-	                className = 'floatableTVShowCover';
-	                break;
-	            case 'tvshowseason':
-	                className = 'floatableTVShowCoverSeason';
-	                break;
-	            case 'image':
-	            case 'directory':
-	                className = 'floatableAlbum';
-	                code = '<p class="album" title="' + title + '">' + showTitle + '</p>';
-	                break;
-	            case 'profile':
-	                className = 'floatableProfileThumb';
-	                code = '<p class="album" title="' + title + '">' + showTitle + '</p>';
-	                break;
-	        }
-	        return floatableAlbum.addClass(className).html('<div class="imgWrapper"><div class="inner"><img src="' + path + '" alt="' + title + '" /></div></div>' + code);
-	    },
-	    showAlbumSelectorBlock: function(album) {
-	        if (album) {
-	            var prevAlbum = null,
-	                nextAlbum = null;
-	            $.each($(this.albumList), $.proxy(function(i, item) {
-	                if (item.albumid == album.albumid) {
-	                    if (this.albumList.length > 1) {
-	                        prevAlbum = this.albumList[i <= 0 ? this.albumList.length - 1 : i - 1];
-	                        nextAlbum = this.albumList[i >= this.albumList.length ? 0 : i + 1];
-	                    }
-	                    return false; /* .each break */
-	                }
-	            }, this));
-	            var albumSelectorBlock = $('#albumSelector');
-	            if (!albumSelectorBlock || albumSelectorBlock.length === 0) {
-	                albumSelectorBlock = $('<div>');
-	                albumSelectorBlock.attr('id', 'albumSelector')
-	                    .html('<table><tr><td class="allAlbums">All Albums</td><td class="activeAlbumTitle"></td><td class="prevAlbum">&nbsp;</td><td class="nextAlbum">&nbsp;</td></tr></table>');
-	                $('#content').prepend(albumSelectorBlock);
-	                $('#albumSelector .allAlbums').bind('click', $.proxy(this.hideAlbumDetails, this));
-	            }
-	            $('#albumSelector .prevAlbum').unbind();
-	            $('#albumSelector .nextAlbum').unbind();
-	            if (prevAlbum) {
-	                $('#albumSelector .prevAlbum').bind('click', {
-	                    album: prevAlbum
-	                }, $.proxy(this.displayAlbumDetails, this));
-	            }
-	            if (nextAlbum) {
-	                $('#albumSelector .nextAlbum').bind('click', {
-	                    album: nextAlbum
-	                }, $.proxy(this.displayAlbumDetails, this));
-	            }
-	            $('#albumSelector .activeAlbumTitle').html(album.title || 'Unknown Album');
-	            albumSelectorBlock.show();
-	        }
-	    },
-	    hideAlbumDetails: function() {
-	        $('.contentContainer').hide();
-	        this.musicLibraryOpen();
-	    },
-	    displayAlbumDetails: function(event) {
-	        this.showAlbumSelectorBlock(event.data.album);
-	        var albumDetailsContainer = $('#albumDetails' + event.data.album.albumid);
-	        $('#topScrollFade').hide();
-	        if (!albumDetailsContainer || albumDetailsContainer.length === 0) {
-	            $('#spinner').show();
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'AudioLibrary.GetSongs',
-	                'params': {
-	                    'properties': [
-	                        'title',
-	                        'artist',
-	                        'genre',
-	                        'track',
-	                        'duration',
-	                        'year',
-	                        'rating',
-	                        'playcount'
-	                    ],
-	                    'sort': {
-	                        'method': 'track'
-	                    },
-	                    'filter': {
-	                        'albumid': event.data.album.albumid
-	                    }
-	                },
-	                'success': function(data) {
-	                    albumDetailsContainer = $('<div>');
-	                    albumDetailsContainer.attr('id', 'albumDetails' + event.data.album.albumid)
-	                        .addClass('contentContainer')
-	                        .addClass('albumContainer')
-	                        .html('<table class="albumView"><thead><tr class="headerRow"><th>Artwork</th><th>&nbsp;</th><th>Name</th><th class="time">Time</th><th>Artist</th><th>Genre</th></tr></thead><tbody class="resultSet"></tbody></table>');
-	                    $('.contentContainer').hide();
-	                    $('#content').append(albumDetailsContainer);
-	                    var albumThumbnail = event.data.album.thumbnail;
-	                    var albumTitle = event.data.album.title || 'Unknown Album';
-	                    var albumArtist = event.data.album.artist.join(', ') || 'Unknown Artist';
-	                    var trackCount = data.result.limits.total;
-	                    $.each($(data.result.songs), $.proxy(function(i, item) {
-	                        var trackRow, trackNumberTD;
-	                        if (i === 0) {
-	                            trackRow = $('<tr>').addClass('trackRow').addClass('tr' + i % 2);
-	                            trackRow.append($('<td>').attr('rowspan', ++trackCount + 1).addClass('albumThumb'));
-	                            for (var a = 0; a < 5; a++) {
-	                                trackRow.append($('<td>').html('&nbsp').attr('style', 'display: none'));
-	                            }
-	                            $('#albumDetails' + event.data.album.albumid + ' .resultSet').append(trackRow);
-	                        }
-	                        trackRow = $('<tr>').addClass('trackRow').addClass('tr' + i % 2).bind('click', {
-	                            album: event.data.album,
-	                            itmnbr: i
-	                        }, $.proxy(this.playTrack, this));
-	                        trackNumberTD = $('<td>').html(item.track);
-
-	                        trackRow.append(trackNumberTD);
-	                        var trackTitleTD = $('<td>').html(item.title);
-
-	                        trackRow.append(trackTitleTD);
-	                        var trackDurationTD = $('<td>')
-	                            .addClass('time')
-	                            .html(xbmc.core.durationToString(item.duration));
-
-	                        trackRow.append(trackDurationTD);
-	                        var trackArtistTD = $('<td>').html(item.artist.join(', '));
-
-	                        trackRow.append(trackArtistTD);
-	                        var trackGenreTD = $('<td>').html(item.genre.join(', '));
-
-	                        trackRow.append(trackGenreTD);
-	                        $('#albumDetails' + event.data.album.albumid + ' .resultSet').append(trackRow);
-	                    }, this));
-	                    if (trackCount > 0) {
-	                        var trackRow = $('<tr>').addClass('fillerTrackRow'),
-	                            i;
-	                        for (i = 0; i < 5; i++) {
-	                            trackRow.append($('<td>').html('&nbsp'));
-	                        }
-	                        $('#albumDetails' + event.data.album.albumid + ' .resultSet').append(trackRow);
-
-	                        var trackRow2 = $('<tr>').addClass('fillerTrackRow2');
-	                        trackRow2.append($('<td>').addClass('albumBG').html('&nbsp'));
-	                        for (i = 0; i < 5; i++) {
-	                            trackRow2.append($('<td>').html('&nbsp'));
-	                        }
-	                        $('#albumDetails' + event.data.album.albumid + ' .resultSet').append(trackRow2);
-	                    }
-	                    $('#albumDetails' + event.data.album.albumid + ' .albumThumb')
-	                        .append(this.generateThumb('album', albumThumbnail, albumTitle, albumArtist))
-	                        .append($('<div>').addClass('footerPadding'));
-	                    $('#spinner').hide();
-	                    myScroll = new iScroll('albumDetails' + event.data.album.albumid);
-	                }
-	            });
-	        } else {
-	            $('.contentContainer').hide();
-	            $('#albumDetails' + event.data.album.albumid).show();
-	        }
-	    },
-	    togglePosterView: function(event) {
-	        var view = event.data.mode;
-	        var wthumblist, hthumblist, hthumbdetails;
-	        $("#toggleBanner").removeClass('activeMode');
-	        $("#togglePoster").removeClass('activeMode');
-	        $("#toggleLandscape").removeClass('activeMode');
-	        switch (view) {
-	            case 'poster':
-	                xbmc.core.setCookie('TVView', 'poster');
-	                wthumblist = '135px';
-	                hthumblist = '199px';
-	                hthumbdetails = '559px';
-	                $("#togglePoster").addClass('activeMode');
-	                break;
-	            case 'landscape':
-	                xbmc.core.setCookie('TVView', 'landscape');
-	                wthumblist = '210px';
-	                hthumblist = '118px';
-	                hthumbdetails = '213px';
-	                $("#toggleLandscape").addClass('activeMode');
-	                break;
-	            default:
-	                xbmc.core.setCookie('TVView', 'banner');
-	                wthumblist = '379px';
-	                hthumblist = '70px';
-	                hthumbdetails = '70px';
-	                $("#toggleBanner").addClass('activeMode');
-	                break;
-	        }
-	        $(".floatableTVShowCover, .floatableTVShowCover div.imgWrapper, .floatableTVShowCover img, .floatableTVShowCover div.imgWrapper div.inner").css('width', wthumblist).css('height', hthumblist);
-	        $(".floatableTVShowCoverSeason div.imgWrapper, .floatableTVShowCoverSeason div.imgWrapper div.inner,.floatableTVShowCoverSeason img, .floatableTVShowCoverSeason").css('height', hthumbdetails);
-	    },
-	    displayTVShowDetails: function(event) {
-	        var tvshowDetailsContainer = $('#tvShowDetails' + event.data.tvshow.tvshowid);
-	        $('#topScrollFade').hide();
-	        toggle = this.toggle.detach();
-	        if (!tvshowDetailsContainer || tvshowDetailsContainer.length === 0) {
-	            $('#spinner').show();
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'VideoLibrary.GetSeasons',
-	                'params': {
-	                    'properties': [
-	                        'season',
-	                        'showtitle',
-	                        'playcount',
-	                        'episode',
-	                        'thumbnail',
-	                        'fanart'
-	                    ],
-	                    'tvshowid': event.data.tvshow.tvshowid
-	                },
-	                'success': function(data) {
-	                    tvshowDetailsContainer = $('<div>');
-	                    tvshowDetailsContainer.attr('id', 'tvShowDetails' + event.data.tvshow.tvshowid)
-	                        .css('display', 'none')
-	                        .addClass('contentContainer')
-	                        .addClass('tvshowContainer');
-	                    var showThumb = this.generateThumb('tvshowseason', event.data.tvshow.thumbnail, event.data.tvshow.title);
-	                    if (data && data.result && data.result.seasons && data.result.seasons.length > 0) {
-	                        var showDetails = $('<div>').addClass('showDetails');
-	                        showDetails.append(toggle);
-	                        showDetails.append($('<p>').html(data.result.seasons[0].showtitle).addClass('showTitle'));
-	                        var seasonSelectionSelect = $('<select>').addClass('seasonPicker');
-	                        this.tvActiveShowContainer = tvshowDetailsContainer;
-	                        $.each($(data.result.seasons), function(i, item) {
-	                            var season = $('<option>').attr('value', i);
-	                            season.text(item.label);
-	                            seasonSelectionSelect.append(season);
-	                        });
-	                        seasonSelectionSelect.bind('change', {
-	                            tvshow: event.data.tvshow.tvshowid,
-	                            seasons: data.result.seasons,
-	                            element: seasonSelectionSelect
-	                        }, $.proxy(this.displaySeasonListings, this));
-	                        showDetails.append(seasonSelectionSelect);
-	                        tvshowDetailsContainer.append(showDetails);
-	                        tvshowDetailsContainer.append(showThumb);
-	                        seasonSelectionSelect.trigger('change');
-	                        $('#content').append(tvshowDetailsContainer);
-	                        if (xbmc.core.getCookie('TVView') !== null &&
-	                            xbmc.core.getCookie('TVView') !== 'banner'
-	                        ) {
-	                            var view = xbmc.core.getCookie('TVView');
-	                            switch (view) {
-	                                case 'poster':
-	                                    togglePoster.trigger('click');
-	                                    break;
-	                                case 'landscape':
-	                                    toggleLandscape.trigger('click');
-	                                    break;
-	                            }
-	                        }
-	                        tvshowDetailsContainer.fadeIn();
-	                    }
-	                    $('#spinner').hide();
-	                }
-	            });
-	        } else {
-	            $('.contentContainer').hide();
-	            $('#tvShowDetails' + event.data.tvshow.tvshowid).show();
-	            $('#tvShowDetails' + event.data.tvshow.tvshowid + ' select').trigger('change');
-	        }
-	    },
-	    displaySeasonListings: function(event) {
-	        var selectedVal = event.data.element.val();
-	        var seasons = event.data.seasons;
-	        $('#topScrollFade').hide();
-	        var oldListings = $('.episodeListingsContainer', this.tvActiveShowContainer).fadeOut();
-	        this.tvActiveSeason = selectedVal;
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'VideoLibrary.GetEpisodes',
-	            'params': {
-	                'properties': [
-	                    'title',
-	                    'thumbnail',
-	                    'episode',
-	                    'plot',
-	                    'season'
-	                ],
-	                'season': seasons[selectedVal].season,
-	                'tvshowid': event.data.tvshow
-	            },
-	            'success': function(data) {
-	                var episodeListingsContainer = $('<div>').addClass('episodeListingsContainer');
-	                var episodeTable = $('<table>').addClass('seasonView').html('<thead><tr class="headerRow"><th class="thumbHeader">N&deg;</th><th>Title</th><th class="thumbHeader">Thumb</th><th class="thumbHeader">Details</th></tr></thead><tbody class="resultSet"></tbody>');
-	                $.each($(data.result.episodes), $.proxy(function(i, item) {
-	                    var episodeRow = $('<tr>').addClass('episodeRow').addClass('tr' + i % 2);
-	                    var episodePictureImg = $('<img>').bind('click', {
-	                        episode: item
-	                    }, $.proxy(this.playTVShow, this)).css('cursor', 'pointer');
-	                    episodePictureImg.attr('src', this.getThumbnailPath(item.thumbnail));
-	                    var episodePicture = $('<td>').addClass('episodeThumb').append(episodePictureImg).bind('click', {
-	                        episode: item
-	                    }, $.proxy(this.playTVShow, this));
-	                    var episodeNumber = $('<td>').addClass('episodeNumber').html(item.episode).bind('click', {
-	                        episode: item
-	                    }, $.proxy(this.playTVShow, this));
-	                    var episodeTitle = $('<td>').html(item.title).bind('click', {
-	                        episode: item
-	                    }, $.proxy(this.playTVShow, this));
-	                    var episodeDetails = $('<td class="info">').html('').bind('click', {
-	                        episode: item
-	                    }, $.proxy(this.displayEpisodeDetails, this)).css('cursor', 'pointer');
-	                    episodeRow.append(episodeNumber).append(episodeTitle).append(episodePicture).append(episodeDetails);
-	                    episodeTable.append(episodeRow);
-	                }, this));
-	                episodeListingsContainer.append(episodeTable);
-	                $(this.tvActiveShowContainer).append(episodeListingsContainer);
-	            }
-	        });
-	    },
-	    displayEpisodeDetails: function(event) {
-	        var episodeDetails = $('<div>').attr('id', 'episode-' + event.data.episode.episodeid).addClass('episodePopoverContainer');
-	        episodeDetails.append($('<img>').attr('src', 'images/close-button.png').addClass('closeButton').bind('click', $.proxy(this.hideOverlay, this)));
-	        episodeDetails.append($('<img>').attr('src', this.getThumbnailPath(event.data.episode.thumbnail)).addClass('episodeCover'));
-	        episodeDetails.append($('<div>').addClass('playIcon').bind('click', {
-	            episode: event.data.episode
-	        }, $.proxy(this.playTVShow, this)));
-	        var episodeTitle = $('<p>').addClass('episodeTitle');
-	        var yearText = event.data.episode.year ? ' <span class="year">(' + event.data.episode.year + ')</span>' : '';
-	        episodeTitle.html(event.data.episode.title + yearText);
-	        episodeDetails.append(episodeTitle);
-	        if (event.data.episode.runtime) {
-	            episodeDetails.append($('<p>').addClass('runtime').html('<strong>Runtime:</strong> ' + Math.ceil(event.data.episode.runtime / 60) + ' minutes'));
-	        }
-	        if (event.data.episode.season) {
-	            episodeDetails.append($('<p>').addClass('season').html('<strong>Season:</strong> ' + event.data.episode.season));
-	        }
-	        if (event.data.episode.episode) {
-	            episodeDetails.append($('<p>').addClass('episode').html('<strong>Episode:</strong> ' + event.data.episode.episode));
-	        }
-	        if (event.data.episode.plot) {
-	            episodeDetails.append($('<p>').addClass('plot').html('<strong>Plot:</strong> <br/><br/>' + event.data.episode.plot));
-	        }
-	        if (event.data.episode.genre) {
-	            episodeDetails.append($('<p>').addClass('genre').html('<strong>Genre:</strong> ' + event.data.episode.genre));
-	        }
-	        if (event.data.episode.director) {
-	            episodeDetails.append($('<p>').addClass('director').html('<strong>Directed By:</strong> ' + event.data.episode.director));
-	        }
-	        this.activeCover = episodeDetails;
-	        $('body').append(episodeDetails);
-	        $('#overlay').show();
-	        this.updatePlayButtonLocation();
-	    },
-	    playTVShow: function(event) {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Player.Open',
-	            'params': {
-	                'item': {
-	                    'episodeid': event.data.episode.episodeid
-	                }
-	            },
-	            'success': function(data) {
-	                this.hideOverlay();
-	            }
-	        });
-	    },
-	    hideOverlay: function(event) {
-	        if (this.activeCover) {
-	            $(this.activeCover).remove();
-	            this.activeCover = null;
-	        }
-	        $('#overlay').hide();
-	    },
-	    updatePlayButtonLocation: function(event) {
-	        var movieContainer = $('.movieCover'),
-	            playIcon;
-	        if (movieContainer.length > 0) {
-	            playIcon = $('.playIcon');
-	            if (playIcon.length > 0) {
-	                var heightpi = $(movieContainer[0]).height();
-	                playIcon.width(Math.floor(0.65 * heightpi));
-	                playIcon.height(heightpi);
-	            }
-	        }
-	        var episodeContainer = $('.episodeCover');
-	        if (episodeContainer.length > 0) {
-	            playIcon = $('.playIcon');
-	            if (playIcon.length > 0) {
-	                var widthpi = $(episodeContainer[0]).width();
-	                playIcon.width(widthpi);
-	                //assume 16/9 thumb
-	                playIcon.height(Math.floor(widthpi * 9 / 16));
-	            }
-	        }
-	    },
-	    playMovie: function(event) {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Player.Open',
-	            'params': {
-	                'item': {
-	                    'movieid': event.data.movie.movieid
-	                }
-	            },
-	            'success': function(data) {
-	                this.hideOverlay();
-	            }
-	        });
-	    },
-	    displayMovieDetails: function(event) {
-	        var movieDetails = $('<div>').attr('id', 'movie-' + event.data.movie.movieid).addClass('moviePopoverContainer');
-	        movieDetails.append($('<img>').attr('src', 'images/close-button.png').addClass('closeButton').bind('click', $.proxy(this.hideOverlay, this)));
-	        movieDetails.append($('<img>').attr('src', this.getThumbnailPath(event.data.movie.thumbnail)).addClass('movieCover'));
-	        movieDetails.append($('<div>').addClass('playIcon').bind('click', {
-	            movie: event.data.movie
-	        }, $.proxy(this.playMovie, this)));
-	        var movieTitle = $('<p>').addClass('movieTitle');
-	        var yearText = event.data.movie.year ? ' <span class="year">(' + event.data.movie.year + ')</span>' : '';
-	        movieTitle.html(event.data.movie.title + yearText);
-	        movieDetails.append(movieTitle);
-	        if (event.data.movie.runtime) {
-	            movieDetails.append($('<p>').addClass('runtime').html('<strong>Runtime:</strong> ' + Math.ceil(event.data.movie.runtime / 60) + ' minutes'));
-	        }
-	        if (event.data.movie.plot) {
-	            movieDetails.append($('<p>').addClass('plot').html(event.data.movie.plot));
-	        }
-	        if (event.data.movie.genre) {
-	            movieDetails.append($('<p>').addClass('genre').html('<strong>Genre:</strong> ' + event.data.movie.genre));
-	        }
-	        if (event.data.movie.director) {
-	            movieDetails.append($('<p>').addClass('director').html('<strong>Directed By:</strong> ' + event.data.movie.director));
-	        }
-	        this.activeCover = movieDetails;
-	        $('body').append(movieDetails);
-	        $('#overlay').show();
-	        this.updatePlayButtonLocation();
-	    },
-	    playTrack: function(event) {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Playlist.Clear',
-	            'params': {
-	                'playlistid': this.playlists["audio"]
-	            },
-	            'success': function(data) {
-	                xbmc.rpc.request({
-	                    'context': this,
-	                    'method': 'Playlist.Add',
-	                    'params': {
-	                        'playlistid': this.playlists["audio"],
-	                        'item': {
-	                            'albumid': event.data.album.albumid
-	                        }
-	                    },
-	                    'success': function(data) {
-	                        xbmc.rpc.request({
-	                            'method': 'Player.Open',
-	                            'params': {
-	                                'item': {
-	                                    'playlistid': this.playlists["audio"],
-	                                    'position': event.data.itmnbr
-	                                }
-	                            },
-	                            'success': function() {}
-	                        });
-	                    }
-	                });
-	            }
-	        });
-	    },
-	    loadProfile: function(event) {
-	        return xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Profiles.LoadProfile',
-	            'params': {
-	                'profile': event.data.profile.label
-	            }
-	        });
-	    },
-	    movieLibraryOpen: function() {
-	        this.resetPage();
-	        $('#movieLibrary').addClass('selected');
-	        $('.contentContainer').hide();
-	        var libraryContainer = $('#movieLibraryContainer');
-	        if (!libraryContainer || libraryContainer.length === 0) {
-	            $('#spinner').show();
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'VideoLibrary.GetMovies',
-	                'params': {
-	                    'limits': {
-	                        'start': 0
-	                    },
-	                    'properties': [
-	                        'genre',
-	                        'director',
-	                        'trailer',
-	                        'tagline',
-	                        'plot',
-	                        'plotoutline',
-	                        'title',
-	                        'originaltitle',
-	                        'lastplayed',
-	                        'runtime',
-	                        'year',
-	                        'playcount',
-	                        'rating',
-	                        'thumbnail',
-	                        'file'
-	                    ],
-	                    'sort': {
-	                        'method': 'sorttitle',
-	                        'ignorearticle': true
-	                    }
-	                },
-	                'success': function(data) {
-	                    if (data && data.result && data.result.movies) {
-	                        libraryContainer = $('<div>');
-	                        libraryContainer.attr('id', 'movieLibraryContainer')
-	                            .addClass('contentContainer');
-	                        $('#content').append(libraryContainer);
-	                    } else {
-	                        libraryContainer.html('');
-	                    }
-	                    $.each($(data.result.movies), $.proxy(function(i, item) {
-	                        var floatableMovieCover = this.generateThumb('movie', item.thumbnail, item.title);
-	                        floatableMovieCover.bind('click', {
-	                            movie: item
-	                        }, $.proxy(this.displayMovieDetails, this));
-	                        libraryContainer.append(floatableMovieCover);
-	                    }, this));
-	                    libraryContainer.append($('<div>').addClass('footerPadding'));
-	                    $('#spinner').hide();
-	                    libraryContainer.bind('scroll', {
-	                        activeLibrary: libraryContainer
-	                    }, $.proxy(this.updateScrollEffects, this));
-	                    libraryContainer.trigger('scroll');
-	                    myScroll = new iScroll('movieLibraryContainer');
-	                }
-	            });
-	        } else {
-	            libraryContainer.show();
-	            libraryContainer.trigger('scroll');
-	        }
-	    },
-	    tvshowLibraryOpen: function() {
-	        this.resetPage();
-	        $('#tvshowLibrary').addClass('selected');
-	        $('.contentContainer').hide();
-	        var libraryContainer = $('#tvshowLibraryContainer');
-	        if (!libraryContainer || libraryContainer.length === 0) {
-	            $('#spinner').show();
-	            toggle = $('<p>').addClass('toggle');
-	            togglePoster = $('<span>Poster</span>');
-	            togglePoster.attr('id', 'togglePoster')
-	                .css('cursor', 'pointer')
-	                .bind('click', {
-	                    mode: 'poster'
-	                }, $.proxy(this.togglePosterView, this));
-	            toggleBanner = $('<span>Banner</span>');
-	            toggleBanner.attr('id', 'toggleBanner')
-	                .css('cursor', 'pointer')
-	                .addClass('activeMode')
-	                .bind('click', {
-	                    mode: 'banner'
-	                }, $.proxy(this.togglePosterView, this));
-	            toggleLandscape = $('<span>Landscape</span>');
-	            toggleLandscape.attr('id', 'toggleLandscape')
-	                .css('cursor', 'pointer')
-	                .bind('click', {
-	                    mode: 'landscape'
-	                }, $.proxy(this.togglePosterView, this));
-	            toggle.append(toggleBanner).append(' | ').append(togglePoster).append(' | ').append(toggleLandscape);
-	            this.toggle = toggle;
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'VideoLibrary.GetTVShows',
-	                'params': {
-	                    'properties': [
-	                        'genre',
-	                        'plot',
-	                        'title',
-	                        'lastplayed',
-	                        'episode',
-	                        'year',
-	                        'playcount',
-	                        'rating',
-	                        'thumbnail',
-	                        'studio',
-	                        'mpaa',
-	                        'premiered'
-	                    ]
-	                },
-	                'success': function(data) {
-	                    if (data && data.result && data.result.tvshows) {
-	                        libraryContainer = $('<div>');
-	                        libraryContainer.append(toggle);
-	                        libraryContainer.attr('id', 'tvshowLibraryContainer')
-	                            .addClass('contentContainer');
-	                        $('#content').append(libraryContainer);
-	                    } else {
-	                        libraryContainer.html('');
-	                    }
-	                    $.each($(data.result.tvshows), $.proxy(function(i, item) {
-	                        var floatableTVShowCover = this.generateThumb('tvshow', item.thumbnail, item.title);
-	                        floatableTVShowCover.bind('click', {
-	                            tvshow: item
-	                        }, $.proxy(this.displayTVShowDetails, this));
-	                        libraryContainer.append(floatableTVShowCover);
-	                    }, this));
-	                    libraryContainer.append($('<div>').addClass('footerPadding'));
-	                    $('#spinner').hide();
-	                    libraryContainer.bind('scroll', {
-	                        activeLibrary: libraryContainer
-	                    }, $.proxy(this.updateScrollEffects, this));
-	                    libraryContainer.trigger('scroll');
-	                    myScroll = new iScroll('tvshowLibraryContainer');
-	                    if (xbmc.core.getCookie('TVView') !== null &&
-	                        xbmc.core.getCookie('TVView') !== 'banner'
-	                    ) {
-	                        var view = xbmc.core.getCookie('TVView');
-	                        switch (view) {
-	                            case 'poster':
-	                                togglePoster.trigger('click');
-	                                break;
-	                            case 'landscape':
-	                                toggleLandscape.trigger('click');
-	                                break;
-	                        }
-	                    }
-	                }
-	            });
-	        } else {
-	            libraryContainer.prepend($(".toggle").detach()).show();
-	            libraryContainer.trigger('scroll');
-	        }
-	    },
-	    profilesOpen: function() {
-	        this.resetPage();
-	        $('#profiles').addClass('selected');
-	        $('.contentContainer').hide();
-	        var libraryContainer = $('#profilesContainer');
-	        if (!libraryContainer || libraryContainer.length == 0) {
-	            $('#spinner').show();
-	            var currentProfile = "";
-	            xbmc.rpc.request({
-	                'method': 'Profiles.GetCurrentProfile',
-	                'params': {
-	                    'properties': [
-	                        'lockmode'
-	                    ]
-	                },
-	                'success': function(data) {
-	                    if (data)
-	                        if (data.result)
-	                            currentProfile = data.result.label;
-	                }
-	            });
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'Profiles.GetProfiles',
-	                'params': {
-	                    'limits': {
-	                        'start': 0
-	                    },
-	                    'properties': [
-	                        'thumbnail'
-	                    ],
-	                    'sort': {
-	                        'method': 'sorttitle',
-	                        'ignorearticle': true
-	                    }
-	                },
-	                'success': function(data) {
-	                    if (data && data.result && data.result.profiles) {
-	                        libraryContainer = $('<div>');
-	                        libraryContainer.attr('id', 'profilesContainer')
-	                            .addClass('contentContainer');
-	                        $('#content').append(libraryContainer);
-	                    } else {
-	                        libraryContainer.html('');
-	                    }
-	                    $.each($(data.result.profiles), $.proxy(function(i, item) {
-	                        var itemLabel = item.label;
-	                        if (currentProfile == itemLabel) {
-	                            itemLabel = itemLabel + "*";
-	                        }
-	                        var floatableProfileThumb = this.generateThumb('profile', item.thumbnail, itemLabel);
-	                        floatableProfileThumb.bind('click', {
-	                            profile: item
-	                        }, $.proxy(this.loadProfile, this));
-	                        libraryContainer.append(floatableProfileThumb);
-	                    }, this));
-	                    libraryContainer.append($('<div>').addClass('footerPadding'));
-	                    $('#spinner').hide();
-	                    libraryContainer.bind('scroll', {
-	                        activeLibrary: libraryContainer
-	                    }, $.proxy(this.updateScrollEffects, this));
-	                    libraryContainer.trigger('scroll');
-	                    myScroll = new iScroll('profilesContainer');
-	                }
-	            });
-	        } else {
-	            libraryContainer.show();
-	            libraryContainer.trigger('scroll');
-	        }
-	    },
-	    updateScrollEffects: function(event) {
-	        if (event.data.activeLibrary && $(event.data.activeLibrary).scrollTop() > 0) {
-	            $('#topScrollFade').fadeIn();
-	        } else {
-	            $('#topScrollFade').fadeOut();
-	        }
-	    },
-	    startSlideshow: function(event) {
-	        xbmc.rpc.request({
-	            'method': 'Player.Open',
-	            'params': {
-	                'item': {
-	                    'recursive': 'true',
-	                    'random': 'true',
-	                    'path': this.replaceAll(event.data.directory.file, "\\", "\\\\")
-	                }
-	            },
-	            'success': function() {}
-	        });
-	    },
-	    showDirectory: function(event) {
-	        var directory = event.data.directory.file;
-	        var jsonDirectory = this.replaceAll(directory, "\\", "\\\\");
-	        this.resetPage();
-	        $('#pictureLibrary').addClass('selected');
-	        $('.contentContainer').hide();
-	        var libraryContainer = $('#pictureLibraryDirContainer' + directory);
-	        if (!libraryContainer || libraryContainer.length === 0) {
-	            $('#spinner').show();
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'Files.GetDirectory',
-	                'params': {
-	                    'media': 'pictures',
-	                    'directory': jsonDirectory
-	                },
-	                'success': function(data) {
-	                    if (data && data.result && (data.result.directories || data.result.files)) {
-	                        libraryContainer = $('<div>');
-	                        libraryContainer.attr('id', 'pictureLibraryDirContainer' + directory)
-	                            .addClass('contentContainer');
-	                        $('#content').append(libraryContainer);
-	                        var breadcrumb = $('<div>');
-	                        var seperator = '/';
-	                        var item = '';
-	                        var directoryArray = directory.split(seperator);
-	                        $.each(directoryArray, function(i, v) {
-	                            if (v !== '') {
-	                                item += v + seperator;
-	                                breadcrumb.append($('<div>').text(' > ' + v).css('float', 'left').addClass('breadcrumb'));
-	                            }
-	                        });
-	                        libraryContainer.append(breadcrumb);
-	                        libraryContainer.append($('<div>').css('clear', 'both'));
-	                        if (data.result.files) {
-	                            $.each($(data.result.files), $.proxy(function(i, item) {
-	                                if (item.filetype == "file") {
-	                                    var floatableImage = this.generateThumb('image', item.file, item.label);
-	                                    libraryContainer.append(floatableImage);
-	                                } else if (item.filetype == "directory") {
-	                                    var floatableShare = this.generateThumb('directory', item.thumbnail, item.label);
-	                                    floatableShare.bind('click', {
-	                                        directory: item
-	                                    }, $.proxy(this.showDirectory, this));
-	                                    libraryContainer.append(floatableShare);
-	                                }
-	                            }, this));
-	                        }
-	                        libraryContainer.append($('<div>').addClass('footerPadding'));
-	                    } else {
-	                        libraryContainer.html('');
-	                    }
-	                    $('#spinner').hide();
-	                    libraryContainer.bind('scroll', {
-	                        activeLibrary: libraryContainer
-	                    }, $.proxy(this.updateScrollEffects, this));
-	                    libraryContainer.trigger('scroll');
-	                    myScroll = new iScroll('#pictureLibraryDirContainer' + directory);
-	                }
-	            });
-	        } else {
-	            libraryContainer.show();
-	            libraryContainer.trigger('scroll');
-	        }
-	    },
-	    pictureLibraryOpen: function() {
-	        this.resetPage();
-	        $('#pictureLibrary').addClass('selected');
-	        $('.contentContainer').hide();
-	        var libraryContainer = $('#pictureLibraryContainer');
-	        if (!libraryContainer || libraryContainer.length === 0) {
-	            $('#spinner').show();
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'Files.GetSources',
-	                'params': {
-	                    'media': 'pictures'
-	                },
-	                'success': function(data) {
-	                    if (data && data.result && data.result.shares) {
-	                        libraryContainer = $('<div>');
-	                        libraryContainer.attr('id', 'pictureLibraryContainer')
-	                            .addClass('contentContainer');
-	                        $('#content').append(libraryContainer);
-	                    } else {
-	                        libraryContainer.html('');
-	                    }
-	                    $.each($(data.result.shares), $.proxy(function(i, item) {
-	                        var floatableShare = this.generateThumb('directory', item.thumbnail, item.label);
-	                        floatableShare.bind('click', {
-	                            directory: item
-	                        }, $.proxy(this.showDirectory, this));
-	                        libraryContainer.append(floatableShare);
-	                    }, this));
-	                    libraryContainer.append($('<div>').addClass('footerPadding'));
-	                    $('#spinner').hide();
-	                    libraryContainer.bind('scroll', {
-	                        activeLibrary: libraryContainer
-	                    }, $.proxy(this.updateScrollEffects, this));
-	                    libraryContainer.trigger('scroll');
-	                    myScroll = new iScroll('#pictureLibraryContainer');
-	                }
-	            });
-	        } else {
-	            libraryContainer.show();
-	            libraryContainer.trigger('scroll');
-	        }
-	    }
-	};
-
-	module.exports = MediaLibrary;
-
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	 *      Copyright (C) 2005-2013 Team XBMC
-	 *      http://xbmc.org
-	 *
-	 *  This Program is free software; you can redistribute it and/or modify
-	 *  it under the terms of the GNU General Public License as published by
-	 *  the Free Software Foundation; either version 2, or (at your option)
-	 *  any later version.
-	 *
-	 *  This Program is distributed in the hope that it will be useful,
-	 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-	 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	 *  GNU General Public License for more details.
-	 *
-	 *  You should have received a copy of the GNU General Public License
-	 *  along with XBMC; see the file COPYING.  If not, see
-	 *  <http://www.gnu.org/licenses/>.
-	 *
-	 */
-	var $ = __webpack_require__(1);
-	var xbmc = __webpack_require__(9);
-
-	var NowPlayingManager = function() {
-	    this.init();
-	    return true;
-	}
-
-	NowPlayingManager.prototype = {
-	    updateCounter: 0,
-	    activePlayer: "",
-	    activePlayerId: -1,
-	    currentItem: -1,
-	    playing: false,
-	    paused: false,
-	    playlistid: -1,
-
-	    init: function() {
-	        $('#pbPause').hide(); /* Assume we are not playing something */
-	        this.bindPlaybackControls();
-	        this.updateState();
-	        $('#nextTrack').bind('click', $.proxy(this.showPlaylist, this));
-	        $('#nowPlayingPlaylist').bind('click', function() {
-	            return false;
-	        });
-	        $(window).bind('click', $.proxy(this.hidePlaylist, this));
-	    },
-	    updateState: function() {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Player.GetActivePlayers',
-	            'timeout': 3000,
-	            'success': function(data) {
-	                if (data && data.result && data.result.length > 0) {
-	                    if (data.result[0].playerid != this.activePlayerId) {
-	                        this.activePlayerId = data.result[0].playerid;
-	                        this.activePlayer = data.result[0].type;
-	                        if (this.activePlayer == "audio") {
-	                            this.stopVideoPlaylistUpdate();
-	                            this.displayAudioNowPlaying();
-	                        } else if (this.activePlayer == "video") {
-	                            this.stopAudioPlaylistUpdate();
-	                            this.displayVideoNowPlaying();
-	                        } else {
-	                            this.stopVideoPlaylistUpdate();
-	                            this.stopAudioPlaylistUpdate();
-	                            this.activePlayer = "";
-	                            this.activePlayerId = -1;
-	                        }
-
-	                        this.stopRefreshTime();
-	                        this.updatePlayer();
-	                    }
-	                } else if (!data || !data.result || data.result.length <= 0) {
-	                    this.stopVideoPlaylistUpdate();
-	                    this.stopAudioPlaylistUpdate();
-	                    this.activePlayer = "";
-	                    this.activePlayerId = -1;
-	                }
-
-	                if (this.activePlayerId >= 0) {
-	                    this.showFooter();
-	                } else {
-	                    this.stopRefreshTime();
-	                    this.hideFooter();
-	                }
-
-	                setTimeout($.proxy(this.updateState, this), 1000);
-	            },
-	            'error': function(data, error) {
-	                xbmc.core.displayCommunicationError();
-	                setTimeout($.proxy(this.updateState, this), 2000);
-	            }
-	        });
-	    },
-	    updatePlayer: function() {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Player.GetProperties',
-	            'params': {
-	                'playerid': this.activePlayerId,
-	                'properties': [
-	                    'playlistid',
-	                    'speed',
-	                    'position',
-	                    'totaltime',
-	                    'time'
-	                ]
-	            },
-	            'success': function(data) {
-	                if (data && data.result) {
-	                    this.playlistid = data.result.playlistid;
-	                    this.playing = data.result.speed != 0;
-	                    this.paused = data.result.speed == 0;
-	                    this.currentItem = data.result.position;
-	                    this.trackBaseTime = xbmc.core.timeToDuration(data.result.time);
-	                    this.trackDurationTime = xbmc.core.timeToDuration(data.result.totaltime);
-	                    if (!this.autoRefreshAudioData && !this.autoRefreshVideoData && this.playing) {
-	                        if (this.activePlayer == 'audio') {
-	                            this.autoRefreshAudioData = true;
-	                            this.refreshAudioData();
-	                        } else if (this.activePlayer == 'video') {
-	                            this.autoRefreshVideoData = true;
-	                            this.refreshVideoData();
-	                        }
-	                    }
-	                }
-	                if ((this.autoRefreshAudioData || this.autoRefreshVideoData) && !this.activeItemTimer) {
-	                    this.activeItemTimer = 1;
-	                    setTimeout($.proxy(this.updateActiveItemDurationLoop, this), 1000);
-	                }
-	            }
-	        });
-	    },
-	    bindPlaybackControls: function() {
-	        $('#pbNext').bind('click', $.proxy(this.nextTrack, this));
-	        $('#pbPrev').bind('click', $.proxy(this.prevTrack, this));
-	        $('#pbStop').bind('click', $.proxy(this.stopTrack, this));
-	        $('#pbPlay').bind('click', $.proxy(this.playPauseTrack, this));
-	        $('#pbPause').bind('click', $.proxy(this.playPauseTrack, this));
-	        var that = this
-	        $(document).keypress(function(event) {
-	            switch (event.which) {
-	                case 32: //spacebar
-	                    event.preventDefault()
-	                    $.proxy(that.playPauseTrack, that)();
-	                    break;
-	                case 120: //x key
-	                    event.preventDefault()
-	                    $.proxy(that.stopTrack, that)();
-	                    break;
-	                case 44: //period key
-	                    event.preventDefault()
-	                    $.proxy(that.nextTrack, that)();
-	                    break;
-	                case 46: //comma key
-	                    event.preventDefault()
-	                    $.proxy(that.prevTrack, that)();
-	                    break;
-	            }
-	        });
-	    },
-	    showPlaylist: function() {
-	        $('#nextText').html('Playlist: ');
-	        $('#nowPlayingPlaylist').show();
-	        return false;
-	    },
-	    hidePlaylist: function() {
-	        $('#nextText').html('Next: ');
-	        $('#nowPlayingPlaylist').hide();
-	        return false;
-	    },
-	    hideFooter: function() {
-	        $('#footerPopover').hide();
-	        $('#overlay').css('bottom', '0px');
-	    },
-	    showFooter: function() {
-	        $('#footerPopover').show();
-	        $('#overlay').css('bottom', '150px');
-	    },
-	    nextTrack: function() {
-	        if (this.activePlayer) {
-	            xbmc.rpc.request({
-	                'method': 'Player.GoTo',
-	                'params': {
-	                    'playerid': this.activePlayerId,
-	                    'to': 'next'
-	                },
-	                'success': function() {}
-	            });
-	        }
-	    },
-	    prevTrack: function() {
-	        if (this.activePlayer) {
-	            xbmc.rpc.request({
-	                'method': 'Player.GoTo',
-	                'params': {
-	                    'playerid': this.activePlayerId,
-	                    'to': 'previous'
-	                },
-	                'success': function() {}
-	            });
-	        }
-	    },
-	    stopTrack: function() {
-	        if (this.activePlayer) {
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': 'Player.Stop',
-	                'params': {
-	                    'playerid': this.activePlayerId
-	                },
-	                'success': function(data) {
-	                    if (data && data.result == 'OK') {
-	                        this.playing = false;
-	                        this.paused = false;
-	                        this.trackBaseTime = 0;
-	                        this.trackDurationTime = 0;
-	                        this.showPlayButton();
-	                    }
-	                }
-	            });
-	        }
-	    },
-	    playPauseTrack: function() {
-	        if (this.activePlayer) {
-	            var method = ((this.playing || this.paused) ? 'Player.PlayPause' : 'Playlist.Play');
-	            xbmc.rpc.request({
-	                'context': this,
-	                'method': method,
-	                'params': {
-	                    'playerid': this.activePlayerId
-	                },
-	                'success': function(data) {
-	                    if (data && data.result) {
-	                        this.playing = data.result.speed != 0;
-	                        this.paused = data.result.speed == 0;
-	                        if (this.playing) {
-	                            this.showPauseButton();
-	                        } else {
-	                            this.showPlayButton();
-	                        }
-	                    }
-	                }
-	            });
-	        }
-	    },
-	    showPauseButton: function() {
-	        $('#pbPause').show();
-	        $('#pbPlay').hide();
-	    },
-	    showPlayButton: function() {
-	        $('#pbPause').hide();
-	        $('#pbPlay').show();
-	    },
-	    displayAudioNowPlaying: function() {
-	        if (!this.autoRefreshAudioPlaylist) {
-	            this.autoRefreshAudioPlaylist = true;
-	            this.updateAudioPlaylist();
-	        }
-	    },
-	    displayVideoNowPlaying: function() {
-	        if (!this.autoRefreshVideoPlaylist) {
-	            this.autoRefreshVideoPlaylist = true;
-	            this.updateVideoPlaylist();
-	        }
-	    },
-	    playPlaylistItem: function(sender) {
-	        var sequenceId = $(sender.currentTarget).attr('seq');
-	        if (!this.activePlaylistItem || (this.activePlaylistItem !== undefined && sequenceId != this.activePlaylistItem.seq)) {
-	            xbmc.rpc.request({
-	                'method': 'Player.GoTo',
-	                'params': {
-	                    'playerid': this.activePlayerId,
-	                    'to': sequenceId
-	                },
-	                'success': function() {}
-	            });
-	        }
-	        this.hidePlaylist();
-	    },
-	    playlistChanged: function(newPlaylist) {
-	        if (this.activePlaylist && !newPlaylist || !this.activePlaylist && newPlaylist) {
-	            return true;
-	        }
-	        if (!this.activePlaylist && !newPlaylist) {
-	            return false;
-	        }
-	        if (this.activePlaylist.length != newPlaylist.length) {
-	            return true;
-	        }
-	        for (var i = 0; i < newPlaylist.length; i++) {
-	            if (!this.comparePlaylistItems(this.activePlaylist[i], newPlaylist[i])) {
-	                return true;
-	            }
-	        }
-	        return false;
-	    },
-	    updateAudioPlaylist: function() {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Playlist.GetItems',
-	            'params': {
-	                'playlistid': this.playlistid,
-	                'properties': [
-	                    'title',
-	                    'album',
-	                    'artist',
-	                    'duration',
-	                    'thumbnail'
-	                ]
-	            },
-	            'success': function(data) {
-	                if (data && data.result && data.result.items && data.result.items.length > 0 && data.result.limits.total > 0) {
-	                    if (!this.activePlaylistItem || this.playlistChanged(data.result.items) || (this.activePlaylistItem && (this.activePlaylistItem.seq != this.currentItem))) {
-	                        var ul = $('<ul>');
-	                        var activeItem;
-	                        $.each($(data.result.items), $.proxy(function(i, item) {
-	                            var li = $('<li>');
-	                            var code = '<span class="duration">' + xbmc.core.durationToString(item.duration) + '</span><div class="trackInfo" title="' + item.title + ' - ' + item.artist + '"><span class="trackTitle">' + item.title + '</span> - <span class="trackArtist">' + item.artist + '</span></div>';
-	                            if (i == this.currentItem) {
-	                                activeItem = item;
-	                                activeItem.seq = i;
-	                                li.addClass('activeItem');
-	                            }
-	                            if (i == (this.currentItem + 1)) {
-	                                $('#nextTrack').html(code).show();
-	                            }
-	                            li.bind('click', $.proxy(this.playPlaylistItem, this));
-	                            ul.append(li.attr('seq', i).html(code));
-	                        }, this));
-	                        if (data.result.limits.total > 1) {
-	                            if (activeItem && data.result.limits.total - 1 == activeItem.seq) {
-	                                $('#nextTrack').html('<div class="trackInfo">Last track in playlist</div>').show();
-	                            }
-	                            $('#nextText').show();
-	                            $('#nowPlayingPlaylist').html('').append(ul);
-	                        } else {
-	                            $('#nextText').hide();
-	                            $('#nowPlayingPlaylist').hide();
-	                            $('#nextTrack').hide();
-	                        }
-	                        if (!this.comparePlaylistItems(activeItem, this.activePlaylistItem)) {
-	                            this.activePlaylistItem = activeItem;
-	                            if (!this.updateActiveItemDurationRunOnce) {
-	                                this.updateActiveItemDurationRunOnce = true;
-	                                this.updatePlayer();
-	                            }
-	                        } else if (!activeItem) {
-	                            this.stopRefreshTime();
-	                        }
-	                        this.activePlaylist = data.result.items;
-	                        $('#videoDescription').hide();
-	                        $('#audioDescription').show();
-	                        $('#nowPlayingPanel').show();
-	                    }
-	                } else {
-	                    this.activePlaylist = null;
-	                    $('#audioDescription').hide();
-	                    $('#nowPlayingPanel').hide();
-	                }
-	                if (this.autoRefreshAudioPlaylist) {
-	                    setTimeout($.proxy(this.updateAudioPlaylist, this), 1000);
-	                }
-	            },
-	            'error': function(data) {
-	                xbmc.core.displayCommunicationError();
-	                if (this.autoRefreshAudioPlaylist) {
-	                    setTimeout($.proxy(this.updateAudioPlaylist, this), 2000); /* Slow down request period */
-	                }
-	            }
-	        });
-	    },
-	    stopAudioPlaylistUpdate: function() {
-	        this.autoRefreshAudioPlaylist = false;
-	        this.updateActiveItemDurationRunOnce = false;
-	    },
-	    stopVideoPlaylistUpdate: function() {
-	        this.autoRefreshVideoPlaylist = false;
-	        this.updateActiveItemDurationRunOnce = false;
-	    },
-	    updateActiveItemDurationLoop: function() {
-	        this.activeItemTimer = 0;
-	        this.updatePlayer();
-	    },
-	    refreshAudioDataLoop: function() {
-	        this.audioRefreshTimer = 0;
-	        this.refreshAudioData();
-	    },
-	    refreshAudioData: function() {
-	        if (this.autoRefreshAudioData && !this.audioRefreshTimer) {
-	            this.audioRefreshTimer = 1;
-	            setTimeout($.proxy(this.refreshAudioDataLoop, this), 1000);
-	        }
-	        if (this.playing && !this.paused) {
-	            this.trackBaseTime++;
-	        }
-	        if (this.paused) {
-	            this.showPlayButton();
-	        } else if (this.playing) {
-	            this.showPauseButton();
-	        }
-	        if (this.activePlaylistItem) {
-	            if (this.activePlaylistItem != this.lastPlaylistItem) {
-	                this.lastPlaylistItem = this.activePlaylistItem;
-	                var imgPath = xbmc.core.DEFAULT_ALBUM_COVER;
-	                if (this.activePlaylistItem.thumbnail) {
-	                    imgPath = 'image/' + encodeURI(this.activePlaylistItem.thumbnail);
-	                }
-	                $('#audioCoverArt').html('<img src="' + imgPath + '" alt="' + this.activePlaylistItem.album + ' cover art">');
-	                $('#audioTrackTitle').html('<span title="' + this.activePlaylistItem.title + '">' + this.activePlaylistItem.title + '</span>');
-	                if (this.activePlaylistItem.album) {
-	                    $('#audioAlbumTitle').html('<span title="' + this.activePlaylistItem.album + '">' + this.activePlaylistItem.album + '</span>')
-	                        .show();
-	                } else {
-	                    $('#audioAlbumTitle').hide();
-	                }
-	                $('#audioArtistTitle').html(this.activePlaylistItem.artist);
-	                $('#progressBar').attr('style', '');
-	            }
-	            $('#audioDuration').html(xbmc.core.durationToString(this.trackBaseTime) + ' / ' + xbmc.core.durationToString(this.trackDurationTime));
-	            var buttonWidth = $('#progressBar .progressIndicator').width();
-	            var progressBarWidth = (this.trackBaseTime / this.trackDurationTime) * 100;
-	            var progressSliderPosition = Math.ceil(($('#progressBar').width() / 100) * progressBarWidth) - buttonWidth;
-	            if (progressSliderPosition < 0) {
-	                progressSliderPosition = 0;
-	            }
-	            if (progressBarWidth <= 100) {
-	                $('#progressBar .elapsedTime').width(progressBarWidth + '%');
-	                $('#progressBar .progressIndicator').css('left', progressSliderPosition);
-	            }
-	        }
-	    },
-	    refreshVideoDataLoop: function() {
-	        this.videoRefreshTimer = 0;
-	        this.refreshVideoData();
-	    },
-	    refreshVideoData: function() {
-	        if (this.autoRefreshVideoData && !this.videoRefreshTimer) {
-	            this.videoRefreshTimer = 1;
-	            setTimeout($.proxy(this.refreshVideoDataLoop, this), 1500);
-	        }
-	        if (this.playing && !this.paused) {
-	            this.trackBaseTime++;
-	        }
-	        if (this.paused) {
-	            this.showPlayButton();
-	        } else if (this.playing) {
-	            this.showPauseButton();
-	        }
-	        if (this.activePlaylistItem) {
-	            if (this.activePlaylistItem != this.lastPlaylistItem) {
-	                this.lastPlaylistItem = this.activePlaylistItem;
-	                var imgPath = xbmc.core.DEFAULT_VIDEO_COVER;
-	                if (this.activePlaylistItem.thumbnail) {
-	                    imgPath = 'image/' + encodeURI(this.activePlaylistItem.thumbnail);
-	                }
-	                $('#videoCoverArt').html('<img src="' + imgPath + '" alt="' + this.activePlaylistItem.title + ' cover art">');
-	                $('#videoShowTitle').html(this.activePlaylistItem.showtitle || '&nbsp;');
-	                var extra = '';
-	                if (this.activePlaylistItem.season >= 0 && this.activePlaylistItem.episode >= 0) {
-	                    extra = this.activePlaylistItem.season + 'x' + this.activePlaylistItem.episode + ' ';
-	                }
-	                $('#videoTitle').html(extra + this.activePlaylistItem.title);
-	            }
-	            $('#videoDuration').html(xbmc.core.durationToString(this.trackBaseTime) + ' / ' + xbmc.core.durationToString(this.trackDurationTime));
-	            var buttonWidth = $('#progressBar .progressIndicator').width();
-	            var progressBarWidth = (this.trackBaseTime / this.trackDurationTime) * 100;
-	            var progressSliderPosition = Math.ceil(($('#progressBar').width() / 100) * progressBarWidth) - buttonWidth;
-	            if (progressSliderPosition < 0) {
-	                progressSliderPosition = 0;
-	            }
-	            if (progressBarWidth <= 100) {
-	                $('#progressBar .elapsedTime').width(progressBarWidth + '%');
-	                $('#progressBar .progressIndicator').css('left', progressSliderPosition);
-	            }
-	        }
-	    },
-	    stopRefreshTime: function() {
-	        this.autoRefreshAudioData = false;
-	        this.autoRefreshVideoData = false;
-	    },
-	    comparePlaylistItems: function(item1, item2) {
-	        if (!item1 || !item2) {
-	            if (!item1 && !item2) {
-	                return true;
-	            }
-	            return false;
-	        }
-	        if (item1.title != item2.title) {
-	            return false;
-	        }
-	        if (item1.album != item2.album) {
-	            return false;
-	        }
-	        if (item1.artist != item2.artist) {
-	            return false;
-	        }
-	        if (item1.duration != item2.duration) {
-	            return false;
-	        }
-	        if (item1.label != item2.label) {
-	            return false;
-	        }
-	        if (item1.season != item2.season) {
-	            return false;
-	        }
-	        if (item1.episode != item2.episode) {
-	            return false;
-	        }
-	        return true;
-	    },
-	    updateVideoPlaylist: function() {
-	        xbmc.rpc.request({
-	            'context': this,
-	            'method': 'Playlist.GetItems',
-	            'params': {
-	                'playlistid': this.playlistid,
-	                'properties': [
-	                    'title',
-	                    'season',
-	                    'episode',
-	                    'plot',
-	                    'runtime',
-	                    'showtitle',
-	                    'thumbnail'
-	                ]
-	            },
-	            'success': function(data) {
-	                if (data && data.result && data.result.items && data.result.items.length > 0 && data.result.limits.total > 0) {
-	                    if (this.playlistChanged(data.result.items)) {
-	                        var ul = $('<ul>');
-	                        var activeItem;
-	                        $.each($(data.result.items), $.proxy(function(i, item) {
-	                            var li = $('<li>');
-	                            var extra = '';
-	                            if (item.season >= 0 && item.episode >= 0) {
-	                                extra = item.season + 'x' + item.episode + ' ';
-	                            }
-	                            var code = '<span class="duration">' + xbmc.core.durationToString(item.runtime) + '</span><div class="trackInfo" title="' + extra + item.title + '"><span class="trackTitle">' + extra + item.title + '</span></div>';
-	                            if (i == this.currentItem) {
-	                                activeItem = item;
-	                                activeItem.seq = i;
-	                                li.addClass('activeItem');
-	                            }
-	                            if (i == (this.currentItem + 1)) {
-	                                $('#nextTrack').html(code).show();
-	                            }
-	                            li.bind('click', $.proxy(this.playPlaylistItem, this));
-	                            ul.append(li.attr('seq', i).html(code));
-	                        }, this));
-	                        if (data.result.limits.total > 1) {
-	                            $('#nextText').show();
-	                            if (activeItem && data.result.limits.total == activeItem.seq) {
-	                                $('#nextTrack').html('<div class="trackInfo">Last track in playlist</div>').show();
-	                            }
-	                            $('#nowPlayingPlaylist').html('').append(ul);
-	                        } else {
-	                            $('#nextText').hide();
-	                            $('#nowPlayingPlaylist').hide();
-	                            $('#nextTrack').hide();
-	                        }
-	                        if (!this.comparePlaylistItems(activeItem, this.activePlaylistItem)) {
-	                            this.activePlaylistItem = activeItem;
-	                            if (!this.updateActiveItemDurationRunOnce) {
-	                                this.updateActiveItemDurationRunOnce = true;
-	                                this.updatePlayer();
-	                            }
-	                        } else if (!activeItem) {
-	                            this.stopRefreshTime();
-	                        }
-	                        this.activePlaylist = data.result.items;
-	                        $('#videoDescription').show();
-	                        $('#audioDescription').hide();
-	                        $('#nowPlayingPanel').show();
-	                    }
-	                } else {
-	                    xbmc.rpc.request({
-	                        'context': this,
-	                        'method': 'Player.GetItem',
-	                        'params': {
-	                            'playerid': this.activePlayerId,
-	                            'properties': [
-	                                'title',
-	                                'season',
-	                                'episode',
-	                                'plot',
-	                                'runtime',
-	                                'showtitle',
-	                                'thumbnail'
-	                            ]
-	                        },
-	                        'success': function(data) {
-	                            if (data && data.result && data.result.item) {
-	                                this.activePlaylistItem = data.result.item;
-	                                if (!this.updateActiveItemDurationRunOnce) {
-	                                    this.updateActiveItemDurationRunOnce = true;
-	                                    this.updatePlayer();
-	                                }
-
-	                                $('#nextText').hide();
-	                                $('#nowPlayingPlaylist').hide();
-	                                $('#nextTrack').hide();
-
-	                                $('#videoDescription').show();
-	                                $('#audioDescription').hide();
-	                                $('#nowPlayingPanel').show();
-	                            } else {
-	                                this.activePlaylist = null;
-	                                $('#videoDescription').hide();
-	                                $('#nowPlayingPanel').hide();
-	                            }
-	                        },
-	                        'error': function(data) {
-	                            xbmc.core.displayCommunicationError();
-	                            if (this.autoRefreshVideoPlaylist) {
-	                                setTimeout($.proxy(this.updateVideoPlaylist, this), 2000); /* Slow down request period */
-	                            }
-	                        }
-	                    });
-	                }
-	                if (this.autoRefreshVideoPlaylist) {
-	                    setTimeout($.proxy(this.updateVideoPlaylist, this), 1000);
-	                }
-	            },
-	            'error': function(data) {
-	                xbmc.core.displayCommunicationError();
-	                if (this.autoRefreshVideoPlaylist) {
-	                    setTimeout($.proxy(this.updateVideoPlaylist, this), 2000); /* Slow down request period */
-	                }
-	            }
-	        });
-	    }
-	}
-
-	module.exports = NowPlayingManager;
-
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	 *      Copyright (C) 2005-2013 Team XBMC
-	 *      http://xbmc.org
-	 *
-	 *  This Program is free software; you can redistribute it and/or modify
-	 *  it under the terms of the GNU General Public License as published by
-	 *  the Free Software Foundation; either version 2, or (at your option)
-	 *  any later version.
-	 *
-	 *  This Program is distributed in the hope that it will be useful,
-	 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-	 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	 *  GNU General Public License for more details.
-	 *
-	 *  You should have received a copy of the GNU General Public License
-	 *  along with XBMC; see the file COPYING.  If not, see
-	 *  <http://www.gnu.org/licenses/>.
-	 *
-	 */
-
-	'use strict';
-
-	var $ = __webpack_require__(1);
-
-	var xbmc = {};
-
-	xbmc.rpc = {
-	    'default_options': {
-	        'contentType': 'application/json',
-	        'dataType': 'json',
-	        'type': 'POST',
-	        'success': function() {
-	            $('#spinner').hide();
-	        }
-	    },
-	    'request': function(options) {
-	        var request_options = $.extend({}, this.default_options, options);
-	        request_options.url = xbmc.core.JSON_RPC + '?' + options.method;
-	        request_options.data = JSON.stringify({
-	            'jsonrpc': '2.0',
-	            'method': options.method,
-	            'id': 1,
-	            'params': request_options.params
-	        });
-	        return $.ajax(request_options)
-	    }
-	};
-	xbmc.core = {
-	    'DEFAULT_ALBUM_COVER': 'images/DefaultAlbumCover.png',
-	    'DEFAULT_VIDEO_COVER': 'images/DefaultVideo.png',
-	    'JSON_RPC': 'jsonrpc',
-	    'applyDeviceFixes': function() {
-	        window.document.addEventListener('touchmove', function(e) {
-	            e.preventDefault();
-	        });
-	    },
-	    'displayCommunicationError': function(m) {
-	        window.clearTimeout(xbmc.core.commsErrorTimeout);
-	        var message = m || 'Connection to server lost';
-	        $('#commsErrorPanel').html(message).show();
-	        xbmc.core.commsErrorTimeout = window.setTimeout('xbmc.core.hideCommunicationError()', 5000);
-	    },
-	    'durationToString': function(duration) {
-	        var total_seconds = duration || 0,
-	            seconds = total_seconds % 60,
-	            minutes = Math.floor(total_seconds / 60) % 60,
-	            hours = Math.floor(total_seconds / 3600),
-	            result = ((hours > 0 && ((hours < 10 ? '0' : '') + hours + ':')) || '');
-	        result += (minutes < 10 ? '0' : '') + minutes + ':';
-	        result += (seconds < 10 ? '0' : '') + seconds;
-	        return result;
-	    },
-	    'getCookie': function(name) {
-	        var i,
-	            match,
-	            haystack = window.document.cookie.split(';');
-	        for (i = 0; i < haystack.length; i += 1) {
-	            match = haystack[i].match(/^\s*[\S\s]*=([\s\S]*)\s*$/);
-	            if (match && match.length === 2) {
-	                return match[1];
-	            }
-	        }
-	        return null;
-	    },
-	    'hideCommunicationError': function() {
-	        $('#commsErrorPanel').hide();
-	    },
-	    'setCookie': function(name, value, days) {
-	        var date,
-	            expires;
-	        if (name) {
-	            if (days) {
-	                date = new Date();
-	                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-	                expires = "; expires=" + date.toGMTString();
-	            } else {
-	                expires = '';
-	            }
-	            window.document.cookie = name + "=" + value + expires + "; path=/";
-	        }
-	    },
-	    'timeToDuration': function(time) {
-	        var duration;
-	        time = time || {};
-	        duration = ((time.hours || 0) * 3600);
-	        duration += ((time.minutes || 0) * 60);
-	        duration += (time.seconds || 0);
-	        return duration;
-	    }
-	};
-
-	module.exports = xbmc;
-
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	/**
-	 * Merge two attribute objects giving precedence
-	 * to values in object `b`. Classes are special-cased
-	 * allowing for arrays and merging/joining appropriately
-	 * resulting in a string.
-	 *
-	 * @param {Object} a
-	 * @param {Object} b
-	 * @return {Object} a
-	 * @api private
-	 */
-
-	exports.merge = function merge(a, b) {
-	  if (arguments.length === 1) {
-	    var attrs = a[0];
-	    for (var i = 1; i < a.length; i++) {
-	      attrs = merge(attrs, a[i]);
-	    }
-	    return attrs;
-	  }
-	  var ac = a['class'];
-	  var bc = b['class'];
-
-	  if (ac || bc) {
-	    ac = ac || [];
-	    bc = bc || [];
-	    if (!Array.isArray(ac)) ac = [ac];
-	    if (!Array.isArray(bc)) bc = [bc];
-	    a['class'] = ac.concat(bc).filter(nulls);
-	  }
-
-	  for (var key in b) {
-	    if (key != 'class') {
-	      a[key] = b[key];
-	    }
-	  }
-
-	  return a;
-	};
-
-	/**
-	 * Filter null `val`s.
-	 *
-	 * @param {*} val
-	 * @return {Boolean}
-	 * @api private
-	 */
-
-	function nulls(val) {
-	  return val != null && val !== '';
-	}
-
-	/**
-	 * join array as classes.
-	 *
-	 * @param {*} val
-	 * @return {String}
-	 */
-	exports.joinClasses = joinClasses;
-	function joinClasses(val) {
-	  return (Array.isArray(val) ? val.map(joinClasses) :
-	    (val && typeof val === 'object') ? Object.keys(val).filter(function (key) { return val[key]; }) :
-	    [val]).filter(nulls).join(' ');
-	}
-
-	/**
-	 * Render the given classes.
-	 *
-	 * @param {Array} classes
-	 * @param {Array.<Boolean>} escaped
-	 * @return {String}
-	 */
-	exports.cls = function cls(classes, escaped) {
-	  var buf = [];
-	  for (var i = 0; i < classes.length; i++) {
-	    if (escaped && escaped[i]) {
-	      buf.push(exports.escape(joinClasses([classes[i]])));
-	    } else {
-	      buf.push(joinClasses(classes[i]));
-	    }
-	  }
-	  var text = joinClasses(buf);
-	  if (text.length) {
-	    return ' class="' + text + '"';
-	  } else {
-	    return '';
-	  }
-	};
-
-
-	exports.style = function (val) {
-	  if (val && typeof val === 'object') {
-	    return Object.keys(val).map(function (style) {
-	      return style + ':' + val[style];
-	    }).join(';');
-	  } else {
-	    return val;
-	  }
-	};
-	/**
-	 * Render the given attribute.
-	 *
-	 * @param {String} key
-	 * @param {String} val
-	 * @param {Boolean} escaped
-	 * @param {Boolean} terse
-	 * @return {String}
-	 */
-	exports.attr = function attr(key, val, escaped, terse) {
-	  if (key === 'style') {
-	    val = exports.style(val);
-	  }
-	  if ('boolean' == typeof val || null == val) {
-	    if (val) {
-	      return ' ' + (terse ? key : key + '="' + key + '"');
-	    } else {
-	      return '';
-	    }
-	  } else if (0 == key.indexOf('data') && 'string' != typeof val) {
-	    if (JSON.stringify(val).indexOf('&') !== -1) {
-	      console.warn('Since Jade 2.0.0, ampersands (`&`) in data attributes ' +
-	                   'will be escaped to `&amp;`');
-	    };
-	    if (val && typeof val.toISOString === 'function') {
-	      console.warn('Jade will eliminate the double quotes around dates in ' +
-	                   'ISO form after 2.0.0');
-	    }
-	    return ' ' + key + "='" + JSON.stringify(val).replace(/'/g, '&apos;') + "'";
-	  } else if (escaped) {
-	    if (val && typeof val.toISOString === 'function') {
-	      console.warn('Jade will stringify dates in ISO form after 2.0.0');
-	    }
-	    return ' ' + key + '="' + exports.escape(val) + '"';
-	  } else {
-	    if (val && typeof val.toISOString === 'function') {
-	      console.warn('Jade will stringify dates in ISO form after 2.0.0');
-	    }
-	    return ' ' + key + '="' + val + '"';
-	  }
-	};
-
-	/**
-	 * Render the given attributes object.
-	 *
-	 * @param {Object} obj
-	 * @param {Object} escaped
-	 * @return {String}
-	 */
-	exports.attrs = function attrs(obj, terse){
-	  var buf = [];
-
-	  var keys = Object.keys(obj);
-
-	  if (keys.length) {
-	    for (var i = 0; i < keys.length; ++i) {
-	      var key = keys[i]
-	        , val = obj[key];
-
-	      if ('class' == key) {
-	        if (val = joinClasses(val)) {
-	          buf.push(' ' + key + '="' + val + '"');
-	        }
-	      } else {
-	        buf.push(exports.attr(key, val, false, terse));
-	      }
-	    }
-	  }
-
-	  return buf.join('');
-	};
-
-	/**
-	 * Escape the given string of `html`.
-	 *
-	 * @param {String} html
-	 * @return {String}
-	 * @api private
-	 */
-
-	exports.escape = function escape(html){
-	  var result = String(html)
-	    .replace(/&/g, '&amp;')
-	    .replace(/</g, '&lt;')
-	    .replace(/>/g, '&gt;')
-	    .replace(/"/g, '&quot;');
-	  if (result === '' + html) return html;
-	  else return result;
-	};
-
-	/**
-	 * Re-throw the given `err` in context to the
-	 * the jade in `filename` at the given `lineno`.
-	 *
-	 * @param {Error} err
-	 * @param {String} filename
-	 * @param {String} lineno
-	 * @api private
-	 */
-
-	exports.rethrow = function rethrow(err, filename, lineno, str){
-	  if (!(err instanceof Error)) throw err;
-	  if ((typeof window != 'undefined' || !filename) && !str) {
-	    err.message += ' on line ' + lineno;
-	    throw err;
-	  }
-	  try {
-	    str = str || __webpack_require__(13).readFileSync(filename, 'utf8')
-	  } catch (ex) {
-	    rethrow(err, null, lineno)
-	  }
-	  var context = 3
-	    , lines = str.split('\n')
-	    , start = Math.max(lineno - context, 0)
-	    , end = Math.min(lines.length, lineno + context);
-
-	  // Error context
-	  var context = lines.slice(start, end).map(function(line, i){
-	    var curr = i + start + 1;
-	    return (curr == lineno ? '  > ' : '    ')
-	      + curr
-	      + '| '
-	      + line;
-	  }).join('\n');
-
-	  // Alter exception message
-	  err.path = filename;
-	  err.message = (filename || 'Jade') + ':' + lineno
-	    + '\n' + context + '\n\n' + err.message;
-	  throw err;
-	};
-
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(2);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* (ignored) */
+	module.exports = __webpack_require__.p + "fontawesome-webfont.ttf"
 
 /***/ }
 /******/ ]);
