@@ -14,4 +14,4 @@ Below are commands to get you started.
 
 Then go to `http://localhost:4000`
 
- `npm run build` will watch for files in `app` folder and concat all the assets and generate the output in `dist` folder. Webserver is server `dist` folder.
+ `npm run build` will watch for files in `app` folder and concat all the assets and generate the output in `dist` folder. Webserver is serving `dist` folder.
