@@ -55,6 +55,21 @@ xbmc.core = {
             e.preventDefault();
         });
     },
+    'init': function() {
+        xbmc.rpc.request({
+            'context': this,
+            'method': 'Player.GetActivePlayers',
+            'timeout': 3000,
+            'success': function(data) {
+                if (data && data.result && data.result.length > 0) {
+                    xbmc.activePlayerId = data.result[0].playerid;
+                }
+            },
+            'error': function(data, error) {
+                xbmc.core.displayCommunicationError();
+            }
+        });
+    },
     'displayCommunicationError': function(m) {
         window.clearTimeout(xbmc.core.commsErrorTimeout);
         var message = m || 'Connection to server lost';
