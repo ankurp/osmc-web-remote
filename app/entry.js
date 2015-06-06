@@ -11,20 +11,4 @@ $('body').append(require('jade!./template/index.jade')());
 $('body').css({'background-image': `url(${require("url!./img/splash.jpg")})`});
 
 var Remote = require('./js/remote');
-var remote = new Remote();
-$('i.fa').click((e) => {
-  var method = $(e.target).data('method');
-  switch (method) {
-  case 'Player.SetSpeedInc':
-    remote.rpcCall('Player.SetSpeed', {'speed': 'increment'});
-    break;
-  case 'Player.SetSpeedDec':
-    remote.rpcCall('Player.SetSpeed', {'speed': 'decrement'});
-    break;
-  case 'Player.PlayPause':
-    remote.rpcCall('Player.PlayPause', {});
-    break;
-  default:
-    remote.rpcCall(method);
-  }
-});
+var remote = new Remote($('i.fa'));
